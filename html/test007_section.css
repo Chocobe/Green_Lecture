@@ -1,0 +1,36 @@
+
+section {
+    width: 73%;
+    height: 500px;
+    margin: 0 auto;
+    
+}
+
+.bg {
+    width: 1115px;
+    height: 390px;
+    
+    background-image: url(bg_1.jpg);
+    background-size:cover; 
+    opacity: 0.5;
+    position: absolute;
+    
+    z-index: -1;
+}
+
+table {
+    padding: 140px 0 0 220px;
+}
+
+td {
+    width: 400px;
+}
+
+.tableTitle {
+    font-size: 50px;
+    font-weight: border;
+}
+
+.tableDescription {
+    font-size: 30px;
+}

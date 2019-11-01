@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+header {
+    width: 73%;
+    margin: 0 auto;
+}
+
+header .headerContent {
+    margin: 20px;
+}
+
+.headerContent img {
+/*    float: left;*/
+    margin-right: 30px;
+}
+
+.headerLhs {
+/*    float: left;*/
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.headerLhs a {
+    margin-right: 20px;
+}
+
+
+
+.headerRhs {
+/*    float: right;*/
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+.headerRhs .pages {
+    display: inline-block;
+}
+
+.headerRhs .pages input {
+    margin-right: 20px;
+}
+
+.headerRhs .sign {
+    display: inline-block;
+}
+
+.headerRhs a {
+    margin-right: 20px;
+}
+
+
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
