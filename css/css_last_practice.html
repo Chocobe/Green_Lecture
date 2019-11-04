@@ -1,124 +1,416 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
-        <meta charset="UTF-8">
-        <title>Document</title>
-        
+        <meta charset="utf-8">
+        <title></title>
+
         <style>
             * {
-                margin: 0 auto;
+                margin: 0;
                 padding: 0;
             }
-            
-            #contentWrap {
-                width: 1024px;
-                height: 300px;
-                border: 3px solid black;
-                position: relative;
-                display: flex;
-                justify-content: space-around;
-                flex-flow: row wrap;
-            }
-            
-            
-            .title {
-                width: 900px;
-                height: 100px;
-                
-                position: relative;
+
+            body {
                 display: flex;
                 justify-content: center;
+            }
+
+            .mainWrap {
+                width: 1500px;
+                display: flex;
                 flex-flow: row wrap;
+                justify-content: center;
             }
+
             
-            .title_1 {
-                width: 280px;
-                border: 1px solid blue;
+            /* class="top" */
+            .top {
+                width: 1200px;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+
+                margin: 10px;
             }
-            
-            .title_1 div {
+
+            /* .top .first */
+            .top .first {
+                width: 250px;
+                height: 100px;
+                position: relative;
+                border: 3px solid black;
+            }
+
+            .top .first div {
                 width: 80px;
                 height: 80px;
                 border-radius: 50%;
                 border: 3px solid black;
-                
                 position: absolute;
             }
-            
-            .title_1 div:nth-child(1) {
-                top: 5px;
-                left: 50px;
+
+            .top .first .circle_1 {
+                top: 10px;
+                left: 40px;
                 background-color: red;
+
+                z-index: 3;
             }
-            
-            .title_1 div:nth-child(2) {
-                top: 5px;
-                left: 100px;
+
+            .top .first .circle_2 {
+                top: 10px;
+                left: 85px;
                 background-color: blue;
+
+                z-index: 2;
             }
-            
-            .title_1 div:nth-child(3) {
-                top: 5px;
-                left: 150px;
+
+            .top .first .circle_3 {
+                top: 10px;
+                left: 130px;
                 background-color: yellow;
+
+                z-index: 1;
             }
-            
-            
-            .title_2 {
-                width: 300px;
-                height: 100px;
-                border: 1px solid red;
+
+            /* .top .second */
+            .top .second {
+                width: 400px;
+
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+                
+                border-top: 3px solid black;
+                border-bottom: 3px solid black;
+            }
+
+            .top .second .wrap {
+                width: 360px;
+                height: 40px;
                 position: relative;
             }
-            
-            .title_2 input:nth-child(1) {
-                width: 200px;
+
+            .top .second .inputHeader {
+                width: 30px;
+                height: 34px;
+                border: 2px solid deeppink;
+                border-radius: 50%;
+
+                position: absolute;
+                top:0;
+                left:0;
             }
-            
-            
-            .title_3 {
+
+            .top .second input {
                 width: 300px;
-                height: 100px;
-                border: 1px solid cyan;
-                
-                
+                height: 34px;
+                border-top: 2px solid deeppink;
+                border-bottom: 2px solid deeppink;
+                border-left: none;
+
+                position: absolute;
+                top: 0;
+                left: 15px;
+
+                z-index: 1;
             }
-            
+
+            .top .second button {
+                width: 26px;
+                height: 38px;
+                border: 2px solid deeppink;
+                background-color: deeppink;
+
+                position: absolute;
+                top: 0;
+                left: 315px;
+
+                z-index: 1;
+            }
+
+            .top .second button:hover {
+                cursor: pointer;
+            }
+
+            .top .second .buttonFooter {
+                width: 38px;
+                height: 38px;
+                background-color: deeppink;
+                border-radius: 50%;
+
+                position: absolute;
+                top: 0;
+                left: 320px;
+            }
+
+            /* .top .third */
+            .top .third {
+                width: 500px;
+                height: 100px;
+                border: 3px solid black;
+
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .third p {
+                /* width: 480px;
+                height: 30px; */
+                display: inline-block;
+            }
+
+
+            /* .mainMenuBar */
+            .mainMenuBar {
+                width: 1400px;
+                height: 40px;
+                background-color: #3A3232;
+
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            li {
+                color: white;
+                
+                list-style: none;
+                display: inline-block;
+                margin-right: 40px;
+            }
+
+            li:hover {
+                color: yellow;
+                cursor: pointer;
+            }
+
+
+            /* leftSideBar */
+            .leftSideBar {
+                width: 100px;
+                position: fixed;
+                left: 200px;
+                top: 171px;
+            }
+
+            .leftSideBar div img {
+                width: 100px;
+                display: inline-block;
+            }
+            .leftSideBar div div {
+                display: inline-block;
+                width:100px;
+                height: 100px;
+                background-color: magenta;
+            }
+
+
+            /* section */
+            .sectionWrap {
+                width: 1100px;
+                margin: 10px;
+            }
+
+            /* .section .section_1 */
+            .section_1 table {
+                border-collapse: collapse;
+            }
+
+            .section_1 table tr th {
+                font-weight: border;
+            }
+
+            .section_1 table tr td {
+                font-size: 12px;
+                padding: 5px;
+            }
+
+
+            /* .section .section_2 */
+            .section_2 img {
+                margin-top: 10px;
+                width: 1098px;
+                border: 1px solid black;
+            }
+
+
+            /* .section .section_3 */
+            .section_3 img {
+                margin-top: 10px;
+                width: 1098px;
+            }
+
+
+            /* rightSideBar */
+            .rightSideBar {
+                width: 100px;
+
+                position: fixed;
+                right: 190px;
+                top: 176px;
+            }
+
+            .rightSideBar table {
+                border-collapse: collapse;
+                width: 100px;
+            }
+
+            .rightSideBar table tr td {
+                font-size: 12px;
+                text-align: center;
+                padding: 5px;
+            }
+
+            .rightSideBar .blankBox {
+                width: 100px;
+                height: 80px;
+            }
+
+
+            /* Q & A */
+            .QA {
+                position: absolute;
+                bottom: 215px;
+                right: 190px;
+            }
         </style>
     </head>
-    
+
     <body>
-        <div id="contentWrap">
-            <div class="title">
-                <div class="title_1">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+        <div class="mainWrap">
+            <div class="top">
+                <div class="first">
+                    <div class="circle_1"></div>
+                    <div class="circle_2"></div>
+                    <div class="circle_3"></div>
                 </div>
                 
-                <div class="title_2">
-                    <input type="search"/>
-                    <input type="submit"/>
+                <div class="second">
+                    <div class="wrap">
+                        <div class="inputHeader"></div>
+                        <input type="text" placeholder="게이밍 최강성능RTX2080 PC"/>
+                        <button>🔍</button>
+                        <div class="buttonFooter"></div>
+                    </div>
                 </div>
-                <div class="title_3"></div>
+
+                <div class="third">
+                    <p>🕒실시간 PC견적 [16:34]카드 견적 부탁드립니다 &nbsp;&nbsp;&nbsp; 2,342,764원</p>
+                </div>
             </div>
-            
-            <div class="mainMenubar">
+
+            <div class="mainMenuBar">
+                <ul>
+                    <li>조립PC홈</li>
+                    <li>표준PC</li>
+                    <li>조립PC</li>
+                    <li>게임용PC</li>
+                    <li>전문가용PC</li>
+                    <li>하이엔드/튜닝PC</li>
+                    <li>PC견적/역경매</li>
+                    <li>기획전</li>
+                    <li>이용가이드</li>
+                </ul>
+            </div>
+
+            <div class="leftSideBar">
+                <div></div>
+                <div></div>
+                <div><img src="상표.jpg"></div>
+                <div><img src="상표.jpg"></div>
+                <div><img src="상표.jpg"></div>
+                <div><img src="상표.jpg"></div>
+                <div><img src="상표.jpg"></div>
+            </div>
+
+            <div class="sectionWrap">
+                <div class="section_1">
+                    <table border="1">
+                        <tr>
+                            <th colspan="4">가격별</th>
+                            <th colspan="2">파워셀러 <img src="bullet_fixed.png" style="height:16px;"/></th>
+                            <th colspan="7">일반 판매점</th>
+                        </tr>
+
+                        <tr>
+                            <td>10~40만원대</td>
+                            <td>50~60만원대</td>
+                            <td>70~80만원대</td>
+                            <td>90~100만원대</td>
+
+                            <td>피씨드림</td>
+                            <td>엔코퍼레이션</td>
+
+                            <td>유니코어씨엔씨</td>
+                            <td>디씨나라</td>
+                            <td>영재컴퓨터</td>
+                            <td>월드컴퓨터</td>
+                            <td>한마음아이티</td>
+                            <td>마이피씨샵</td>
+                            <td>엔코퍼레이션</td>
+                        </tr>
+
+                        <tr>
+                            <td>110~120만원대</td>
+                            <td>130~140만원대</td>
+                            <td>150~190만원대</td>
+                            <td>200만원대 이상</td>
+
+                            <td>한마음아이티</td>
+                            <td>월드컴퓨터</td>
+
+                            <td>피씨드림</td>
+                            <td>피씨조이</td>
+                            <td>코잇컴</td>
+                            <td>에이블컴퓨터</td>
+                            <td>피씨블로그</td>
+                            <td>컴퓨터연구소</td>
+                            <td></td>
+                        </tr>                        
+                    </table>
+                </div>
                 
+                <div class="section_2">
+                    <img src="css_position_section_2_image.png"/>
+                </div>
+
+                <div class="section_3">
+                    <img src="css_position_section_3_image.png"/>
+                </div>
             </div>
-            
-            <div class="leftMenuBar">
-                
+
+            <div class="rightSideBar">
+                <table border="1" class="favorite">
+                    <tr>
+                        <td>관심상품</td>
+                    </tr>
+                    <tr>
+                        <td>장바구니(0)</td>
+                    </tr>
+                </table>
+
+                <div class="blankBox"></div>
+
+                <table border="1" class="delivery">
+                    <tr>
+                        <td>주문/배송 조회</td>
+                    </tr>
+                    <tr>
+                        <td>신고/문의/제안</td>
+                    </tr>
+                    <tr>
+                        <td>A/S신청</td>
+                    </tr>
+                </table>
             </div>
-            
-            <div class="section">
-                <div class="section_1"></div>
-                <div class="section_2"></div>
-                <div class="section_3"></div>
-            </div>
-            
-            <div class="rightMenuBar">
-                
+
+            <div class="QA">
+                <img src="css_position_pc_QandA.png"/>
             </div>
         </div>
     </body>
