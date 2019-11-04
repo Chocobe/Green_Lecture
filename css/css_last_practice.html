@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0 auto;
+                padding: 0;
+            }
+            
+            #contentWrap {
+                width: 1024px;
+                height: 300px;
+                border: 3px solid black;
+                position: relative;
+                display: flex;
+                justify-content: space-around;
+                flex-flow: row wrap;
+            }
+            
+            
+            .title {
+                width: 900px;
+                height: 100px;
+                
+                position: relative;
+                display: flex;
+                justify-content: center;
+                flex-flow: row wrap;
+            }
+            
+            .title_1 {
+                width: 280px;
+                border: 1px solid blue;
+            }
+            
+            .title_1 div {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                border: 3px solid black;
+                
+                position: absolute;
+            }
+            
+            .title_1 div:nth-child(1) {
+                top: 5px;
+                left: 50px;
+                background-color: red;
+            }
+            
+            .title_1 div:nth-child(2) {
+                top: 5px;
+                left: 100px;
+                background-color: blue;
+            }
+            
+            .title_1 div:nth-child(3) {
+                top: 5px;
+                left: 150px;
+                background-color: yellow;
+            }
+            
+            
+            .title_2 {
+                width: 300px;
+                height: 100px;
+                border: 1px solid red;
+                position: relative;
+            }
+            
+            .title_2 input:nth-child(1) {
+                width: 200px;
+            }
+            
+            
+            .title_3 {
+                width: 300px;
+                height: 100px;
+                border: 1px solid cyan;
+                
+                
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <div id="contentWrap">
+            <div class="title">
+                <div class="title_1">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                
+                <div class="title_2">
+                    <input type="search"/>
+                    <input type="submit"/>
+                </div>
+                <div class="title_3"></div>
+            </div>
+            
+            <div class="mainMenubar">
+                
+            </div>
+            
+            <div class="leftMenuBar">
+                
+            </div>
+            
+            <div class="section">
+                <div class="section_1"></div>
+                <div class="section_2"></div>
+                <div class="section_3"></div>
+            </div>
+            
+            <div class="rightMenuBar">
+                
+            </div>
+        </div>
+    </body>
+</html>
