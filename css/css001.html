@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+/*          "*" : 와일드 카드 - 전체 선택자
+            * {
+                backround-color: magenta;
+            }
+*/
+/*          태그 선택자
+            p {
+                background-color: cyan;
+            }
+*/
+/*          id 선택자 
+            #temp {
+                background-color: darkgreen;
+            }
+*/
+/*          class 선택자 
+            .temp {
+                background-color: peru;
+            }
+*/
+            
+            input {
+                width: 200px;
+                height: 50px;
+            }
+            
+/*          속성 선택자 (중요!) */
+            input[type="button"] {
+                background-color: dodgerblue;
+            }
+            
+/*          block요소(<div>, <p>등 과 같은 태그)는 크기 적용 가능 */
+/*          inline요소는 크기 적용 불가능 */
+            .box1 {
+                width: 200px;
+                height: 200px;
+                background-color: forestgreen;
+                border: 1px solid black;
+            }
+            
+            .box2 {
+                width: 150px;
+                height: 150px;
+                background-color: aqua;
+                border: 1px solid black;
+            }
+            
+            .box3 {
+                width: 100px;
+                height: 100px;
+                background-color: darkorange;
+                border: 1px solid black;
+            }
+
+/*          직계 자식 선택자 */
+/*          .box1의 첫번째 자식 하나만 선택 */
+            .box1 > div {
+                background-color: red;
+            }
+            
+/*          형제 선택자(첫번째 형제를 선택한다.) */
+            #temp + p {
+                background-color: deepskyblue;
+            }
+            
+/*          모든 형제 선택자(모든 형제를 선택한다. */
+            #temp ~ p {
+                background-color: red;
+            }
+            
+/*          형제중 1번(첫번째) 형제 선택자*/
+            td:nth-child(1) {
+                background-color:blue;
+            }
+            
+/*          형제중 홀수번째 형제 모두 선택
+            td:nth-child(2n+1) {
+                background-color:fuchsia;
+            }
+*/
+/*          형제중 짝수번째 형제 모두 선택
+            td:nth-child(2n) {
+                background-color:fuchsia;
+            }
+*/
+        </style>
+    </head>
+
+    <body>
+        <p id="temp">
+            안녕하세요
+        </p>
+        
+        <p class="temp">
+            안녕하세요
+        </p>
+        
+        <p class="temp">
+            안녕하세요
+        </p>
+        
+        <p class="temp">
+            안녕하세요
+        </p>
+        
+        <input type="button" value="눌러"/>
+        <input type="text" placeholder="눌러"/>
+        
+        <div class="box1">
+            <div class="box2">
+                <div class="box3"></div>
+            </div>
+        </div>
+        
+        <table>
+            <td></td><td></td><td></td>
+        </table>
+    </body>
+</html>
