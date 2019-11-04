@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                background-color: yellow;
+            }
+            
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: magenta;
+            }
+            
+            #idtemp {
+                background-color: blue;
+            }
+            
+            .temp {
+                background-color:green;
+            }
+            
+            
+        </style>
+    </head>
+
+    <body>
+<!--
+        선택자 우선순위
+        (최하위)* -> 태그 -> class -> id(최상위)
+-->
+        <div id="idtemp" class="temp"></div>
+    </body>
+</html>
