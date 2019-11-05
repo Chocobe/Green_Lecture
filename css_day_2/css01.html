@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-size: 17px;
+            }
+            
+            #myVideo {
+                min-width: 100%;
+                min-height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+            
+            .content {
+                position: fixed;
+                bottom: 0;
+                
+                background: rgba(0, 0, 0, 0.5);
+                color: #f1f1f1;
+                width: 100%;
+                padding: 20px;
+            }
+            
+            #myBtn {
+                width: 200px;
+                font-size: 18px;
+                padding: 10px;
+                border: none;
+                
+                color: #fff;
+                background: #000;
+                
+                cursor: pointer;
+            }
+            
+            #myBtn:hover {
+                background: #ddd;
+                color: #000;
+            }
+        </style>
+    </head>
+    <body>
+        <video autoplay muted loop id="myVideo">
+            <source src="mj.webm" type="video/webm">
+            이 브라우저는 동영상 배경을 지원하지 않습니다.
+        </video>
+
+        <div class="content">
+            <h1>헤드라인</h1>
+            <p>
+                헌법재판소의 장은 국회의 동의를 얻어 재판관중에서 대통령이 임명한다. 대통령은 제1항과 제2항의 처분 또는 명령을 한 때에는 지체없이 국회에 보고하여 그 승인을 얻어야 한다.
+
+                대법원장은 국회의 동의를 얻어 대통령이 임명한다. 감사위원은 원장의 제청으로 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다.
+
+                국가는 여자의 복지와 권익의 향상을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.
+            </p>
+
+            <button id="myBtn" onclick="myFunction()">
+                일시중지
+            </button>
+        </div>
+        
+        <script>
+            var video = document.getElementById("myVideo"),
+                btn = document.getElementById("myBtn");
+            
+            function myFunction() {
+                if(video.paused) {
+                    video.play();
+                    btn.innerHTML = "일시중지";
+                    
+                } else {
+                    video.pause();
+                    btn.innerHTML = "재생";
+                }
+            }
+        </script>
+    </body>
+</html>
