@@ -71,3 +71,35 @@
             홀수번째 형제들을 모두 선택한다.
         }
     ```
+
+---
+
+# 요소 정렬하기
+
+## ``display:flex``
+
+*   ```css
+        <style>
+            .className {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+            }
+        </style>
+
+        <body>
+            <div class="className">
+                <div class="element_1"></div>
+                <div class="element_2"></div>
+            </div>
+    ```
+
+*   ``display:flex``
+
+    *   이 요소의 하위(자식)요소를 설정에 따라 유연하게 배치한다.
+
+    *   ``flex-flow``, ``space-around`` 속성으로 설정
+
+*   ``flex-flow:속성``
+
+    *   
