@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            div {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                animation-name: move;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                
+                animation-direction: alternate;
+            }
+            
+            @keyframes move {
+                from {
+                    left: 0;
+                    
+                } to {
+                    left: 300px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+</html>

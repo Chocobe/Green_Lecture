@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            .accent {
+                animation-name: changeBg;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+            
+            @keyframes changeBg {
+                25% { background-color: aqua; }
+                50% { background-color: greenyellow; }
+                75% { background-color: fuchsia; }
+                100% { background-color: peru; }
+            }
+        </style>
+    </head>
+    
+    <body>
+        This is <span class="accent">blinking</span> text.
+    </body>
+</html>

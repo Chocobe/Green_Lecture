@@ -19,29 +19,50 @@
                 background-image: linear-gradient(to top, purple, red, yellow, green, skyblue, purple);
             }
             
+            
             .title {
-                display: flex;
-                flex-flow: row wrap;
+                width: 100%;
+                height: 200px;
                 justify-content: space-around;
+                position: relative;
             }
             
-            .content .titleContext {
+            .title .titleContext {
+                color: white;
                 line-height: 150px;
                 width: 30vw;
                 height: 150px;
                 text-align: center;
+                
+                position: absolute;
+                left: 70px;
+                top: 25px;
+                
+                z-index: 1;
             }
             
-            .content .symbol {
+            .title .symbol {
                 width: 100px;
                 height: 100px;
+                background-image: linear-gradient(to right, gray, white);
                 border-radius: 50%;
-                background-image: linear-gradient(to top right, white, gray);
+                
+                position: absolute;
+                left: 100px;
+                top: 50px;
             }
             
             .content .titleImg {
                 display: inline-block;
                 width: 150px;
+                
+                position: absolute;
+                right: 50px;
+                top: 25px;
+            }
+            
+            p {
+                margin: 20px;
             }
         </style>
     </head>
@@ -60,8 +81,8 @@
             <p>애니메이션 기능은 최소화 해주세요.</p>
             <p>색은 되도록 3가지 이상 쓰지 마세요.</p>
             <p>영 디자인 감각이 없다면, 학교 홈페이지에 있는 학교 공식 템플릿을 사용하세요</p>
-            <p>PPT 내에 첨부된 영상 or 폰트 파일은 혹시 모르니 꼭 USB에 넣어가세요.</p>
-            <p>텍스트는 페이지의 20% 정도로 맞춰주세요. 가독성이 좋아집니다.</p>
+            <p class="accent">PPT 내에 첨부된 영상 or 폰트 파일은 혹시 모르니 꼭 USB에 넣어가세요.</p>
+            <p class="accent">텍스트는 페이지의 20% 정도로 맞춰주세요. 가독성이 좋아집니다.</p>
 
             <h2>모두 모두 A+ 받으세요!!</h2>
         </div>
