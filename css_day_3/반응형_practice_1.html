@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            .content {
+                width: 1024px;
+                display: flex;
+                flex-flow: row wrap;
+                
+                margin: 0 auto;
+            }
+            
+            
+            /*  topMenu */
+            .content .topMenu {
+                width: 1024px;
+                background-color: cadetblue;
+                position: fixed;
+            }
+            
+            .content .topMenu ul {
+                list-style: none;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-end;
+            }
+            
+            .content .topMenu ul li {
+                padding: 30px 25px;
+                font-weight: bolder;
+                font-size: 20px;
+                color: #fff;
+            }
+            
+            .boxBig {
+                width: 100%;
+                height: 400px;
+            }
+            
+            .boxSmall {
+                width: 100%;
+                height: 200px;
+            }
+            
+            
+            /* sectionWrap */
+            .sectionWrap {
+                width: 100%;
+                margin-top: 88px;
+            }
+            
+            /* section_1 */
+            .section_1 {
+                width: 60%;
+            }
+            
+            .section_1 .wrap_1 {
+                width: 100%;
+            }
+            
+            .section_1 .wrap_1 .box_1 {
+                background-color: bisque;
+            }
+            
+            .section_1 .wrap_1 .box_2 {
+                background-color: coral;
+            }
+            
+            .section_1 .wrap_2 {
+                width: 40%;
+            }
+            
+            .section_1 .wrap_2 .box_1 {
+                background-color: cornflowerblue;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="content">
+            <div class="topMenu">
+                <ul>
+                    <li>메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                    <li>메뉴4</li>
+                    <li>메뉴5</li>
+                </ul>
+            </div>
+
+            <div class="sectionWrap">
+                <div class="section_1">
+                    <div class="wrap_1">
+                        <div class="box_1 boxBig"></div>
+                        <div class="box_2 boxBig"></div>
+                    </div>
+
+                    <div class="wrap_2">
+                        <div class="box_1 boxSmall"></div>
+                        <div class="box_2 boxSmall"></div>
+                    </div>
+                </div>
+
+                <div class="section_2"></div>
+
+                <div class="section_3">
+                    <div class="wrap_1">
+                        <div class="box_1"></div>
+                        <div class="box_2"></div>
+                    </div>
+
+                    <div class="wrap_2">
+                        <div class="box_1"></div>
+                        <div class="box_2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

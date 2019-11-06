@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            .container {
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            .c1 {
+                color: #ddd;
+                background-color: peru;
+                padding: 10px;
+                width: 100%;
+            }
+            
+            @media(min-width: 600px) {
+                .c1 {
+                    padding: 20px;
+                    font-size: 1.5em;
+                }
+            }
+            
+            @media(min-width: 800px) {
+                .c1 {
+                    padding: 40px;
+                    font-size: 2em;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="c1">
+                <p>
+                    대법관은 대법원장의 제청으로 국회의 동의를 얻어 대통령이 임명한다. 평화통일정책의 수립에 관한 대통령의 자문에 응하기 위하여 민주평화통일자문회의를 둘 수 있다. 체포·구속·압수 또는 수색을 할 때에는 적법한 절차에 따라 검사의 신청에 의하여 법관이 발부한 영장을 제시하여야 한다. 다만, 현행범인인 경우와 장기 3년 이상의 형에 해당하는 죄를 범하고 도피 또는 증거인멸의 염려가 있을 때에는 사후에 영장을 청구할 수 있다.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            .contentWrap {
+                width: 1024px;
+                margin: 0 auto;
+                padding: 20px;
+                
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            
+        /* topMenu */
+            .contentWrap .topMenu {
+                width: 100%;
+                height: 250px;
+                position: relative;
+                
+                margin-bottom: 40px;
+            }
+            
+            .contentWrap .topMenu .logo {
+                width: 250px;
+                height: 100px;
+                
+                background-image: url("aoa3.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                
+                position:absolute;
+                top: 0;
+                left: 0;
+            }
+            
+            .contentWrap .topMenu .menu {
+                width: 700px;
+                height: 100px;
+                
+                position: absolute;
+                top: 0;
+                right: 0;
+                
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: flex-start;
+                align-items: flex-end;
+            }
+            
+            .contentWrap .topMenu .menu .search {
+                
+            }
+            
+            .contentWrap .topMenu .menu ul {
+                
+                list-style: none;
+                
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .contentWrap .topMenu .menu ul li {
+                margin: 20px 0 0 40px;
+            }
+            
+            
+            .contentWrap .topMenu .banner {
+                width: 100%;
+                height: 100px;
+
+                
+                position: absolute;
+                top: 120px;
+            }
+            
+            .contentWrap .topMenu .banner .smallText {
+                font-size: 5px;
+                padding-bottom: 5px;
+            }
+            
+            .contentWrap .topMenu .banner .content {
+                background-color: cadetblue;
+                
+                font-size: 30px;
+                font-weight: bolder;
+                padding-left: 30px;
+                line-height: 90px;
+            }
+            
+            /* sideBar */
+            .contentWrap .sideBar {
+                width: 220px;
+                height: 500px;
+            }
+            
+            .contentWrap .sideBar ul {
+                margin-bottom: 40px;
+                list-style: none;
+                
+                
+            }
+            
+            .contentWrap .sideBar ul .title_1,
+            .contentWrap .sideBar ul .title_2 {
+                background-color: cadetblue;
+                display: inline-block;
+                width: 150px;
+            }
+            
+            .contentWrap .sideBar ul li {
+                margin-top: 10px;
+            }
+            
+            
+            /* section */
+            .contentWrap .section {
+                width: calc(100% - 220px);
+                height: 1000px;
+                
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            .contentWrap .section > div {
+                width: calc(100% / 3 - 10px);
+                margin-left: 10px;
+            }
+            
+            .contentWrap .section > div .img {
+                width: 100%;
+                height: 70%;
+                border: 1px solid black;
+            }
+            
+            .contentWrap .section .article_1 .img {
+                background-color: peru;
+            }
+            
+            .contentWrap .section .article_2 .img {
+                background-color: cyan;
+            }
+            
+            .contentWrap .section .article_3 .img {
+                background-color: bisque;
+            }
+            
+            .contentWrap .section .article_4 .img {
+                background-color: cornflowerblue;
+            }
+            
+            .contentWrap .section .article_5 .img {
+                background-color: darkgreen;
+            }
+            
+            .contentWrap .section .article_6 .img {
+                background-color: darkmagenta;
+            }
+            
+            .contentWrap .section .article_7 .img {
+                background-color: dimgray;
+            }
+            
+            .contentWrap .section .article_8 .img {
+                background-color: firebrick;
+            }
+            
+            .contentWrap .section .article_9 .img {
+                background-color: darkseagreen;
+            }
+            
+            .contentWrap .section div .descripter {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                border: 1px solid black;
+            }
+            
+            .contentWrap .section div .descripter .coment {
+                font-size: 1px;
+                
+                width: 60%;
+            }
+            
+            
+            .contentWrap .section div .descripter button {
+                width: 100px;
+                height: 20px;
+            }
+            
+            
+            
+            
+            
+            
+            
+            /* footer */
+            .contentWrap .footer {
+                width: 100%;
+                height: 150px;
+                
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="contentWrap">
+            <div class="topMenu">
+                <div class="logo"></div>
+                
+                <div class="menu">
+                    <div class="search">
+                        <input type="text"/>
+                    </div>
+                    
+                    <ul>
+                        <li>♡</li>
+                        <li>CUPS</li>
+                        <li>SPOONS</li>
+                        <li>LIOS</li>
+                        <li>ACCESSORIES</li>
+                        <li>MARKETING</li>
+                    </ul>
+                </div>
+                
+                <div class="banner">
+                    <div class="smallText">my HTML practice page</div>
+                    <div class="content">Category Banner</div>
+                    
+                </div>
+            </div>
+            
+            
+            
+            <div class="sideBar">
+                <ul><span class="title_1">SideBar_1</span>
+                    <li>First option</li>
+                    <li>Second option</li>
+                    <li>Third option</li>
+                    <li>Fourth option</li>
+                </ul>
+                
+                <ul><span class="title_2">SideBar_2</span>
+                    <li>first Option</li>
+                    <li>second Option</li>
+                    <li>third Option</li>
+                    <li>fourth Option</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="article_1">
+                    <div class="img"></div>
+                    <div class="descripter">
+                        <div class="coment">
+                            국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며, 그 자율적 활동과 발전을 보장한다.
+                        </div>
+                        <div class="pay">
+                            $100,000
+                        </div>
+                        
+                        <div class="button">
+                            <button value="Add to Chart"/>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article_2">
+                    <div class="img"></div>
+                    <div class="descripter">
+                        <div class="coment">
+                            국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며, 그 자율적 활동과 발전을 보장한다.
+                        </div>
+                        <div class="pay"></div>
+                        <div class="chartButton"></div>
+                    </div>
+                </div>
+                
+                <div class="article_3">
+                    <div class="img"></div>
+                    <div class="descripter">
+                        <div class="coment">
+                            국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며, 그 자율적 활동과 발전을 보장한다.
+                        </div>
+                        <div class="pay"></div>
+                        <div class="chartButton"></div>
+                    </div>
+                </div>
+                
+                <div class="article_4">
+                    <div class="img"></div>
+                    <div class="descripter">
+                        <div class="coment">
+                            국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며, 그 자율적 활동과 발전을 보장한다.
+                        </div>
+                        <div class="pay"></div>
+                        <div class="chartButton"></div>
+                    </div>
+                </div>
+                
+                <div class="article_5">
+                    <div class="img"></div>
+                    <div class="descripter">
+                        <div class="coment">
+                            국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며, 그 자율적 활동과 발전을 보장한다.
+                        </div>
+                        <div class="pay"></div>
+                        <div class="chartButton"></div>
+                    </div>
+                </div>
+                
+                <div class="article_6">
+                    <div class="img"></div>
+                    <div class="descripter">
+                        <div class="coment">
+                            국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며, 그 자율적 활동과 발전을 보장한다.
+                        </div>
+                        <div class="pay"></div>
+                        <div class="chartButton"></div>
+                    </div>
+                </div>
+                
+                <div class="article_7">
+                    <div class="img"></div>
+                    <div class="descripter">
+                        <div class="coment">
+                            국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며, 그 자율적 활동과 발전을 보장한다.
+                        </div>
+                        <div class="pay"></div>
+                        <div class="chartButton"></div>
+                    </div>
+                </div>
+                
+                <div class="article_8">
+                    <div class="img"></div>
+                    <div class="descripter">
+                        <div class="coment">
+                            국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며, 그 자율적 활동과 발전을 보장한다.
+                        </div>
+                        <div class="pay"></div>
+                        <div class="chartButton"></div>
+                    </div>
+                </div>
+                
+                <div class="article_9">
+                    <div class="img"></div>
+                    <div class="descripter">
+                        <div class="coment">
+                            국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며, 그 자율적 활동과 발전을 보장한다.
+                        </div>
+                        <div class="pay"></div>
+                        <div class="chartButton"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer"></div>
+        </div>
+    </body>
+</html>

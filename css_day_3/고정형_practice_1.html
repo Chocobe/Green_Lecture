@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            .container {
+                width: 900px;
+                height: 700px;
+                border: 1px solid black;
+            }
+            
+            .box {
+                margin: 20px;
+                padding-left: 20px;
+                border: 1px solid black;
+            }
+            
+            header {
+                width: 860px;
+                
+                
+                font-size: 30px;
+                font-weight: bolder;
+                
+                line-height: 90px;
+            }
+            
+            .content {
+                width: 860px;
+                
+                
+                position: relative;
+            }
+            
+            .content section {
+                width: 580px;
+                padding: 20px;
+                
+                margin-top: 0;
+                
+                display: inline-block;
+                top: 0;
+                left: 0;
+            }
+            
+            .content nav {
+                width: 100px;
+                padding: 20px;
+                
+                display: inline-block;
+                top: 0;
+                right: 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <header class="box">Responsive Layout</header>
+            
+            <div class="content">
+                <section>
+                    <article class="box">
+                        <p>Content</p>
+                        헌법재판소의 장은 국회의 동의를 얻어 재판관중에서 대통령이 임명한다. 대통령이 궐위되거나 사고로 인하여 직무를 수행할 수 없을 때에는 국무총리, 법률이 정한 국무위원의 순서로 그 권한을 대행한다. 모든 국민은 헌법과 법률이 정한 법관에 의하여 법률에 의한 재판을 받을 권리를 가진다. 국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 국가는 농수산물의 수급균형과 유통구조의 개선에 노력하여 가격안정을 도모함으로써 농·어민의 이익을 보호한다.
+                    </article>
+                </section>
+
+                <nav class="box">
+                    <p class="sideTitle">Sidebar</p>
+                    <ul>
+                        <li>Lorem</li>
+                        <li>Ipsum</li>
+                        <li>Dolor</li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <footer class="box">Copyright</footer>
+        </div>
+    </body>
+</html>
