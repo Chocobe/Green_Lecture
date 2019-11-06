@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .box {
+                width: 225px;
+                height: 225px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            
+            .wrap .img_1 {                
+                animation-name: fadeInFirst;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+                
+                background-image: url("aoa1.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            
+            .wrap .img_2 {
+                animation-name: fadeInSecond;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+                
+                background-image: url("aoa2.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            
+            .wrap .img_3 {                
+                animation-name: fadeInThird;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+                
+                background-image: url("aoa3.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            
+            @keyframes fadeInFirst {
+                0% { opacity: 0; }
+                16% { opacity: 1; }
+                32% { opacity: 0; }
+                48% { opacity: 0; }
+                64% { opacity: 0; }
+                80% { opacity: 0; }
+                96% { opacity: 0; }
+                100% { opacity: 0; }
+            }
+            
+            @keyframes fadeInSecond {
+                0% { opacity: 0; }
+                16% { opacity: 0; }
+                32% { opacity: 0; }
+                48% { opacity: 1; }
+                64% { opacity: 0; }
+                80% { opacity: 0; }
+                96% { opacity: 0; }
+                100% { opacity: 0; }
+            }
+            
+            @keyframes fadeInThird {
+                0% { opacity: 0; }
+                16% { opacity: 0; }
+                32% { opacity: 0; }
+                48% { opacity: 0; }
+                64% { opacity: 0; }
+                80% { opacity: 1; }
+                96% { opacity: 0; }
+                100% { opacity: 0; }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <div class="img_1 box"></div>
+            <div class="img_2 box"></div>
+            <div class="img_3 box"></div>
+        </div>
+    </body>
+</html>
