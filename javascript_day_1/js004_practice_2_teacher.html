@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                
+                position: absolute;
+                top: 50px;
+                left: 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <input type="text" onkeydown="func(event)">
+        <div id="box"></div>
+        
+        <script>
+            var x = 0;
+            var y = 50;
+            
+            document.getElementById("box").innerHTML = x + " : " + y;
+            
+            function func(event) {
+                if(event.key === "ArrowUp") {
+                    y -= 10;
+                    document.getElementById("box").style.top = y + "px";
+                    
+                } else if(event.key === "ArrowDown") {
+                    y += 10;
+                    document.getElementById("box").style.top = y + "px";
+                    
+                } else if(event.key === "ArrowLeft") {
+                    x -= 10;
+                    document.getElementById("box").style.left = x + "px";
+                    
+                } else if(event.key === "ArrowRight") {
+                    x += 10;
+                    document.getElementById("box").style.left = x + "px";
+                }
+            }
+        </script>
+    </body>
+</html>

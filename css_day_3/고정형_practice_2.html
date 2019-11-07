@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+        /* 초기화 */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .wrap {
+                width: 1024px;
+                border: 1px solid black;
+                
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            
+        /* header */
+            header {
+                width: 100%;
+                
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            /* .logo */
+            header .logo {
+                width: 200px;
+                height: 100px;
+                
+                background-image: url("aoa2.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            
+            /* .title */
+            header .title {
+                width: calc(100% - 200px);
+                
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            header .title .box_1 {
+                width: 100%;
+                height: 50px;
+                
+                background-color: darksalmon;
+                border: 1px solid black;
+            }
+            
+            header .title .box_2 {
+                width: 100%;
+                height: 50px;
+                
+                background-color: cadetblue;
+                border: 1px solid black;
+            }
+            
+            
+        /* .section_1 */
+            .section_1 {
+                width: 100%;
+                
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            /* .article_1 */
+            .section_1 .article_1 {
+                width: 100%;
+                height: 400px;
+                
+                background-color: dimgrey;
+            }
+            
+            /* article_2 */
+            .section_1 .article_2 {
+                width: 100%;
+                
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            .section_1 .article_2 .box {
+                width: 25%;
+                height: 120px;
+                
+                background-color: darkseagreen;
+                border: 1px solid black;
+                
+                margin-bottom: 1%;
+            }
+            
+            
+        /* .section_2 */
+            .section_2 {
+                width: 100%;
+                
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            .section_2 .img {
+                width: 25%;
+                height: 150px;                
+                
+                padding: 1%;
+            }
+            
+            .section_2 .img img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <header>
+                <div class="logo"></div>
+                
+                <div class="title">
+                    <div class="box_1"></div>
+                    <div class="box_2"></div>
+                </div>
+            </header>
+            
+            <section class="section_1">
+                <article class="article_1"></article>
+                
+                <article class="article_2">
+                    <div class="box">주거공간</div>
+                    <div class="box">상업공간</div>
+                    <div class="box">스타일페키지</div>
+                    <div class="box">3D작업공간</div>
+                </article>
+            </section>
+            
+            <section class="section_2">
+                <div class="img">
+                    <img src="aoa3.jpg"/>
+                </div>
+                
+                <div class="img">
+                    <img src="aoa3.jpg"/>
+                </div>
+                
+                <div class="img">
+                    <img src="aoa3.jpg"/>
+                </div>
+                
+                <div class="img">
+                    <img src="aoa3.jpg"/>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

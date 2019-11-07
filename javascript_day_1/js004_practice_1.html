@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            
+            .wrap {
+                width: 400px;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+            }
+            
+            .wrap div {
+                width: 20%;
+                height: 50px;
+                background-color: burlywood;
+                border: 1px solid black;
+                
+                line-height: 40px;
+                text-align: center;
+                font-size: 30px;
+            }
+            
+            input ~ input {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <input type="text" id="lhs"> 좌측항<br/>
+        <input type="text" id="rhs"> 우측항
+        
+        <div class="wrap">
+            <div class="add" onclick="add()">+</div>
+            <div class="sub" onclick="sub()">-</div>
+            <div class="mul" onclick="mul()">*</div>
+            <div class="div" onclick="div()">/</div>
+        </div>
+        
+        <p id="result">s</p>
+        
+        <script>
+            function add() {
+                var lhs = document.getElementById("lhs").value;
+                var rhs = document.getElementById("rhs").value;
+                
+                document.getElementById("result").innerHTML =
+                        `${lhs} + ${rhs} = ${Number(lhs) + Number(rhs)}`;
+            }
+            
+            function sub() {
+                var lhs = document.getElementById("lhs").value;
+                var rhs = document.getElementById("rhs").value;
+                
+                document.getElementById("result").innerHTML = 
+                        `${lhs} - ${rhs} = ${lhs - rhs}`;
+            }
+            
+            function mul() {
+                var lhs = document.getElementById("lhs").value;
+                var rhs = document.getElementById("rhs").value;
+                
+                document.getElementById("result").innerHTML = 
+                        `${lhs} * ${rhs} = ${lhs * rhs}`;
+            }
+            
+            function div() {
+                var lhs = document.getElementById("lhs").value;
+                var rhs = document.getElementById("rhs").value;
+                
+                document.getElementById("result").innerHTML = 
+                        `${lhs} / ${rhs} = ${lhs / rhs}`;
+            }
+        </script>
+    </body>
+</html>

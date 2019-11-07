@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            div {
+                width: 200px;
+                height: 100px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="box" onmouseover="myFunction(event)" onmouseout="clearCoor()"></div>
+        <p>마우스를 위에 네모상자에 올리면 네모 상자 안에서의 위치를 알려줍니다.</p>
+        <p id="demo"></p>
+        
+        <script>            
+            function myFunction(e) {
+                var x = e.clientX;
+                var y = e.clientY;
+                
+                var coor = "Coordinates: (" + x + ", " + y + ")";
+                document.getElementById("demo").innerHTML = coor;
+            }
+            
+            function clearCoor() {
+                document.getElementById("demo").innerHTML = "";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                width: 100%;
+            }
+            
+            .wrap {
+                width: 100%;
+            }
+            
+            .wrap .bg {
+                width: 100%;
+                position: fixed;
+                z-index: -1;
+            }
+            
+            .wrap .content {
+                width: 100%;
+            }
+            
+            .wrap .content .box_1 {
+                width: 100%;
+                height: 300px;
+                
+                margin-bottom: 400px;
+                
+                background-color: red;
+            }
+            
+            .wrap .content .box_2 {
+                width: 100%;
+                height: 800px;
+                
+                background-color: blue;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <img class="bg" src="aoa1.jpg"/>
+            <div class="content">
+                <div class="box_1"></div>
+                <div class="box_2"></div>
+            </div>
+        </div>
+    </body>
+</html>

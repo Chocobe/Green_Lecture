@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <p>Select a new car from the list.</p>
+        
+        <p id="target">글자색</p>
+        
+        <select id="mySelect" onchange="changeColor()">
+            <option value="magenta">magenta</option>
+            <option value="cyan">cyan</option>
+            <option value="peru">peru</option>
+        </select>
+        
+        <script>
+            function changeColor() {
+                var selectedColor =
+                        document.getElementById("mySelect").value;
+                
+                document.getElementById("target").style.color 
+                        = selectedColor;
+            }
+        </script>
+    </body>
+</html>

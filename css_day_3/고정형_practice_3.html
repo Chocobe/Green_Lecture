@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+        /* 초기화 */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            .wrap {
+                width: 1024px;
+            }
+            
+        /* header */
+            header {
+                width: 100%;
+                display: flex;
+            }
+            
+            header .logo {
+                width: 200px;
+                height: 100px;
+            }
+            
+            header .headerTitle {
+                width: calc(100% - 200px);
+                height: 100px;
+                
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            header .headerTitle .box_1 {
+                width: 100%;
+                height: 50px;
+                background-color: burlywood;
+            }
+            
+            header .headerTitle .box_2 {
+                width: 100%;
+                height: 50px;
+                background-color: aqua;
+            }
+            
+            section {
+                width: 100%;
+                
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            section .content {
+                width: calc(100% - 250px);
+                height: 750px;
+                
+                background-color: darksalmon;
+            }
+            
+            section .sideBar {
+                width: 250px;
+            }
+            
+            section .sideBar div {
+                width: 250px;
+                height: 250px;
+                
+                background-color: firebrick;
+                border: 1px solid black;
+            }
+            
+            footer {
+                width: 100%;
+                
+                display: flex;
+            }
+            
+            footer div {
+                width: 33.33333%;
+                height: 200px;
+                
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <header>
+                <img src="aoa3.jpg" class="logo"/>
+                <div class="headerTitle">
+                    <div class="box_1"></div>
+                    <div class="box_2"></div>
+                </div>
+            </header>
+            
+            <section>
+                <div class="content"></div>
+                <div class="sideBar">
+                    <div class="box_1"></div>
+                    <div class="box_2"></div>
+                    <div class="box_3"></div>
+                </div>
+            </section>
+            
+            <footer>
+                <div class="box_1"></div>
+                <div class="box_2"></div>
+                <div class="box_3"></div>
+            </footer>
+        </div>
+    </body>
+</html>
