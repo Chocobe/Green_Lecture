@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+        /* 초기화 */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .wrap {
+                width: 1024px;
+                
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+            }
+            
+            
+        /* header */
+            header {
+                width: inherit;
+                
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                
+                position: fixed;
+            }
+            
+            header .logo {
+                width: 30%;
+                height: 80px;
+                
+                background-color: orangered;
+            }
+            
+            header nav {
+                width: 70%;
+                height: 80px;
+                
+                background-color: aquamarine;
+                
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            
+            header nav ul {
+                list-style: none;
+                
+            }
+            
+            header nav ul li {
+                display: inline-block;
+                margin-right: 30px;    
+                
+                cursor: pointer;
+                font-weight: bolder;
+            }
+            
+            header nav ul li:hover {
+                color: firebrick;
+            }
+            
+            .headerSpace {
+                width: inherit;
+                height: 80px;
+            }
+            
+            
+        /* section */
+            section {
+                width: inherit;
+                padding: 20px;
+                
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+            }
+            
+            section .title {
+                width: inherit;
+                height: 400px;
+                
+                background-image: url("aoa3.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            
+            section .content {
+                width: inherit;
+                margin-top: 20px;
+                
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-start;
+            }
+            
+            section .content .card {
+                width: 226px;
+                height: 150px;
+                margin-bottom: 20px;
+                margin-right: 26px;
+                
+                background-image: url("aoa3.jpg");
+                background-size: cover;
+            }
+            
+            section .content .card:nth-child(4n) {
+                margin-right: 0;
+            }
+            
+            
+        /* footer */
+            footer {
+                width: inherit;
+                height: 80px;
+                
+                background-color: dimgrey;
+                
+                text-align: center;
+                line-height: 80px;
+            }
+            
+            
+            @media(max-width:1024px) {
+                .wrap {
+                    width: 600px;
+                }
+                
+                section .content {
+                    justify-content: center;
+                }
+                
+                section .content .card:nth-child(2n) {
+                    margin-right: 0;
+                }
+            }
+            
+            @media(max-width: 500px) {
+                .wrap {
+                    width: 500px;
+                }
+                
+                header .logo {
+                    display: none;
+                }
+                
+                header nav {
+                    width: inherit;
+                }
+                
+                section .content .card {
+                    margin-right: 0;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <header>
+                <div class="logo"></div>
+                
+                <nav>
+                    <ul>
+                        <li class="menu_1">메뉴_1</li>
+                        <li class="menu_2">메뉴_2</li>
+                        <li class="menu_3">메뉴_3</li>
+                        <li class="menu_4">메뉴_4</li>
+                        <li class="menu_5">메뉴_5</li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="headerSpace"></div>            
+            
+            <section>
+                <div class="title"></div>
+                
+                <div class="content">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    
+                </div>
+            </section>
+            
+            <footer>Copyright</footer>
+        </div>
+    </body>
+</html>
