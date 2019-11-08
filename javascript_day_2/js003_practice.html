@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <label for="inputer">문자입력</label>
+            <input id="inputer"/><br/>
+            
+            <label for="counter">출력개수</label>
+            <input id="counter"/><br/>
+            
+            <input type="button" value="확인" onclick="submit()" style="width: 200px; margin-left: 20px;"/><br/>
+            
+            <label for="result">결과 : </label>
+            <input type="text" id="result" disabled placeholder="결과 대기중"/>
+        </div>
+        
+        <script>
+            function submit() {
+                const inputer = document.getElementById("inputer"),
+                      output = document.getElementById("counter"),
+                      result = document.getElementById("result");
+                
+                const inputValue = inputer.value;
+                const countValue = Number(counter.value);
+                
+                result.value = `${inputValue.substr(0, countValue)} ...`;
+            }
+        </script>
+    </body>
+</html>

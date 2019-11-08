@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+    </head>
+    
+    <body>
+        <div id="words">
+            <p>Ladys and gentleman 아싸 또 왔다 나</p>
+            <p>[아~싸]아싸 또 왔다 나 기분 좋아서 나 노래 한곡 하고 하나 둘 셋 넷</p>
+            <p>터틀맨 Song]</p>
+            <p>터질것만 같은 행복한 기분으로</p>
+            <p>틀에박힌 관념 다 버리고 이제 또</p>
+            <p>맨 주먹 정신 다시 또 시작하면</p>
+            <p>나 이루리라 다 나 바라는대로</p>
+            <p>지금내가 있는 이땅이 너무 좋아</p>
+            <p>이민따윈 생각 한적도 없었고요</p>
+            <p>금 같은 시간 아끼고 또 아끼며</p>
+            <p>나 비상하리라 나 바라는대로[빙고]</p>
+            <p>지이 Song]</p>
+            <p>산 속에도 저 바다속에도 이렇게 행복할순 없을거야 랄랄랄라</p>
+            <p>구름타고 세상을 날아도 지금처럼 좋을수는 없을거야 울랄랄라</p>
+            <p>금비 Song]</p>
+            <p>모든게 마음 먹기 달렸어 어떤게 행복한 삶인가요</p>
+            <p>사는게 힘이 들다 하지만 쉽게만** 살아가면 재미없어 빙고 [빙고]</p>
+            <p>터틀맨 Song]</p>
+            <p>거룩한 인생 고귀한 삶을 살며</p>
+            <p>부끄럼 없는 투명한 마음으로</p>
+            <p>이내삶이 끝날 그 마지막 순간에</p>
+            <p>나 웃어보리라 나 바라는대로 [빙고]</p>
+
+            <p>[아~싸]아싸 또 왔다 나 기분 좋아서 나 노래 한곡 하고 하나 둘 셋 넷</p>
+
+            <p>한치앞도 모르며 또 앞만보고 달리며 이 쉴세없는 인생은 언제나 젊을수 없음을</p>
+            <p>알면서도 하루하루 지나가고 또 느끼면서 매일매일 미뤄가고 평소 해보고 싶은 가보고 싶은 곳에 단한번도 못가는 이 청춘</p>
+
+            <p>산 속에도 저 바다속에도 이렇게 행복할순 없을거야 랄랄랄라</p>
+            <p>구름타고 세상을 날아도 지금처럼 좋을수는 없을거야 울랄랄라</p>
+            <p>금비 Song]</p>
+            <p>모든게 마음 먹기 달렸어 어떤게 행복한 삶인가요</p>
+            <p>사는게 힘이 들다 하지만 쉽게만 살아가면 재미없어 빙고[빙고]</p>
+            <p>피할수 없다면 즐겨봐요 힘들다 불평하지만 말고</p>
+            <p>사는게 고생이라 하지만 쉽게</p>
+        </div>
+        
+        <hr/>
+        
+        <div id="result"></div>
+        
+        <script>
+            const words = document.getElementById("words").children;
+            const result = document.getElementById("result");
+            
+            function getFirstWord() {                
+                for(var i = 0; i < words.length; i++) {
+                    const firstWord = document.createElement("p");
+                    firstWord.innerHTML = words[i].innerHTML.charAt(0);
+                    result.appendChild(firstWord);
+                }
+            }
+            getFirstWord();
+        </script>
+    </body>
+</html>
