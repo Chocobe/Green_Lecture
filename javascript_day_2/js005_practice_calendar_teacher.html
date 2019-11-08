@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <p id="yyyymm">xxxx년 xx월</p>
+        <p>일 월 화 수 목 금 토</p>
+        <p id="calendar">실제달력</p>
+        
+        <script>
+            var result = "";
+            var date = new Date();
+            var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+            var week = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+            
+            document.getElementById("yyyymm").innerHTML = `${date.getFullYear()}. ${date.getMonth() + 1}`;
+            
+            for(var i = 0; i < week; i++) {
+                result += "XX ";
+            }
+            
+            for(var i = 1; i <= lastDay; i++) {
+                if(i < 10) {
+                    result += `0${i} `;
+                    
+                } else {
+                    result += `${i} `;
+                }
+                
+                if(new Date(date.getFullYear(), date.getMonth(), i).getDay() === 6) {
+                    result += "<br/>";
+                }
+            }
+            
+            document.getElementById("calendar").innerHTML = result;
+        </script>
+    </body>
+</html>

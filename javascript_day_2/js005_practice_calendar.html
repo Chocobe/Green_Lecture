@@ -24,10 +24,10 @@
                                 todayObj.getMonth(),
                                 1);
                 
-                const dayPosition = [0, 1, 2, 3, 4, 5, 6];
+                const dayPosition = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
                 calendar.innerHTML = `| 일 | 월 | 화 | 수 | 목 | 금 | 토<br/>`;
                 
-                for(var i = 0; i < firstDateObj.getDay(); i++) {
+                for(var i = 0; i < dayPosition; i++) {
                     calendar.innerHTML += "| &nbsp&nbsp&nbsp ";
                 }
                 

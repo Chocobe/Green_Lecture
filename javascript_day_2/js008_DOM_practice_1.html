@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                maring: 0;
+                padding: 0;
+            }
+            
+            body {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+            }
+            
+            .wrap {
+                width: 1024px;
+                height: 768px;
+                border: 3px solid black;
+                
+                position: relative;
+            }
+            
+
+            
+            .boxWrap {
+                width: 1024px;
+                height: 768px;
+                border: 3px solid black;
+                
+                position: relative;
+            }
+            
+            .inputer {
+                width: 300px;
+                
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                
+                z-index: 10;
+            }
+            
+            .start {
+                font-size: 20px;
+                width: 100px;
+                height: 30px;
+            }
+            
+            .box {
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                border: 1px solid black;
+            }
+            
+            .currentCnt {
+                width: 30px;
+                position: abolute;
+                
+                top: 20px;
+                left: 20px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <div class="currentCnt">0</div>
+            
+            <div class="inputer">
+                <input type="text" class="count">
+                <input type="button" value="시작" class="start" onclick="myReload()"/>
+            </div>
+        </div>
+        
+        <script>
+            
+            
+            const BOX_CN = "box";
+            var boxCount = 0;
+            
+            function myReload() {    
+                clear();
+                
+                const cntInput = document.querySelector(".count");
+                const count = cntInput.value;
+                cntInput.value = "";
+                
+                for(var i = 0; i < count; i++) {
+                    generateRandomBox();
+                }
+                
+                document.querySelector(".currentCnt").innerHTML = count;
+            }
+            
+            function generateRandomBox() {
+                var top = Math.floor(Math.random() * (768 - 100));
+                var left = Math.floor(Math.random() * (1024 - 100));
+                const color = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+                
+                const box = document.createElement("div");
+                box.classList.add(BOX_CN);
+                box.style.top = top + "px";
+                box.style.left = left + "px";
+                box.style.backgroundColor = color;
+                box.addEventListener("click", deleteHandler);
+                
+                boxCount++;
+                box.id = boxCount;
+                
+                document.querySelector(".wrap").appendChild(box);
+            }
+            
+            function deleteHandler(event) {
+                const target = event.target;
+                const wrap = document.querySelector(".wrap");
+                wrap.removeChild(target);
+                
+                const currentCnt = document.querySelector(".currentCnt");
+                boxCount--;
+                currentCnt.innerHTML = boxCount;
+            }
+            
+            
+            function clear() {
+                const wrap = document.querySelector(".wrap");
+                const boxes = wrap.querySelectorAll(".box");
+                
+                for(var i = 0; i < boxes.length; i++) {
+                    wrap.removeChild(boxes.item(i));
+                }
+                
+                boxCount = 0;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        
+        <script type="text/javascript">
+            window.onload = function() {
+                // createElement(tagName) : 요소 노드 생성
+                // createTextNode(text) : 텍스트 노드 생성
+                var header = document.createElement("h1");
+                var textNode = document.createTextNode("Hello DOM");
+                
+                // appendChild(node) : 객체에 노드를 연결
+                header.appendChild(textNode);
+                document.body.appendChild(header);
+            }
+        </script>
+    </body>
+</html>
