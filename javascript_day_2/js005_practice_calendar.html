@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <div id="calendar"></div>
+        
+        <script>
+            function getCalendar() {
+                const calendar = document.getElementById("calendar");
+                
+                const todayObj = new Date();
+                
+                const lastDateObj = new Date(
+                                todayObj.getFullYear(),
+                                todayObj.getMonth() + 1,
+                                0);
+                
+                const firstDateObj = new Date(
+                                todayObj.getFullYear(),
+                                todayObj.getMonth(),
+                                1);
+                
+                const dayPosition = [0, 1, 2, 3, 4, 5, 6];
+                calendar.innerHTML = `| 일 | 월 | 화 | 수 | 목 | 금 | 토<br/>`;
+                
+                for(var i = 0; i < firstDateObj.getDay(); i++) {
+                    calendar.innerHTML += "| &nbsp&nbsp&nbsp ";
+                }
+                
+                for(var i = 0; i < lastDateObj.getDate(); i++) {
+                    const currDate = new Date(
+                                    firstDateObj.getFullYear(),
+                                    firstDateObj.getMonth(),
+                                    i + 1);
+                    
+                    calendar.innerHTML += `| ${currDate.getDate() < 10 ? ` 0${currDate.getDate()} ` : " " + currDate.getDate() + " "}`;
+                    
+                    if(currDate.getDay() === 6) {
+                        calendar.innerHTML += "<br/>";
+                    }
+                }
+            }
+            
+            getCalendar();
+        </script>
+    </body>
+</html>

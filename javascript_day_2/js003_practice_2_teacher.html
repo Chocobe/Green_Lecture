@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <h1>로또 번호 생성기</h1>        
+        <p id="lotto"></p>
+        
+        <script>
+            const num = [];
+            
+            function init() {
+                for(var i = 1; i < 46; i++) {
+                    num.push(i);
+                }
+            }
+            
+            function genLotto() {
+                init();
+                const lotto = document.getElementById("lotto");
+                
+                for(var i = 0; i < 100; i++) {
+                    const lhs = Math.floor(Math.random() * 45);
+                    const rhs = Math.floor(Math.random() * 45);
+                    
+                    var temp = num[lhs];
+                    num[lhs] = num[rhs];
+                    num[rhs] = temp;
+                }
+                
+                for(var i = 0; i < 5; i++) {
+                    lotto.innerHTML += `${num[i]} : `;
+                }
+                lotto.innerHTML += num[5];
+            }
+            genLotto();
+        </script>
+    </body>
+</html>

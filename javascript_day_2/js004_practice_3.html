@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <p id="greeting">Hello</p>
+        
+        <script>
+            function changeColor() {
+                var color = [];
+                
+                for(var i = 0; i < 3; i++) {
+                    const randomNumber = Math.floor(Math.random() * 255) + 1;
+                    color.push(randomNumber);
+                }
+                
+                document.getElementById("greeting").style.color = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+            }
+            changeColor();
+        </script>
+    </body>
+</html>
