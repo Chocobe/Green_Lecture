@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>practice Element Create/Delete</title>
+        
+        <style>
+        /* 초기화 */
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .wrap {
+                width: 1024px;
+                height: 768px;
+                margin: 0 auto;
+                
+                border: 1px solid black;
+                
+                position: relative;
+            }
+            
+            
+        /* inputerWrap */
+            .wrap .inputerWrap {
+                width: 100%;
+                height: 50px;
+                
+                background-color: peru;
+                
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .wrap .inputerWrap .currentCnt {                
+                margin: 10px 0  0 10px;
+            }
+            
+            .wrap .inputerWrap .inputer {
+                margin: 10px 10px 0 0;
+            }
+            
+        /* .content */
+            .wrap .contentSpace {
+                width: 100%;
+                height: calc(100% - 50px);
+                
+                position: relative;
+            }
+            
+            .wrap .contentSpace .box {
+                display: inline-block;
+                width: 100px;
+                height: 100px;
+                
+                background-color: forestgreen;
+                
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <div class="inputerWrap">
+                <p class="cntLabel">0</p>
+                <div class="inputer">
+                    <input type="text" class="input"/>
+                    <input type="button" value="생성" onclick="generate()"/>
+                </div>
+            </div>
+            
+            <div class="contentSpace"></div>
+        </div>
+        
+        <script>
+            const contentSpace = document.querySelector(".contentSpace");
+            const input = document.querySelector(".input");
+            const cntLabel = document.querySelector(".cntLabel");
+            
+            const BOX_CN = "box";
+            const MAX_TOP = "618";
+            const MAX_LEFT = "924";
+            
+            function generate() {
+                clear();
+                createBox(input.value);
+            }
+            
+            function createBox(cnt) {
+                for(let i = 0; i < cnt; i++) {
+                    const top = Math.floor(Math.random() * MAX_TOP);
+                    const left = Math.floor(Math.random() * MAX_LEFT);
+                    
+                    const box = document.createElement("div");
+                    box.classList.add(BOX_CN);
+                    box.style.top = `${top}px`;
+                    box.style.left = `${left}px`;
+                    
+                    const color = Math.floor(Math.random() * 0xffffff).toString(16);
+                    box.style.backgroundColor = "#" + color;
+                    
+                    box.addEventListener("click", handleDelete);
+                    
+                    contentSpace.appendChild(box);
+                    cntLabel.innerText = Number(cntLabel.innerText) + 1;
+                }
+            }
+            
+            function clear() {
+                const cnt = Number(cntLabel.innerText);
+                
+                for(let i = 0; i < cnt; i++) {
+                    const box = contentSpace.querySelector(`.${BOX_CN}`);
+                    contentSpace.removeChild(box);
+                    
+                    cntLabel.innerText = Number(cntLabel.innerText) - 1;
+                }
+            }
+            
+            function handleDelete(event) {
+                const box = event.target;
+                
+                contentSpace.removeChild(box);
+                cntLabel.innerText = Number(cntLabel.innerText) - 1;
+            }
+        </script>
+    </body>
+</html>
