@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Calendar</title>
+        
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            
+            table th,
+            table td {
+                padding: 10px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h3 class="calendarTitle">xxxx년 xx월</h3>        
+        <table border="1" class="calendar"></table>
+        
+        <script>
+            const calendar = document.querySelector(".calendar");
+            
+            let todayDateObj = null;
+            let lastDateObj = null;
+            let firstDateObj = null;
+            
+            printCalendar();
+            
+            function init() {
+                todayDateObj = new Date();
+                
+                lastDateObj = new Date(
+                                todayDateObj.getFullYear(),
+                                todayDateObj.getMonth() + 1,
+                                0
+                );
+                
+                firstDateObj = new Date(
+                                todayDateObj.getFullYear(),
+                                todayDateObj.getMonth(),
+                                1
+                );
+            }
+            
+            function printCalendar() {
+                init();
+                initTitle();
+                printDayName();
+                printAllDate(firstDateObj, lastDateObj);
+            }
+            
+            
+            function printDayName() {
+                const tr = document.createElement("tr");
+                
+                const sun = createColumn("일요일");
+                const mon = createColumn("월요일");
+                const tue = createColumn("화요일");
+                const wed = createColumn("수요일");
+                const thu = createColumn("목요일");
+                const fri = createColumn("금요일");
+                const sat = createColumn("토요일");
+                
+                tr.appendChild(sun);
+                tr.appendChild(mon);
+                tr.appendChild(tue);
+                tr.appendChild(wed);
+                tr.appendChild(thu);
+                tr.appendChild(fri);
+                tr.appendChild(sat);
+                
+                calendar.appendChild(tr);
+            }
+            
+            function createColumn(text) {
+                const th = document.createElement("th");
+                th.innerText = text;
+                
+                return th;
+            }
+            
+            function printAllDate(firstDate, lastDate) {
+                const firstWeek = firstDate.getDay();
+                let tr = document.createElement("tr");
+                
+                for(let i = 0; i < firstWeek; i++) {
+                    const blank = createColumn("");
+                    tr.appendChild(blank);
+                }
+                
+                for(let i = 0; i < lastDate.getDate(); i++) {
+                    const currentDate = new Date(
+                                    firstDate.getFullYear(),
+                                    firstDate.getMonth(),
+                                    i + 1
+                    );
+                    const currentWeek = currentDate.getDay();
+                    
+                    console.log(currentWeek);
+                    
+                    if(currentWeek == 0) {
+                        calendar.appendChild(tr);
+                        tr = document.createElement("tr");
+                    }
+                    
+                    const td = createColumn(currentDate.getDate());                    
+                    tr.appendChild(td);
+                }
+                
+                for(let i = 0; i < (6 - lastDate.getDay()); i++) {
+                    const td = createColumn("");
+                    tr.appendChild(td);
+                }
+                
+                calendar.appendChild(tr);
+            }
+            
+            function initTitle() {
+                const title = document.querySelector(".calendarTitle");
+                title.innerText = `${todayDateObj.getFullYear()}년 ${todayDateObj.getMonth() + 1}월`;
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
