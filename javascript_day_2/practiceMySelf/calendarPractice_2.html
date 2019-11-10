@@ -4,91 +4,91 @@
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
-<body>
-    <h3>xxxx년 xx월</h3>
-    <table class="calendar" border="1"></table>
-    
-    <script>
-        const calendar = document.querySelector(".calendar");
+    <body>
+        <h3>xxxx년 xx월</h3>
+        <table class="calendar" border="1"></table>
         
-        const todayDate = new Date();
-        const firstDate = new Date(todayDate.getFullYear(),
-                                   todayDate.getMonth(),
-                                   1);
-        const lastDate = new Date(todayDate.getFullYear(),
-                                  todayDate.getMonth() + 1,
-                                  0);
-        
-        function printCalendar() {
-            printCalendarTitle();
-            printDays();
-        }
-        printCalendar();
-        
-        
-        function printCalendarTitle() {
-            const tr = document.createElement("tr");
+        <script>
+            const calendar = document.querySelector(".calendar");
             
-            const sun = document.createElement("th");
-            sun.innerText = "일요일";
+            const todayDate = new Date();
+            const firstDate = new Date(todayDate.getFullYear(),
+                                       todayDate.getMonth(),
+                                       1);
+            const lastDate = new Date(todayDate.getFullYear(),
+                                      todayDate.getMonth() + 1,
+                                      0);
             
-            const mon = document.createElement("th");
-            mon.innerText = "월요일";
+            function printCalendar() {
+                printCalendarTitle();
+                printDays();
+            }
+            printCalendar();
             
-            const tue = document.createElement("th");
-            tue.innerText = "화요일";
             
-            const wed = document.createElement("th");
-            wed.innerText = "수요일";
-            
-            const thu = document.createElement("th");
-            thu.innerText = "목요일";
-            
-            const fri = document.createElement("th");
-            fri.innerText = "금요일";
-            
-            const sat = document.createElement("th");
-            sat.innerText = "토요일";
-            
-            tr.appendChild(sun);
-            tr.appendChild(mon);
-            tr.appendChild(tue);
-            tr.appendChild(wed);
-            tr.appendChild(thu);
-            tr.appendChild(fri);
-            tr.appendChild(sat);
-            
-            calendar.appendChild(tr);
-        }
-        
-        
-        function printDays() {
-            const firstWeek = firstDate.getDay();
-            let tr = document.createElement("tr");
-            
-            for(let i = 0; i < firstWeek; i++) {
-                const td = document.createElement("td");
-                td.innerText = "";
+            function printCalendarTitle() {
+                const tr = document.createElement("tr");
                 
-                tr.appendChild(td);
+                const sun = document.createElement("th");
+                sun.innerText = "일요일";
+                
+                const mon = document.createElement("th");
+                mon.innerText = "월요일";
+                
+                const tue = document.createElement("th");
+                tue.innerText = "화요일";
+                
+                const wed = document.createElement("th");
+                wed.innerText = "수요일";
+                
+                const thu = document.createElement("th");
+                thu.innerText = "목요일";
+                
+                const fri = document.createElement("th");
+                fri.innerText = "금요일";
+                
+                const sat = document.createElement("th");
+                sat.innerText = "토요일";
+                
+                tr.appendChild(sun);
+                tr.appendChild(mon);
+                tr.appendChild(tue);
+                tr.appendChild(wed);
+                tr.appendChild(thu);
+                tr.appendChild(fri);
+                tr.appendChild(sat);
+                
+                calendar.appendChild(tr);
             }
             
-            for(let i = 0; i < lastDate.getDate(); i++) {
-                const currentDate = new Date(todayDate.getFullYear(),
-                                             todayDate.getMonth(),
-                                             i + 1);
+            
+            function printDays() {
+                const firstWeek = firstDate.getDay();
+                let tr = document.createElement("tr");
                 
-                const td = document.createElement("td");
-                td.innerText = currentDate.getDate();
+                for(let i = 0; i < firstWeek; i++) {
+                    const td = document.createElement("td");
+                    td.innerText = "";
+                    
+                    tr.appendChild(td);
+                }
                 
-                tr.appendChild(td);
-                
-                if(currentDate.getDay() === 6) {
-                    calendar.appendChild(tr);
-                    tr = document.createElement("tr");
+                for(let i = 0; i < lastDate.getDate(); i++) {
+                    const currentDate = new Date(todayDate.getFullYear(),
+                                                 todayDate.getMonth(),
+                                                 i + 1);
+                    
+                    const td = document.createElement("td");
+                    td.innerText = currentDate.getDate();
+                    
+                    tr.appendChild(td);
+                    
+                    if(currentDate.getDay() === 6) {
+                        calendar.appendChild(tr);
+                        tr = document.createElement("tr");
+                    }
                 }
             }
-        }
-    </script>
-</body>
+        </script>
+    </body>
 </html>
