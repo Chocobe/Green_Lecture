@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <div class="inputer">
+                <label for="inputValue">글씨입력</label>
+                <input type="text" id="inputValue"/>
+                
+                <input type="submit" value="확인" onclick="input()"/>
+            </div>
+            
+            <div class="slice">
+                <label>자르기</label>
+                
+                <br/>
+                
+                <label for="startIndex">시작</label>
+                <input type="text" id="startIndex"/>
+                
+                <label for="endIndex">끝</label>
+                <input type="text" id="endIndex"/>
+                
+                <input type="submit" value="확인" onclick="splice()"/>
+            </div>
+            
+            <div>
+                <label for="addContent">추가할 내용</label>
+                <input type="text" id="addContent"/>
+                
+                <label for="addIndex">위치</label>
+                <input type="text" id="addIndex"/>
+                
+                <input type="submit" value="확인" onclick="add()"/>
+            </div>
+            
+            <div class="resultWrap">
+                <label for="resultContent">전체 배열 내용 : </label>
+                <span id="resultContent"> - </span>
+                
+                <br/>
+                
+                <label for="sliceContent">잘린값 : </label>
+                <span id="sliceContent"> - </span>
+            </div>
+        </div>
+        
+        <script>
+            let array = [];
+            
+            function input() {
+                const inputValue = document.querySelector("#inputValue");
+                
+                array.push(inputValue.value);
+                inputValue.value = "";
+                
+                printResult();
+            }
+            
+            function splice() {
+                const startIndex = document.querySelector("#startIndex");
+                const endIndex = document.querySelector("#endIndex");
+                const sliceContent = document.querySelector("#sliceContent");
+                
+                const start = startIndex.value;
+                startIndex.value = "";
+                
+                const end = endIndex.value;
+                endIndex.value = "";
+                
+                const splicedValues = array.splice(start, end);
+                
+                printResult();
+                printSliceContent(splicedValues);
+            }
+            
+            function add() {
+                const addContent = document.querySelector("#addContent");
+                const addIndex = document.querySelector("#addIndex");
+                
+                const content = addContent.value;
+                addContent.value = "";
+                
+                const index = addIndex.value;
+                addIndex.value = "";
+                
+                const lhsArray = array.slice(0, index);
+                const rhsArray = array.slice(index);
+                const addedArray = [content];
+                
+                const resultArray = lhsArray.concat(addedArray, rhsArray);
+                array = resultArray;
+                
+                printResult();
+            }
+            
+            
+            function printResult() {
+                const resultContent = document.querySelector("#resultContent");
+                resultContent.innerText = array;
+            }
+            
+            
+            function printSliceContent(values) {
+                const sliceContent = document.querySelector("#sliceContent");
+                
+                sliceContent.innerText = values;
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

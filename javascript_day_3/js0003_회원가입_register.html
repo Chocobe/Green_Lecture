@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <form name="joinWrap">
+                <label for="id">ID</label>
+                <input type="text" name="inputID" required/>
+                <input type="button" value="Check ID" onclick="checkID()"/>
+                
+                <hr/>
+                
+                <label for="password">Password</label>
+                <input type="text" id="password" name="inputPassword"/>
+                
+                <label for="checkPassword">확인</label>
+                <input type="password" id="checkPassword" name="checkPassword"/>
+                
+                <hr/>
+                
+                <label for="inputName">Name</label>
+                <input type="text" id="inputName" name="inputName"/>
+                
+                <hr/>
+                
+                <label for="inputEmail">E-mail</label>
+                <input type="email" id="inputEmail" name="inputEmail"/>
+                
+                <hr/>
+                
+                <label for="inputHomepage">Homepage</label>
+                <input type="text" id="inputHomepage" name="inputHomepage"/>
+                
+                <hr/>
+                
+                <label for="inputICQ">ICQ</label>
+                <input type="text" id="inputICQ" name="inputICQ"/>
+                
+                <input type="checkbox" id="checkICQ" name="checkICQ"/>
+                <label for="checkICQ">공개</label>
+                
+                <hr/>
+                
+                <label for="checkMailling">Mailling List</label>
+                <input type="checkbox" id="checkMailling" name="checkMailling"/>
+                
+                <hr/>
+                
+                <label for="inputIntroduce">자기 소개서</label>
+                <textarea rows="10" cols="30" id="inputIntroduce" name="inputIntroduce"></textarea>
+                
+                <br/>
+                
+                <input type="checkbox" id="checkIntroduce" name="checkIntroduce"/>
+                <label for="checkIntroduce">공개</label>
+                
+                <hr/>
+                
+                <label for="checkInfoPublic">개인정보 공개</label>
+                <input type="checkbox" id="checkInfoPublic" name="checkInfoPublic"/>
+                <label for="checkInfoPublic">정보 공개</label>
+                
+                <hr/>
+                
+                <input type="button" value="회원가입" onclick="join()"/>
+                <input type="submit" value="취소" onclick="location.href='file:///D:/Back-end/HTML/javascript_day_3/js0003_main.html'"/>
+            </form>
+        </div>
+        
+        
+        <script>
+            let storedUser = ["user1", "user2"];
+            
+            let isValidID = false;
+            let isValidPassword = false;
+            let isValidName = false;
+            let isValidEmail = false;
+            
+            function join() {
+                const homepage = document.joinWrap.inputHomepage.value;
+                
+                const icq = document.joinWrap.inputICQ.value;
+                const checkICQ = document.joinWrap.checkICQ.checked; 
+                
+                const mailling = document.joinWrap.checkMailling.checked;
+                
+                const introduce = document.joinWrap.inputIntroduce.value;
+                const checkIntroduce = document.joinWrap.checkIntroduce.checked;
+                
+                const checkInfoPublic = document.joinWrap.checkInfoPublic.checked;
+                
+            /* ID 검사 */
+                if(!isValidID) {
+                    alert("ID 중복검사가 필요합니다");
+                    return;
+                }
+                
+            /* password 검사 */
+                checkPassword();
+                if(!isValidPassword) {
+                    return;
+                }
+                
+            /* name 검사 */
+                checkName();
+                if(!isValidName) {
+                    return;
+                }
+                
+            /* email 검사 */
+                checkEmail();
+                if(!isValidEmail) {
+                    return;
+                }
+                
+                
+                location.href="file:///D:/Back-end/HTML/javascript_day_3/js0003_success.html";
+            }
+            
+            
+        /* ID 중복검사 버튼 */
+            function checkID() {
+                const id = document.joinWrap.inputID.value;
+                
+                if(id === "") {
+                    alert("ID를 입력해 주세요");
+                    return;
+                }
+                
+                for(var i = 0; i < storedUser.length; i++) {
+                    if(id === storedUser[i]) {
+                        alert("이미 사용중인 ID입니다");
+                        document.joinWrap.inputID.value = "";
+                        isValidID = false;
+                        
+                        return;
+                    }
+                }
+                
+                isValidID = true;
+                alert("사용가능한 ID입니다");
+            }
+            
+            
+        /* Password 검사 */   
+            function checkPassword() {
+                const password = document.joinWrap.inputPassword.value;
+                const checkPassword = document.joinWrap.checkPassword.value;
+                
+                if(password === checkPassword) {
+                    let containNumber = false;
+                    let containEnglish = false;
+                    
+                    if(password.length < 12) {
+                        for(var i = 0; i < password.length; i++) {
+                            if(password.charCodeAt(i) >= 48 && password.charCodeAt(i) <= 57) {
+                                containNumber = true;  
+                            }
+                            
+                            if(password.charCodeAt(i) >= 65 && password.charCodeAt(i) <= 90) {
+                                containEnglish = true;
+                            }
+                            
+                            if(password.charCodeAt(i) >= 97 && password.charCodeAt(i) <= 122) {
+                                containEnglish = true;
+                            }
+                            
+                            if(containNumber && containEnglish) {
+                                break;
+                            }
+                        }
+                        
+                        if(containNumber && containEnglish) {
+                            isValidPassword = true;
+                            
+                        } else {
+                            alert("유효한 Password가 아닙니다");
+                            return;
+                        }
+                    }
+                    
+                } else {
+                    alert("두 Password가 일치하지 않습니다");
+                    return;
+                }
+            }
+            
+            
+        /* name 검사 */
+            function checkName() {
+                const name = document.joinWrap.inputName.value;
+                
+                if(name === "") {
+                    alert("Name을 입력해 주세요");
+                    return;
+                }
+                
+                isValidName = true;
+            }
+            
+            
+        /* email 검사 */
+            function checkEmail() {
+                const email = document.joinWrap.inputEmail.value;
+                
+                for(var i = 0; i < email.length; i++) {
+                    if(email.charCodeAt(i) === 64) {
+                        isValidEmail = true;
+                        break;
+                    }
+                }
+                
+                if(!isValidEmail) {
+                    alert("유효한 E-mail이 아닙니다");
+                    return;
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

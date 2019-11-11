@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <input type="button" value="+" onclick="plus()">
+        <input type="button" value="-" onclick="minus()">
+        <input type="button" value="확인" onclick="r()">
+        
+        <br/>
+        
+        <div id="contents">
+            <input type="file" id="file_1"><br/>
+        </div>
+        
+        <p id="result"></p>
+        
+        <script>
+            var buttonNum = 1;
+            
+        /* plus() */
+            function plus() {
+                buttonNum++;
+                var fileButton = document.createElement("input");
+                var br = document.createElement("br");
+                
+                fileButton.setAttribute("type", "file");
+                fileButton.setAttribute("id", "file_" + buttonNum);
+                
+                document.getElementById("contents").appendChild(fileButton);
+                document.getElementById("contents").appendChild(br);
+            }
+            
+        /* minus() */
+            function minus() {
+                if(buttonNum < 2) {
+                    return;
+                }
+                
+                document.getElementById("file_" + buttonNum).remove();
+                document.getElementsByTagName("br")[buttonNum].remove();
+                buttonNum--;
+            }
+            
+        /* r() */
+            function r() {
+                var txt = "";
+                for(var i = 1; i <= buttonNum - 1; i++) {
+                    txt = txt + document.getElementById("file_" + i).value + "<br/>";
+                }
+                
+                txt = txt + document.getElementById("file_" + buttonNum).value;
+                
+                document.getElementById("result").innerHTML = txt;
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
