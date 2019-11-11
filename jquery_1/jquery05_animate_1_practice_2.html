@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            .controller {
+                position: absolute;
+                bottom: 100px;
+                left: 100px;
+            }
+            
+            .puppy {
+                position: absolute;
+                top: 250px;
+                left: 10px;
+            }
+            
+            .controller tr td img {
+                width: 100px;
+            }
+            
+            .fireButton {
+                position: absolute;
+                top: 700px;
+                left: 150px;
+            }
+            
+            .missile {
+                width: 50px;
+                height: 50px;
+                display: none;
+                
+                position: absolute;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <img class="puppy" src="puppy.jpg">
+        
+        
+        <table class="controller">
+            <tr>
+                <td></td>
+                <td><img class="up" src="upButton.png"></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td><img class="left" src="leftButton.png"></td>
+                <td><img class="down" src="downButton.png"></td>
+                <td><img class="right" src="rightButton.png"></td>
+            </tr>
+        </table>
+        
+        <input type="button" class="fireButton" value="Fire!">
+        <img class="missile" src="아칸.png">
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            const DISTANCE = "50px";
+            const PUPPY = ".puppy";
+            
+            $(function() {
+                $(".up").click(function() {
+                    $(PUPPY).animate({
+                        top: "-=" + DISTANCE
+                    });
+                });
+                
+                $(".down").click(function() {
+                    $(PUPPY).animate({
+                        top: "+=" + DISTANCE
+                    });
+                });
+                
+                $(".left").click(function() {
+                    $(PUPPY).animate({
+                        left: "-=" + DISTANCE
+                    });
+                });
+                
+                $(".right").click(function() {
+                    $(PUPPY).animate({
+                        left: "+=" + DISTANCE
+                    });
+                });
+                
+                $(".fireButton").click(function() {
+                    $(".missile").css({
+                        display: "inline-block",
+                        top: $(PUPPY).css("top"),
+                        left: $(PUPPY).css("left"),
+                    });
+                    
+                    $(".missile").stop().animate({
+                        left: "1000px",
+                    });
+                });
+                
+                
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

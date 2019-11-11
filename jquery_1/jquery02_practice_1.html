@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <p>If you click on the "Hide" button, I will disappear.</p>
+        
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(function() {
+                $("#hide").click(function() {
+//                    $("p").hide();
+                    $("p").hide("slow");
+                    // $("p").hide("fast");
+                    // $("p").hide(1000);
+                    // $("p").toggle();
+                });
+                
+                $("#show").click(function() {
+//                    $("p").show();
+//                    $("p").show("slow");
+//                    $("p").show("fast");
+//                    $("p").show(1000);
+                    $("p").toggle("slow");
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            .wrap {
+                width: 1024px;
+                
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            .wrap .menu {
+                width: 200px;
+            }
+            
+            .wrap .menu li {
+                display: none;
+                list-style: none;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <ul class="menu_1 menu">
+                <div>메뉴_1</div>
+                <li>서브_1</li>
+                <li>서브_2</li>
+                <li>서브_3</li>
+            </ul>
+            
+            <ul class="menu_2 menu">
+                <div>메뉴_2</div>
+                <li>서브_1</li>
+                <li>서브_2</li>
+                <li>서브_3</li>
+            </ul>
+            
+            <ul class="menu_3 menu">
+                <div>메뉴_3</div>
+                <li>서브_1</li>
+                <li>서브_2</li>
+                <li>서브_3</li>
+            </ul>
+        </div>
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(function() {
+                initMenu_1();
+                initMenu_2();
+                initMenu_3();
+            });
+            
+            
+            function initMenu_1() {
+                $(".menu_1").mouseenter(function() {
+                    $(".menu_1 li").slideDown();
+                });
+                
+                $(".menu_1").mouseleave(function() {
+                    $(".menu_1 li").slideUp();
+                });
+            }
+            
+            
+            function initMenu_2() {
+                $(".menu_2").mouseenter(function() {
+                    $(".menu_2 li").slideDown();
+                });
+                
+                $(".menu_2").mouseleave(function() {
+                    $(".menu_2 li").slideUp();
+                });
+            }
+            
+            
+            function initMenu_3() {
+                $(".menu_3").mouseenter(function() {
+                    $(".menu_3 li").slideDown();
+                });
+                
+                $(".menu_3").mouseleave(function() {
+                    $(".menu_3 li").slideUp();
+                });
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

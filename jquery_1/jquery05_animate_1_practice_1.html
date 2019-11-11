@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            .wrap {
+                position: relative;
+            }
+            
+            .puppy_1 img {
+                position: absolute;
+                border: 3px solid red;
+                top: 30px;
+            }
+            
+            .puppy_2 img {
+                position: absolute;
+                border: 3px solid blue;
+                top: 250px;
+                
+            }
+            
+            .puppy_3 img {
+                position: absolute;
+                border: 3px solid green;
+                top: 470px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <input type="button" value="달려라!!"/>
+            
+            <div class="puppy_1">
+                <img src="puppy.jpg" width="300px">
+            </div>
+            
+            <div class="puppy_2">
+                <img src="puppy.jpg" width="300px">
+            </div>
+            
+            <div class="puppy_3">
+                <img src="puppy.jpg" width="300px">
+            </div>
+        </div>
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            const PUPPY_NAME = ".puppy_";
+            
+            $(function() {
+                $("input").click(function() {
+                    run();
+                });                
+            });
+            
+            function run() {
+                const runPuppy = PUPPY_NAME + genRandomNumber() + " img";
+                
+                $(runPuppy).animate({
+                    left: '+=50px'
+                });
+            }
+            
+            function genRandomNumber() {
+                const randomNum = Math.floor(Math.random() * 3) + 1;
+                return randomNum;
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
