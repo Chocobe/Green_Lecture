@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            .wrap {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                width: 700px;
+            }
+            
+        /* controller */
+            .controller {
+                width: 100%;
+                padding: 30px;
+                
+                border: 3px solid black;
+                
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+            }
+            
+            .controller .pannel_1 {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                
+            }
+            
+            .controller .pannel_1 .colorBox div:nth-child(1) {
+                width: 50px;
+                height: 25px;
+                display: inline-block;
+                background-color: black;
+            }
+            
+            .controller .pannel_1 .colorBox div:nth-child(2) {
+                width: 50px;
+                height: 25px;
+                display: inline-block;
+                background-color: gray;
+            }
+            
+            .controller .pannel_1 .colorBox div:nth-child(3) {
+                width: 50px;
+                height: 25px;
+                display: inline-block;
+                background-color: peru;
+            }
+            
+            .controller .pannel_1 .colorBox div:nth-child(4) {
+                width: 50px;
+                height: 25px;
+                display: inline-block;
+                background-color: aquamarine;
+            }
+            
+            .controller .pannel_1 .colorBox div:nth-child(5) {
+                width: 50px;
+                height: 25px;
+                display: inline-block;
+                background-color: magenta;
+            }
+            
+            .controller .pannel_1 .colorBox div:nth-child(6) {
+                width: 50px;
+                height: 25px;
+                display: inline-block;
+                background-color: mediumseagreen;
+            }
+            
+            .controller .pannel_1 .colorBox div:nth-child(7) {
+                width: 50px;
+                height: 25px;
+                display: inline-block;
+                background-color: greenyellow;
+            }
+            
+            
+        /* pannel_2 */
+            .pannel_2 {
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                
+                margin: 50px 0 40px 0;
+            }
+            
+            .pannel_2 div:nth-child(1) {
+                width: 100px;
+                height: 100px;
+                border: 3px solid black;
+            }
+            
+            .pannel_2 div:nth-child(2) {
+                width: 100px;
+                height: 100px;
+                border: 3px solid black;
+                border-radius: 15%;
+            }
+            
+            .pannel_2 div:nth-child(3) {
+                width: 100px;
+                height: 100px;
+                border: 3px solid black;
+                border-radius: 50%;
+            }
+            
+            
+        /* .displayer */
+            .displayer {
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                
+                padding: 50px 0 40px 0;
+                
+                border: 3px solid black;
+                border-top: none;
+            }
+            
+            .displayer div:nth-child(1) {
+                width: 100px;
+                height: 100px;
+                border: 3px solid black;
+            }
+            
+            .displayer div:nth-child(2) {
+                width: 100px;
+                height: 100px;
+                border: 3px solid black;
+                
+                border-radius: 15%;
+            }
+            
+            .displayer div:nth-child(3) {
+                width: 100px;
+                height: 100px;
+                border: 3px solid black;
+                
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <div class="controller">
+                <div class="pannel_1">
+                    <div class="colorBox">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                
+                <button>지우기</button>
+                
+                <div class="pannel_2">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            
+            <div class="displayer">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            var color = "";
+            
+            $(document).ready(function() {
+                $(".colorBox div").click(selectColor);  
+                
+                $(".pannel_2 div").eq(0).click(function() {
+                    $(".displayer div").eq(0).css({
+                        "background-color" : color 
+                    });
+                });
+                
+                $(".pannel_2 div").eq(1).click(function() {
+                    $(".displayer div").eq(1).css({
+                        "background-color" : color 
+                    });
+                });
+                
+                $(".pannel_2 div").eq(2).click(function() {
+                    $(".displayer div").eq(2).css({
+                        "background-color" : color 
+                    });
+                });
+                
+                $(".controller button").click(function() {
+                    $(".displayer div").css({
+                        "background-color" : "#ffffff"
+                    });
+                })
+            });
+            
+            function selectColor() {
+                color = $(this).css("background-color");
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

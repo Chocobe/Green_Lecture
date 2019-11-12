@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            .wrap {
+                width: 500px;
+                height: 500px;
+                
+                position: relative;
+                
+                border: 3px solid black;
+            }
+            
+            .wrap img {
+                width: 500px;
+                height: 500px;
+                
+                position: absolute;
+                top: 0;
+                left: 0;
+                
+                opacity: 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <img src="페이드_배너_1.jpg">
+            <img src="페이드_배너_2.jpg">
+            <img src="페이드_배너_3.jpg">
+        </div>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function() {
+                animate();
+            });
+            
+            function animate() {
+                $(".wrap").children().eq(0).animate({
+                    opacity: 1
+                    
+                }, 1000, function() {
+                    $(".wrap").children().eq(0).animate({
+                        opacity: 0
+                    }, 1000);
+                });
+            }
+            
+            function() {
+                $(".wrap").children().eq(0).animate({
+                    opacity: 1
+                    
+                }, 1000, function() {
+                    $(".wrap").children().eq(0).animate({
+                        opacity: 0
+                    }, 1000);
+                });
+            }
+            
+            function() {
+                $(".wrap").children().eq(1).animate({
+                    opacity: 1
+                    
+                }, 1000, function() {
+                    $(".wrap").children().eq(1).animate({
+                        opacity: 0
+                    }, 1000);
+                });
+            }
+            
+            function() {
+                $(".wrap").children().eq(2).animate({
+                    opacity: 1
+                    
+                }, 1000, function() {
+                    $(".wrap").children().eq(2).animate({
+                        opacity: 0
+                    }, 1000);
+                });
+            }
+            
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

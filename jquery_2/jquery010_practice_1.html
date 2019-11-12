@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+            }
+            
+        /* .header */
+            .header {
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                
+                border: 1px solid black;
+            }
+            
+            /* .header_1 */
+            .header .header_1 {
+                width: 20%;
+                display: flex;
+                flex-flow: row wrap;
+                
+                
+            }
+            
+            .header .header_1 p {
+                padding: 0 10px 0 10px;
+            }
+            
+            /* .header_2 */
+            .header .header_2 p {
+                line-height: 50px
+            }
+            
+            /* .header_2 */
+            .header .header_3 {
+                width: 400px;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-end;
+            }
+            
+            .header .header_3 select {
+                width: 350px;
+            }
+            
+            
+        /* .content */
+            .content {
+                width: 400px;
+            }
+            
+            .content .title {
+                background-color: lightgray;
+                text-align: center;
+            }
+            
+            ol {
+                padding: 20px 0 20px 30px;
+            }
+            
+            
+        /* .answer */
+            .answer {
+                width: 10%;
+            }
+            
+            .answer .title {
+                text-align: center;
+                font-size: 25px;
+                
+                padding: 5px 0 10px 0;
+            }
+            
+            .selected {
+                color: red;
+                font-weight: bold;
+            }
+            
+            .items div:hover {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="header">
+            <div class="header_1">
+                <p>첫화면으로</p>
+                <p>최강 자격증 기출문제</p>
+            </div>
+            
+            <div class="header_2">
+                <p>바리스타 2급 모의고사 : 200511-201211</p>
+            </div>
+            
+            <div class="header_3">
+                <p>경과시간 : <span class="clock">00분 00초</span></p>
+                <select>
+                    <option class="subject" value="coffee">1과목 : 화성학 개론(30문항)</option>
+                    <option class="subject" value="coffee">2과목 : 커피학 개론(40문항)</option>
+                    <option class="subject" value="coffee">3과목 : 항해학 개론(50문항)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p class="title"> 1과목 : 화성학 개론(30문항)</p>
+            
+            <ol>
+                <li>
+                    <p class="question">문제1</p>
+                    <div class="items"></div>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="answer">
+            <p class="title">답 안 지</p>
+            <div class="checkList">
+                01.
+                <span>①</span>
+                <span>②</span>
+                <span>③</span>
+                <span>④</span>
+            </div>            
+        </div>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function() {
+                initAnswer();
+            });
+            
+            function initAnswer() {
+                const q1 = $("<div>①문제1</div>");
+                const q2 = $("<div>①문제1</div>");
+                const q3 = $("<div>①문제1</div>");
+                const q4 = $("<div>①문제1</div>");
+                
+                $(q1).click(function() {
+                    $(q1).toggleClass("selected");
+                    $(".checkList span").eq(0).toggleClass("selected");
+                    
+                    $(q2).removeClass("selected");
+                    $(q3).removeClass("selected");
+                    $(q4).removeClass("selected");
+                    $(".checkList span").eq(1).removeClass("selected");
+                    $(".checkList span").eq(2).removeClass("selected");
+                    $(".checkList span").eq(3).removeClass("selected");
+                });
+                
+                
+                $(q2).click(function() {
+                    $(q2).toggleClass("selected");
+                    $(".checkList span").eq(1).toggleClass("selected");
+                    
+                    $(q1).removeClass("selected");
+                    $(q3).removeClass("selected");
+                    $(q4).removeClass("selected");
+                    $(".checkList span").eq(0).removeClass("selected");
+                    $(".checkList span").eq(2).removeClass("selected");
+                    $(".checkList span").eq(3).removeClass("selected");
+                });
+                
+                
+                $(q3).click(function() {
+                    $(q3).toggleClass("selected");
+                    $(".checkList span").eq(2).toggleClass("selected");
+                    
+                    $(q1).removeClass("selected");
+                    $(q2).removeClass("selected");
+                    $(q4).removeClass("selected");
+                    $(".checkList span").eq(0).removeClass("selected");
+                    $(".checkList span").eq(1).removeClass("selected");
+                    $(".checkList span").eq(3).removeClass("selected");
+                });
+                
+                
+                $(q4).click(function() {
+                    $(q4).toggleClass("selected");
+                    $(".checkList span").eq(3).toggleClass("selected");
+                    
+                    $(q1).removeClass("selected");
+                    $(q2).removeClass("selected");
+                    $(q3).removeClass("selected");
+                    $(".checkList span").eq(0).removeClass("selected");
+                    $(".checkList span").eq(1).removeClass("selected");
+                    $(".checkList span").eq(2).removeClass("selected");                    
+                });
+                
+                $(".items").append(q1);
+                $(".items").append(q2);
+                $(".items").append(q3);
+                $(".items").append(q4);
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
