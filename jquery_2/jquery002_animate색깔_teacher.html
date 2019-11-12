@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            div {
+                width: 200px;
+                height: 200px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <button>커짐(빨강)</button>
+        <button>작아짐(파랑)</button>
+        <br/><br/><br/>
+        <div></div>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+                  integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+                  crossorigin="anonymous"></script>
+        <script>
+            $(function() {
+                $("button").eq(0).click(function() {
+                    $("div").animate({
+                        width: "+=200px",
+                        height: "+=200px",
+                        backgroundColor: "red"
+                    }, 500);
+                });
+                
+                $("button").eq(1).click(function() {
+                    $("div").animate({
+                        width: "-=200px",
+                        height: "-=200px",
+                        backgroundColor: "blue"
+                    }, 500);
+                });
+            });
+        </script>
+    </body>
+</html>

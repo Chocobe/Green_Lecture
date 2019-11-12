@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <button>Hide</button>
+        <p>This is a paragraph with lttle content.</p>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+//            $(document).ready(function() {
+//                $("button").click(function() {
+//                    $("p").hide("slow", function() {
+//                        alert("The paragraph is now hidden");
+//                    });
+//                });
+//            });
+            
+            $(document).ready(function() {
+                $("button").click(function() {
+                    $("p").hide(100);
+                    alert("The paragraph is now hidden");
+                });
+            });
+        </script>
+    </body>
+</html>

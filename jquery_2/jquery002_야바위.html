@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .target {
+                width: 50px;
+                height: 50px;
+                background-color: magenta;
+                
+                position: absolute;
+                top: 25px;
+                left: 25px;
+                
+                z-index: -1;
+            }
+            
+            .wrap {
+                position: relative;
+            }
+            
+            .block1 {
+                width: 100px;
+                height: 100px;
+                background-color: peru;
+                border: 1px solid black;
+                
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            
+            .block2 {
+                width: 100px;
+                height: 100px;
+                background-color: peru;
+                border: 1px solid black;
+                
+                position: absolute;
+                top: 0;
+                left: 100px;
+            }
+            
+            .block3 {
+                width: 100px;
+                height: 100px;
+                background-color: peru;
+                border: 1px solid black;
+                
+                position: absolute;
+                top: 0;
+                left: 200px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="target"></div>
+        
+        <div class="wrap">
+            <div class="block1">1</div>
+            <div class="block2">2</div>
+            <div class="block3">3</div>
+        </div>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            var posX = 25;
+            const posY = 25;
+            
+            $(document).ready(function() {
+                initBlock();
+                
+                var randomNum = Math.floor(Math.random() * 3);
+                posX += (randomNum * 100);
+                
+                $(".target").css({
+                    left: posX + "px",
+                    top: posY + "px"
+                });
+            });
+            
+            
+            function initBlock() {
+                $(".block1").click(function() {
+                    $(".block1").hide();
+                });
+                
+                $(".block2").click(function() {
+                    $(".block2").hide();
+                });
+                
+                $(".block3").click(function() {
+                    $(".block3").hide();
+                });
+            }
+        </script>
+    </body>
+</html>

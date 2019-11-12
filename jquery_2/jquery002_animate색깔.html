@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            .bigButton {
+                width: 100px;
+                height: 50px;
+                border: 1px solid black;
+                background-color: gray;
+                
+                text-align: center;
+                line-height: 50px;
+                
+                position: absolute;
+                top: 0;
+                left: 600px;
+            }
+            
+            .smallButton {
+                width: 100px;
+                height: 50px;
+                border: 1px solid black;
+                background-color: gray;
+                
+                text-align: center;
+                line-height: 50px;
+                
+                position: absolute;
+                top: 0;
+                left: 710px;
+            }
+            
+            .target {
+                width: 300px;
+                height: 300px;
+                border: 3px solid black;
+                
+                position: absolute;
+                top: 150px;
+                left: 200px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="bigButton">커짐</div>
+        <div class="smallButton">작아짐</div>
+        <div class="target"></div>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+                  integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+                  crossorigin="anonymous"></script>
+                  
+        <script>
+            $(document).ready(function() {
+                $(".smallButton").click(function() {
+                    $(".target").animate({
+                        backgroundColor: "red",
+                        width: 150 + "px",
+                        height: 150 + "px"
+                    }, 1000);
+                });
+                
+                $(".bigButton").click(function() {
+                    $(".target").animate({
+                        backgroundColor: "blue",
+                        width: 300 + "px",
+                        height: 300 + "px"
+                    }, 1000);
+                });
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

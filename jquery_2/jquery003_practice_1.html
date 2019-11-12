@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <a href="http://daum.net">다음</a>
+        
+        <button id="button1">append</button>
+        <button id="button2">after</button>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#button1").click(function() {
+                    $("a").append("<font color=red>가자</font>");
+                });
+                
+                $("#button2").click(function() {
+                    $("a").after("<font color=red>가자</font>");
+                });
+            });
+        </script>
+    </body>
+</html>

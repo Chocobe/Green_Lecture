@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            .showbox {
+                position: relative;
+                width: 200px;
+                height: 100px;
+                border: 1px solid black;
+                overflow: hidden;
+            }
+            
+            .box {
+                position: absolute;
+                width: 600px;
+                height: 100px;
+                
+                top: 0;
+                left: 0;
+                
+                display: flex;
+            }
+            
+            .box img {
+                width: 198px;
+                height: 98px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="showbox">
+            <div class="box">
+                <img src="aoa1.jpg">
+                <img src="aoa2.jpg">
+                <img src="aoa3.jpg">
+            </div>
+        </div>
+        
+        <button>왼쪽으로</button>
+        <button>오른쪽으로</button>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("button").eq(0).click(function() {
+                    $(".box").animate({
+                        left: "-198px"
+                        
+                    }, 500, function() {
+                        var x = $(".box img").eq(0).detach();
+                        $(".box").append(x);
+                        
+                        $(".box").css({
+                            left: "0"
+                        });
+                    });
+                });
+                
+                $("button").eq(1).click(function() {
+                    var x = $(".box img").eq(2).detach();
+                    $(".box").prepend(x);
+                    
+                    $(".box").css({
+                        left: "-198px"
+                    });
+                    
+                    $(".box").animate({
+                        left: "0"
+                    }, 500);
+                });
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

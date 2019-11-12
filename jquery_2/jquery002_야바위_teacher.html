@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            .choose1 {
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+                border: 2px solid black;
+                
+                position: absolute;
+                top: 0;
+                left: 0;
+                
+                z-index: 3;
+            }
+            
+            .choose2 {
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+                border: 2px solid black;
+                
+                position: absolute;
+                top: 0;
+                left: 200px;
+                
+                z-index: 3;
+            }
+            
+            .choose3 {
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+                border: 2px solid black;
+                
+                position: absolute;
+                top: 0;
+                left: 400px;
+                
+                z-index: 3;
+            }
+            
+            .ran {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                border: 2px solid black;
+                
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                
+                z-index: 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="choose1">1</div>
+        <div class="choose2">2</div>
+        <div class="choose3">3</div>
+        <div class="ran"></div>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(function() {
+                var ran = Math.floor(Math.random() * 3);
+                
+                if(ran == 0) {
+                    $(".ran").css({
+                        left: "50px"
+                    });
+                    
+                } else if(ran == 1) {
+                    $(".ran").css({
+                        left: "250px"
+                    });
+                    
+                } else if(ran == 2) {
+                    $(".ran").css({
+                        left: "450px"
+                    });
+                }
+                
+                $("div").click(function() {
+                    $(this).hide();
+                });
+            });
+            
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

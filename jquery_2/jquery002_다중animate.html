@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                border: 5px solid black;
+                
+                position: absolute;
+                
+                top: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div></div>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+                  integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+                  crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function() {
+                $("div").animate({
+                    left: 500 + "px"
+                    
+                }, 1000, function() {
+                    $("div").animate({
+                        top: 500 + "px"
+                    
+                    }, 1000, function() {
+                        $("div").animate({
+                            left: 0
+                            
+                        }, 1000, function() {
+                            $("div").animate({
+                                top: 0
+                            }, 1000);
+                        });
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
