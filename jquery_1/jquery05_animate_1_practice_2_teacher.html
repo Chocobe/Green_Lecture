@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            #dog {
+                position: absolute;
+                top: 80px;
+                left: 120px;
+            }
+            
+            #mi {
+                position: absolute;
+                top: 80px;
+                left: 120px;
+                display: none;
+            }
+            
+            #mi img {
+                width: 50px;
+            }
+            
+            #moveUp {                
+                position: absolute;
+                top: 450px;
+                left: 110px;
+            }
+            
+            #moveDown {
+                position: absolute;
+                top: 550px;
+                left: 110px;
+            }
+            
+            #moveLeft {
+                position: absolute;
+                top: 550px;
+                left: 10px;
+            }
+            
+            #moveRight {
+                position: absolute;
+                top: 550px;
+                left: 210px;
+            }
+            
+            div > img {
+                width: 100px;
+            }
+            
+            #fire {
+                
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="dog">
+            <img src="puppy.jpg">
+        </div>
+        
+        <div id="mi">
+            <img src="아칸.png">
+        </div>
+        
+        <div id="moveUp">
+            <img src="upButton.png">
+        </div>
+        
+        <div id="moveDown">
+            <img src="downButton.png">
+        </div>
+        
+        <div id="moveLeft">
+            <img src="leftButton.png">
+        </div>
+        
+        <div id="moveRight">
+            <img src="rightButton.png">
+        </div>
+        
+        <button id="fire">Fire</button>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function() {
+                var posX = 120;
+                var posY = 80;
+                var miPos = 85;
+                
+                $("#moveUp").click(function() {
+                    posY -= 10;
+                    
+                    $("#dog").animate({
+                        top: posY + "px"
+                    }, 200);
+                });
+                
+                $("#moveDown").click(function() {
+                    posY += 10;
+                    
+                    $("#dog").animate({
+                        top: posY
+                    }, 200);
+                });
+                
+                $("#fire").click(function() {
+                    miPos += 1000;
+                    $("#mi").css("top", posY + 5);
+                    $("#mi").css("left", posX);
+                    $("#mi").css("display", "block");
+                    
+                    $("#mi").animate({
+                        left: miPos + "px"
+                    }, 200);
+                    
+                    miPos -= 1000;
+                });
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
