@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+    <title>Test</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            background-color: #FFD8D8;
+            background-image: url(plan.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #toplogo{
+            text-align: center;
+            margin-top: 30px;
+            font-size: 35px;
+            font-family: 'Jua', sans-serif;
+        }
+        #container{
+            text-align: center;
+            margin-top: 50px;
+            font-size: 30px;
+            font-family: 'Jua', sans-serif;
+            line-height: 10px;
+        }
+        #container #article2{
+            font-size: 14px;
+        }
+        #wrap2{
+            width:100%;
+            height: 50%;
+            position: absolute;
+            bottom:0;
+            /* background-color: #FFD8D8; */
+            display: flex;
+            justify-content: space-around;
+            overflow: hidden;
+        }
+        .person{
+            width:300px;
+            height: 400px;
+            background-color: crimson;
+            margin-top: 159.5px;
+        }
+        .person1{
+            animation-name: person1;
+            animation-duration: 2s;
+        }
+        
+        @keyframes person1{
+            from{
+                margin-top: 159.5px;
+            }
+            to{
+                margin-top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- <menu>
+            로그인 / 마이페이지 / 소개
+            옆에서 나오기
+         
+        <각자 페이지 이름>
+        첫번째 : 저 행복해요
+        두번째 : 입양예약
+        세번재 : 자원봉사
+        네번재 : 유기동물신고
+        
+        <페이지 애니메이션>
+        카드형식으로 (아랫쪽은 단색, 위는 사진)
+        
+    -->
+    <i class="fas fa-paw" style="font-size:60px;"></i>
+    <div id="toplogo">Animal Bridge</div>
+    <div id="container">
+        <div id="article1">
+            <!-- <p>웅앵ㅇ우웅앵ㅇ우웅앵ㅇ</p>
+            <p>우웅앵ㅇ우웅앵ㅇ우웅앵</p>
+            <p>ㅇ우웅앵ㅇ우웅앵ㅇ우웅앵</p> -->
+           
+        </div>
+        <div id="article2">
+            <!-- <p>Happily delivering to doorsteps in Austin, San Antonio, Houston and Dallas. Made in Austin, TX</p> -->
+        </div>
+        <div id="wrap2">
+            <div class="person person1"></div>
+            <div class="person person2"></div>
+            <div class="person person3"></div>
+            <div class="person person4"></div>
+        </div>
+    </div>
+</body>
+</html>
