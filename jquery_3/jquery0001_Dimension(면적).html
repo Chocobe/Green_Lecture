@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            #div1 {
+                height: 300px;
+                width: 500px;
+                
+                padding: 10px;
+                margin: 3px;
+                
+                border: 1px solid blue;
+                background-color: lightblue;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="div1"></div>
+        
+        <br/>
+        
+        <button id="button_1">Display dimensions</button>
+        <button id="button_2">resize dimensions</button>
+        
+        <p>width() - returns the width of an element.</p>
+        <p>height() - returns the height of an element.</p>
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#button_1").click(function() {
+                    var txt = "";
+                    
+                    txt += "Width of div : " + $("#div1").width() + "<br/>";
+                    txt += "Height of div : " + $("#div1").height() + "<br/>"
+                    txt += "Inner width of div : " + $("#div1").innerWidth() + "<br/>";
+                    txt += "Inner height of div : " + $("#div1").innerHeight() + "<br/>";
+                    txt += "Outer width of div : " + $("#div1").outerWidth() + "<br/>";
+                    txt += "Outer height of div : " + $("#div1").outerHeight() + "<br/>";
+                    txt += "Outer width of div (inclued margin) : " + $("#div1").outerWidth(true) + "<br/>";
+                    txt += "Outer height of div (included margin) : " + $("#div1").outerHeight(true) + "<br/>";
+                    txt += "Document width/height : " + $(document).width();
+                    txt += "x" + $(document).height() + "<br/>";
+                    txt += "Window width/height : " + $(window).width();
+                    txt += "x" + $(window).height() + "<br/>";
+                    $("#div1").html(txt);
+                });
+                
+                $("#button_2").click(function() {
+                    $("#div1").width(700).height(500);
+                })
+            });
+        </script>
+    </body>
+</html>

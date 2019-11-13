@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            div, p {
+                float: left;
+                margin: 10px;
+                background-color: #fff;
+            }
+            
+            div #sub {
+                width: 80px;
+                height: 80px;
+                border: #000 solid thin;
+            }
+            
+            p {
+                width: 50px;
+                height: 50px;
+                border: #000 solid thin;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="childrenTest">
+            <div id="sub">
+                <p>div p</p>
+            </div>
+            
+            <p id="part1">p</p>
+            <p>p</p>            
+            <p>p</p>
+        </div>
+        
+        <div id="findTest">
+            <div id="sub">
+                <p>div p</p>
+            </div>
+            
+            <p id="part1">p</p>
+            <p>p</p>            
+            <p>p</p>
+        </div>
+        
+        <div id="prevTest">
+            <div id="sub">
+                <p>div p</p>
+            </div>
+            
+            <p id="part1">p</p>
+            <p>p</p>            
+            <p>p</p>
+        </div>
+        
+        <div id="nextTest">
+            <div id="sub">
+                <p>div p</p>
+            </div>
+            
+            <p id="part1">p</p>
+            <p>p</p>            
+            <p>p</p>
+        </div>
+        
+        <div id="siblingsTest">
+            <div id="sub">
+                <p>div p</p>
+            </div>
+            
+            <p id="part1">p</p>
+            <p>p</p>            
+            <p>p</p>
+        </div>
+        
+        <div id="parentTest">
+            <div id="sub">
+                <p>div p</p>
+            </div>
+            
+            <p id="part1">p</p>
+            <p>p</p>            
+            <p>p</p>
+        </div>
+        
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#childrenTest").children("p").css("background-color", "yellow");
+                $("#findTest").find("p").css("background-color", "yellow");
+                $("#prevTest #part1").prev("div").css("background-color", "yellow");
+                $("#nextTest #part1").next("p").css("background-color", "yellow");
+                $("#siblingsTest #part1").siblings().css("background-color", "yellow");
+                $("#parentTest #sub").parent().css("background-color", "yellow");
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

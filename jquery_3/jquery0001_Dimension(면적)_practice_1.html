@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            div {
+                width: 50%;
+                height: 50%;
+                border: 1px solid black;
+                
+                position: absolute;
+                top: 25%;
+                left: 25%;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div></div>
+        
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(document).resize(function() {
+                    var width = $(document).width();
+                    var height = $(document).height();
+                    $("div").width(width / 2);
+                    $("div").height(height / 2);
+                });
+            });
+        </script>
+    </body>
+</html>

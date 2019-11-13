@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            div, p {
+                float: left;
+                margin: 10px;
+                background-color: #fff;
+            }
+            
+            div #sub {
+                width: 80px;
+                height: 80px;
+                border: #000 solid thin;
+            }
+            
+            div .middle {
+                width: 80px;
+                height: 80px;
+                border: #000 solid thin;
+            }
+            
+            p {
+                width: 50px;
+                height: 50px;
+                border: #000 solid thin;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="firstTest">
+            <div class="middle">div</div>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <div id="sub">
+                <p>div p</p>
+            </div>  
+        </div>
+        
+        <div id="lastTest">
+            <div class="middle">div</div>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <div id="sub">
+                <p>div p</p>
+            </div>  
+        </div>
+        
+        <div id="eqTest">
+            <div class="middle">div</div>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <div id="sub">
+                <p>div p</p>
+            </div>  
+        </div>
+        
+        <div id="filterTest">
+            <div class="middle">div</div>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <div id="sub">
+                <p>div p</p>
+            </div>  
+        </div>
+        
+        <div id="notTest">
+            <div class="middle">div</div>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <div id="sub">
+                <p>div p</p>
+            </div>  
+        </div>
+        
+        <div id="hasTest">
+            <div class="middle has">div</div>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <p>p</p>
+            <div id="sub">
+                <p>div p</p>
+            </div>  
+        </div>
+        
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#firstTest p").first().css("background-color", "yellow");
+                $("#lastTest p").last().css("background-color", "yellow");
+                $("#eqTest p").eq(1).css("background-color", "yellow");
+                $("#filterTest div").filter(".middle").css("background-color", "yellow");
+                $("#notTest div").not(".middle").css("background-color", "yellow");
+                $("div").has(".has").css("background-color", "yellow");
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
