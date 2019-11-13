@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .box {
+                width: 100%;
+                height: 100vh;
+                
+                position: absolute;
+                top: 0;
+                left: 0;
+                
+                display: none;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="box" style="background-color: aquamarine"></div>
+        <div class="box" style="background-color: chartreuse"></div>
+        <div class="box" style="background-color: burlywood"></div>
+        <div class="box" style="background-color: crimson"></div>
+        <div class="box" style="background-color: wheat"></div>
+        <div class="box" style="background-color: forestgreen"></div>
+        <div class="box" style="background-color: darkorange"></div>
+        
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            const BOX = ".box";
+            
+            $(window).ready(function() {                
+                $(BOX).each(function(index) {
+                    $(BOX).eq(index).on("mousewheel DOMMouseScroll", function(e) {
+                        e.preventDefault();
+                        
+                        var currentBox = $(BOX).eq(index);
+                        var E = e.originalEvent;
+                        var delta = 0;
+                        
+                        if(E.detail) {
+                            delta = E.detail * (-40);
+                            
+                        } else {
+                            delta = E.wheelDelta;
+                            
+                            if(window.opera) {
+                                delta = -delta;
+                            }
+                        }
+                        
+                        
+                        // Wheel Down
+                        if(delta < 0) {
+                            if($(currentBox).next() != undefined) {
+                                $(this).stop().slideDown(500);
+                            }
+                            
+                        
+                        } 
+                        // Wheel Up
+                        if(delta < 0) {
+                            if($(BOX).eq(index).prev() != undefined) {
+                                $(this).slideUp(500);
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

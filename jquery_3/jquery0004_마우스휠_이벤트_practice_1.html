@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("html, body").on("mousewheel DOMMouseScroll", function(e) {
+                    var E = e.originalEvent;
+                    var delta = 0;
+                    
+                    if(E.detail) {
+                        delta = E.detail * (-40);
+                        $("body").text(delta);
+                        
+                    } else {
+                        delta = E.wheelDelta;
+                        $("body").text(delta);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
