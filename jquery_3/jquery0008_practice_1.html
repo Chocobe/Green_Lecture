@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .boxGroup {
+                position: relative;
+                width: 100%;
+                cursor: pointer;
+                white-space: nowrap; /*공백처리 - 자동 줄바꿈 해제*/
+                overflow-x: scroll;
+            }
+            
+            .boxGroup.active {
+                background-color: rgba(0, 0, 0, 0.1);
+                cursor: grabbing;
+            }
+            
+            .box {
+                background-color: skyblue;
+                display: inline-block;
+                
+                width: 400px;
+                height: 250px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="boxGroup">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var isDown = false; // 마우스 누름?
+                var startX = 0;     // 마우스 클릭한 위치값
+                var scrollLeft = 0; // 스크롤 위치
+                
+                $(".boxGroup").mousedown(function(e) {
+                    isDown = true;
+                    $(".boxGroup").addClass("active");
+                    startX = e.pageX;   // 마우스 x좌표
+                    
+                    scrollLeft = $(".boxGroup").scrollLeft();
+                    
+                    $("p").eq(0).text("마우스의 위치 : " + startX);
+                    $("p").eq(1).text("스크롤의 위치 : " + scrollLeft);
+                });
+                
+                $(".boxGroup").mousemove(function(e) {
+                    if(!isDown) {
+                        return;
+                        
+                    }
+                    
+                    e.preventDefault();
+                    var x = e.pageX;    // 마우스의 움직이는 x위치
+                    
+                    // var walk = x - startX; <- 너무 느리게 움직이므로, 10을 곱해준다.
+                    var walk = (x - startX) * 10;
+                    
+                    $(".boxGroup").scrollLeft(scrollLeft - walk);
+                    $("p").eq(2).text("마우스 무빙 때 마우스 위치 : " + x);
+                });
+                
+                $(".boxGroup").mouseup(function() {
+                    isDown = false;
+                    $(".boxGroup").removeClass("active");
+                });
+                
+                $(".boxGroup").mouseleave(function() {
+                    isDown = false;
+                    $(".boxGroup").removeClass("active");
+                });
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
