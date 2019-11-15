@@ -30,3 +30,6 @@
 
 *	에러수정 참조 페이지 : https://yenaworldblog.wordpress.com/2018/01/24/java-mysql-%EC%97%B0%EB%8F%99%EC%8B%9C-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%97%90%EB%9F%AC-%EB%AA%A8%EC%9D%8C/
 
+	* apache설치 폴더의 ``lib``에 직접 ``mysql-connector-java-xxx.jar``를 넣어주기.
+	
+		* 아파치 서버의 라이브러리에 직접 ``mysql-connector-java-xxx.jar``파일을 넣는 방식이다. (위의 수정사항이 필요없어진다)
