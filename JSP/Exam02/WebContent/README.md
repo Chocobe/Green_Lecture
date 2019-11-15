@@ -1,35 +1,35 @@
-# ¿ä¾à
+# ìš”ì•½
 
->	## libÆÄÀÏ
+>	## libíŒŒì¼
 
-*	``commons-dbcp-1.4.jar`` : dbcp¸¦ »ç¿ëÇÏ±â À§ÇÑ jar
+*	``commons-dbcp-1.4.jar`` : dbcpë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•œ jar
 
-*	``commons-pool-1.6.jar`` : dbcp¸¦ »ç¿ëÇÏ±â À§ÇÑ jar
+*	``commons-pool-1.6.jar`` : dbcpë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•œ jar
 
-*	``mysql-connector-java-8.0.13.jar`` : mySQLÀ» »ç¿ëÇÏ±â À§ÇÑ ÄÁ³Ø¼Ç
+*	``mysql-connector-java-8.0.13.jar`` : mySQLì„ ì‚¬ìš©í•˜ê¸° ìœ„í•œ ì»¨ë„¥ì…˜
 
 ---
 
->	## mysql¿¬µ¿ ½Ã, ``timezone``¿¡·¯°¡ ¹ß»ıÇÑ´Ù¸é  
+>	## mysqlì—°ë™ ì‹œ, ``timezone``ì—ëŸ¬ê°€ ë°œìƒí•œë‹¤ë©´  
 
-*	¿¡·¯ : The server time zone value ¡®KST¡¯ is unrecognized or represents more than one time zone : 
+*	ì—ëŸ¬ : The server time zone value â€˜KSTâ€™ is unrecognized or represents more than one time zone : 
 
-*	¿øÀÎ : mysql-connector-java ¹öÀü 5.1.X ÀÌÈÄ ¹öÀüºÎÅÍ KST Å¸ÀÓÁ¸À» ÀÎ½ÄÇÏÁö ¸øÇÏ´Â ÀÌ½´
+*	ì›ì¸ : mysql-connector-java ë²„ì „ 5.1.X ì´í›„ ë²„ì „ë¶€í„° KST íƒ€ì„ì¡´ì„ ì¸ì‹í•˜ì§€ ëª»í•˜ëŠ” ì´ìŠˆ
 
-*	DataSource°´Ã¼ÀÇ URL°ªÀ» ´ÙÀ½°ú °°ÀÌ º¯°æÇÑ´Ù 
+*	DataSourceê°ì²´ì˜ URLê°’ì„ ë‹¤ìŒê³¼ ê°™ì´ ë³€ê²½í•œë‹¤ 
 
-	* ±âÁ¸ URL : "jdbc:mysql://localhost:3307/test"
+	* ê¸°ì¡´ URL : "jdbc:mysql://localhost:3307/test"
 	
-	* ¼öÁ¤ URL : ds.setUrl("jdbc:mysql://localhost:3307/test?serverTimezone=UTC"
+	* ìˆ˜ì • URL : ds.setUrl("jdbc:mysql://localhost:3307/test?serverTimezone=UTC"
 	
-*	driverClassNameÀ» ´ÙÀ½°ú °°ÀÌ º¯°æÇÑ´Ù.
+*	driverClassNameì„ ë‹¤ìŒê³¼ ê°™ì´ ë³€ê²½í•œë‹¤.
 
-	* ±âÁ¸ driverClassName : "com.mysql.jdbc.Driver"
+	* ê¸°ì¡´ driverClassName : "com.mysql.jdbc.Driver"
 	
-	* ¼öÁ¤ driverClassName : "com.mysql.cj.jdbc.Driver"
+	* ìˆ˜ì • driverClassName : "com.mysql.cj.jdbc.Driver"
 
-*	¿¡·¯¼öÁ¤ ÂüÁ¶ ÆäÀÌÁö : https://yenaworldblog.wordpress.com/2018/01/24/java-mysql-%EC%97%B0%EB%8F%99%EC%8B%9C-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%97%90%EB%9F%AC-%EB%AA%A8%EC%9D%8C/
+*	ì—ëŸ¬ìˆ˜ì • ì°¸ì¡° í˜ì´ì§€ : https://yenaworldblog.wordpress.com/2018/01/24/java-mysql-%EC%97%B0%EB%8F%99%EC%8B%9C-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%97%90%EB%9F%AC-%EB%AA%A8%EC%9D%8C/
 
-	* apache¼³Ä¡ Æú´õÀÇ ``lib``¿¡ Á÷Á¢ ``mysql-connector-java-xxx.jar``¸¦ ³Ö¾îÁÖ±â.
+	* apacheì„¤ì¹˜ í´ë”ì˜ ``lib``ì— ì§ì ‘ ``mysql-connector-java-xxx.jar``ë¥¼ ë„£ì–´ì£¼ê¸°.
 	
-		* ¾ÆÆÄÄ¡ ¼­¹öÀÇ ¶óÀÌºê·¯¸®¿¡ Á÷Á¢ ``mysql-connector-java-xxx.jar``ÆÄÀÏÀ» ³Ö´Â ¹æ½ÄÀÌ´Ù. (À§ÀÇ ¼öÁ¤»çÇ×ÀÌ ÇÊ¿ä¾ø¾îÁø´Ù)
+		* ì•„íŒŒì¹˜ ì„œë²„ì˜ ë¼ì´ë¸ŒëŸ¬ë¦¬ì— ì§ì ‘ ``mysql-connector-java-xxx.jar``íŒŒì¼ì„ ë„£ëŠ” ë°©ì‹ì´ë‹¤. (ìœ„ì˜ ìˆ˜ì •ì‚¬í•­ì´ í•„ìš”ì—†ì–´ì§„ë‹¤)

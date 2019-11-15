@@ -26,16 +26,16 @@ public class DBCP_VS_NORMAL {
 		ds.setPassword("1111");
 		ds.setUrl("jdbc:mysql://localhost:3307/test?serverTimezone=UTC");
 
-		// Connection Pool¿¡ ¸¸µé¾î ³õÀ» Connection°³¼ö (°³¼ö ÃÊ±âÈ­)
+		// Connection Poolì— ë§Œë“¤ì–´ ë†“ì„ Connectionê°œìˆ˜ (ê°œìˆ˜ ì´ˆê¸°í™”)
 		ds.setInitialSize(20);
 		
-		// µ¿½Ã Á¢¼Ó ¼ö
+		// ë™ì‹œ ì ‘ì† ìˆ˜
 		ds.setMaxActive(20);
 		
-		// ½¬´Â ConnectionÀº 20°³·Î  (³ë´Â ConnectionÀÌ 20°³¸¦ ³ÑÀ¸¸é, ³Ñ´Â°ÍÀ» ÇØÁ¦ÇØ ¹ö¸°´Ù)
+		// ì‰¬ëŠ” Connectionì€ 20ê°œë¡œ  (ë…¸ëŠ” Connectionì´ 20ê°œë¥¼ ë„˜ìœ¼ë©´, ë„˜ëŠ”ê²ƒì„ í•´ì œí•´ ë²„ë¦°ë‹¤)
 		ds.setMaxIdle(20);
 		
-		// ÃÖ¼Ò º¸À¯ Connection°³·Î
+		// ìµœì†Œ ë³´ìœ  Connectionê°œë¡œ
 		ds.setMinIdle(10);
 	}
 	
