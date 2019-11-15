@@ -25,4 +25,16 @@
     <!--
     <Manager pathname="" />
     -->
+    
+    <Resource driverClassName="com.mysql.cj.jdbc.Driver"
+    		  url="jdbc:mysql://localhost:3307/test?serverTimezone=UTC"
+    		  username="root"
+    		  password="1111"
+    		  name="jdbc/mysqlDB"
+    		  type="javax.sql.DataSource"
+    		  maxActive="10"
+    		  maxIdle="10"
+    		  minIdle="10"
+    		  maxWait="3000"
+    		  auth="3000"/>
 </Context>

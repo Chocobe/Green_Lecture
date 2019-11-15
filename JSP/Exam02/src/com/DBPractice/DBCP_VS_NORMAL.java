@@ -25,7 +25,7 @@ public class DBCP_VS_NORMAL {
 		ds.setUsername("root");
 		ds.setPassword("1111");
 		ds.setUrl("jdbc:mysql://localhost:3307/test?serverTimezone=UTC");
-		//?serverTimezone=UTC
+
 		// Connection Pool에 만들어 놓을 Connection개수 (개수 초기화)
 		ds.setInitialSize(20);
 		
