@@ -1,0 +1,132 @@
+<html>
+    <body>
+        <h1 align="center"><b> 회원가입 </b></h1>
+        
+        <form>
+        <table  align="center">
+            <tr>
+                <td align="center" bgcolor="#d7d7d7"> 아이디 </td>
+                <td>
+                    <input type="text" name="id" readonly>
+                    <input type="button" value="중복확인">
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="center" bgcolor="#d7d7d7"> 이름 </td>
+                <td>
+                    <input type="text" name="name">
+                </td>
+            </tr>
+            
+            <tr>
+            <tr>
+                <td align="center" bgcolor="#d7d7d7"> 성별 </td>
+                <td>
+                    <input type="radio" name="sex"> 남
+                    <input type="radio" name="sex"> 여
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="center" bgcolor="#d7d7d7"> 암호 </td>
+                <td>
+                    <input type="password" name="pw">
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="center" bgcolor="#d7d7d7"> 암호확인 </td>
+                <td>
+                    <input type="password"> 같은 암호를 입력하세요
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="center" bgcolor="#d7d7d7"> 이메일 </td>
+                <td>
+                    <input type="text"> @ <input type="text">
+                    <select>
+                        <option value="naver.com"> naver.com </option>
+                        <option value="hanmail.net"> hanmeil.net </option>
+                        <option value="nate.com"> nate.com </option>
+                        <option value="yahoo.net"> yahoo.net </option>
+                        <option value="gmail.com"> gmail.com </option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="center" bgcolor="#d7d7d7"> 주소 </td>
+                <td>
+                    <input type="text">
+                    <input type="button" value="주소찾기">
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="center" bgcolor="#d7d7d7"> 휴대폰 </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="radio" name="통신사"> SKT
+                                <input type="radio" name="통신사"> KT
+                                <input type="radio" name="통신사"> LG U+
+                                <input type="radio" name="통신사"> 알뜰폰
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option value="010"> 010 </option>
+                                    <option value="011"> 011 </option>
+                                    <option value="017"> 016 </option>
+                                    <option value="017"> 017 </option>
+                                    <option value="017"> 018 </option>
+                                </select>
+                                -
+                                <input type="text" size="2">
+                                -
+                                <input type="text" size="2">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="center" bgcolor="#d7d7d7"> 관심 </td>
+                <td>
+                    <input type="checkbox" name="interest" value="shopping"> 쇼핑
+                    <input type="checkbox" name="interest" value="game"> 게임
+                    <input type="checkbox" name="interest" value="travle"> 여행
+                    <input type="checkbox" name="interest" value="etc"> 기타
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="center" bgcolor="#d7d7d7"> 자기소개 </td>
+                <td>
+                    <textarea cols="80" rows="10" placeholder="자기 소개하는 글을 써보세요"></textarea>
+                </td>
+            </tr>
+        </table>
+        <br>
+        
+        <center>
+        <input type="submit" value="확인">
+        <input type="reset" value="다시입력">
+        </center>
+            
+            
+            
+         <input type="email" name="main" required>이메일    
+            
+            
+            
+            
+            
+        </form>
+    </body>
+</html>

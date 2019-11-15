@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .boxgroup{
+                position: relative;
+                width: 100%;
+                overflow-x: scroll;
+                cursor: pointer;
+                white-space: nowrap;
+            }
+            .boxgroup.active{
+                background-color: rgba(0,0,0,0.1);
+                cursor: grabbing;
+            }
+            .box{
+                display: inline-block;
+                background-color: skyblue;
+                width: 400px;
+                height: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="boxgroup">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        
+        <p></p> <!-- 좌표 표시를 위한 p들 -->
+        <p></p>
+        <p></p>
+        
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(document).ready(function(){
+    var boxgroup = $(".boxgroup");
+
+    var isDown = false;//마우스의 누름상태
+    var startX = 0; // 마우스의 첫 클릭위치
+    var scrollLeft = 0;// 스크롤의 위치
+
+    boxgroup.mousedown(function(e){
+        isDown=true;
+        boxgroup.addClass("active");
+        startX = e.pageX;//현재 마우스 좌표
+        scrollLeft = boxgroup.scrollLeft();
+        // 현재 스크롤바 좌표
+        
+        $("p").eq(0).text("e.pageX(마우스 클릭시 마우스의 위치) :" + startX);
+        $("p").eq(1).text("scrollLeft(스크롤의 위치)"+scrollLeft);
+    });
+
+    boxgroup.mousemove(function(e){
+        if(!isDown){ 
+        // isDown = false 일경우 중지
+            return;
+        }
+        
+        e.preventDefault();
+        var x = e.pageX;
+        // 마우스를 움직일 때마다 값이 바뀜
+        
+        //var walk = x-startX;        
+        var walk = (x-startX)*10;    
+   // walk 만큼 움직임으로 *10을 해주면 매우 빠름
+        
+        
+        boxgroup.scrollLeft(scrollLeft-walk);
+        
+        $("p").eq(2).text("e.pageX(마우스를 움직일 때 마우스의 좌표) :"+x);
+        
+        
+    });
+
+    boxgroup.mouseup(function(){
+        isDown=false;
+        boxgroup.removeClass("active");
+    });
+
+    boxgroup.mouseleave(function(){
+        isDown=false;
+        boxgroup.removeClass("active");
+    });
+
+
+
+});
+</script>               
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

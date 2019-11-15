@@ -1,0 +1,57 @@
+package dbcp_basicBasicDataSource;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.HashSet;
+
+import org.apache.commons.dbcp.BasicDataSource;
+
+public class BasicDataSoruce {	
+	private BasicDataSource ds;
+	
+	public BasicDataSoruceEx() {
+		ds = new BasicDataSource();
+		ds.setDriverClassName("com.mysql.jdbc.Driver");
+		ds.setUsername("root");
+		ds.setPassword("1234");
+		ds.setUrl("jdbc:mysql://localhost:3306/test");
+		ds.setInitialSize(20);
+		ds.setMaxActive(20);
+		ds.setMaxIdle(20);
+		ds.setMinIdle(10);
+	}
+	
+	public int insert(String testValue) {
+		int result = 0;
+		Connection con = null;
+		PreparedStatement pStmt = null;
+		
+		try {
+			 con = ds.getConnection();
+			 pStmt = con.prepareStatement("INSERT INTO dummy (testValue) VALUES (?)");
+			 pStmt.setString(1, testValue);
+			 result = pStmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pStmt.close();
+			} catch (Exception e) {	}
+			try {				
+				con.close();
+			} catch(Exception e) {}
+		}
+		
+		return result;
+	}
+	
+	
+	public static void main(String[] args) {
+		BasicDataSoruceEx o = new BasicDataSoruceEx();
+		String testValue = "test";
+		for(int i=0; i<100; i++) {			
+			o.insert(testValue + i);			
+		}		
+	}
+}

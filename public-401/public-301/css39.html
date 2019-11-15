@@ -1,0 +1,133 @@
+<html>
+    <head>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}    
+#flex{
+    display: flex;
+    flex-flow: row wrap;
+    border: 1px solid black;
+    
+/*order : 숫자  - 숫자 순서대로 배치 */
+    
+ /* flex-eirection + flex-wrap */
+
+
+/*    flex-direction: row;*/
+    /*
+    row :  왼쪽 -> 오른쪽
+           위 -> 아래로
+
+    row-reverse :  row의 반대
+    
+    column: 쓰기방향이 수평이면 수직으로
+    
+    column-reverse : column의 반대
+    */
+    
+/*    flex-wrap: wrap;*/
+    /*
+        wrap: 박스 공간이 차면 밑으로
+        nowrap: 공간이 차면 박스를 줄여서 한줄로 - 기본
+        wrap-reverse: wrap의 반대
+    */
+
+}
+#flex div{
+    min-height: 150px;
+    min-width: 150px;
+}
+.title{
+    background-color: pink;
+    text-align: center;
+}
+.c1{
+    color: #ddd;
+    background-color: red;
+}    
+.c2{
+    color: #ddd;
+    background-color: blue;
+}   
+.c3{
+    color: #ddd;
+    background-color: green;
+}   
+.c4{
+    color: #ddd;
+    background-color: yellow;
+}   
+.c5{
+    color: #ddd;
+    background-color: gray;
+}   
+    
+.title, .c1, .c2, .c3, .c4, .c5{
+    width: 100%;
+}
+@media(min-width: 600px){
+    .c2, .c3, .c4, .c5{
+        width: 50%;
+    } 
+    .title{
+        display: block;
+    }
+}
+@media(min-width: 800px){
+    .c1{
+        width: 60%;
+    }
+    .c2{
+        width: 40%;
+    }
+    .c3, .c4{
+        width: 33%;
+    }
+    .c5{
+        width: 34%;
+    }
+    #flex{
+        width: 800px;
+        margin: 0 auto;
+    }
+    .title{
+        display: none;
+    }
+}    
+        </style>
+    </head>
+    
+    
+<body>
+  <div id="flex">
+    <div class="title">유동형</div>
+    <div class="c1">
+        <p>
+            유동형 패턴은 작은화면에서 수직으로 쌓이면서 재배치.
+            중간에 중단점(@media)이 필요.
+        </p>  
+    </div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="c4"></div>  
+    <div class="c5"></div>
+  </div>
+</body>
+    
+    
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+

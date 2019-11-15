@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            .page{
+                width: 100%;
+                height: 100vh;    
+                font-size: 64px;
+                color: white;
+            }
+            .page:nth-child(1){
+                background-color: pink;
+            }
+            .page:nth-child(2){
+                background-color: skyblue;
+            }
+            .page:nth-child(3){
+                background-color: lightgreen;
+            }
+            
+            .header{
+                position: fixed;
+                top: 0;
+                width: 100%;
+                height: 100px;
+                background-color: transparent;
+                z-index: 5;
+            }
+            .header ul{
+                display: flex;
+                justify-content: center;
+            }
+            .header ul li{
+                list-style: none;
+                margin-right: 50px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="page">1</div>
+        <div class="page">2</div>
+        <div class="page">3</div>
+        <div class="header">
+            <ul>
+                <li>
+                    페이지1
+                </li>
+                <li>
+                    페이지2
+                </li>
+                <li>
+                    페이지3
+                </li>
+            </ul>
+        </div>
+        
+        <script  src="http://code.jquery.com/jquery-latest.min.js"></script>    
+        <script>
+           $(document).ready(function(){
+                var elm = ".page";
+                $(elm).each(function (index) {  // 개별적으로 모든 .box 객체에 Wheel 이벤트 적용
+                    $(this).on("mousewheel DOMMouseScroll", function (e) {
+                        e.preventDefault(); // 원하는 이벤트 외에 별도의 브라우저 행동을 막기 위해 사용.
+                        var delta = 0;                    
+                        var E = e.originalEvent;
+
+                        if (E.detail) {
+                            delta = E.detail * -40;
+                        }else{                        
+                            delta = E.wheelDelta;
+                            if (window.opera) delta = -delta;
+                        };
+
+                        var moveTop = 0;
+                        var elmSelecter = $(elm).eq(index);                    
+
+                        if (delta < 0) {  // 마우스휠을 위에서 아래로
+                            if ($(elmSelecter).next() != undefined) {
+                                try{
+                                    moveTop = $(elmSelecter).next().offset().top;
+                                }catch(err){ $("body").text(err.message); }
+                            }
+                        } else {  // 마우스휠을 아래에서 위로
+                            if ($(elmSelecter).prev() != undefined) {
+                                try{
+                                    moveTop = $(elmSelecter).prev().offset().top;
+                                }catch(err){ }
+                            }
+                        }
+
+                        // 화면 이동 0.8초(800)
+                        $("html,body").stop().animate({
+                            scrollTop: moveTop + 'px'
+                        }, {
+                            duration: 500, complete: function () {
+                              // complete: function () { }  <= 모든 animation이 끝나고 실행
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+        <script>
+           $(document).ready(function(){   
+               
+               $("li").eq(0).click(function(){
+                   $("html,body").stop().animate({
+                       scrollTop:$(".page").eq(0).offset().top+'px'
+                   },500);
+               });
+               
+               $("li").eq(1).click(function(){
+                  $("html,body").stop().animate({
+                       scrollTop:$(".page").eq(1).offset().top+'px'
+                   },500);
+               });
+               
+               $("li").eq(2).click(function(){
+                  $("html,body").stop().animate({
+                       scrollTop:$(".page").eq(2).offset().top+'px'
+                   },500);
+               });                        
+            });
+        </script>
+    </body>
+</html>

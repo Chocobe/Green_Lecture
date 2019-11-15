@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        .boxgroup{
+            position: relative;
+            width: 100%;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow-x: scroll;
+        }
+        .boxgroup.active{
+            background-color: rgba(0,0,0,0.1);
+            cursor: grabbing;
+        }
+        
+        .box{
+            display: inline-block;
+            background-color: skyblue;
+            width: 400px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxgroup">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <p></p><!-- 좌표를 표시하기 위한 p들 -->
+    <p></p>
+    <p></p>
+    
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+<script>
+$(document).ready(
+function(){
+    var isDown = false; // 마우스의 누름상태
+    var startX = 0;    //마우스의 첫 클릭위치
+    var scrollLeft = 0; // 스크롤의 위치
+    
+    
+$(".boxgroup").mousedown(
+function(e){
+    isDown = true;
+    $(".boxgroup").addClass("active");
+    startX = e.pageX; // 현재 마우스 좌표
+scrollLeft = $(".boxgroup").scrollLeft();
+        
+$("p").eq(0).text("마우스의 위치 : "+startX);
+$("p").eq(1).text("스크롤 위치 : "+scrollLeft);        
+        
+}
+);
+    
+$(".boxgroup").mousemove(
+function(e){
+    
+    if(!isDown){
+        //isDown = false 중지 하라
+        return;
+    }
+    e.preventDefault();
+    var x = e.pageX;
+    // 마우스가 움직일 때 마다 값이 바뀜
+    var walk = (x-startX);
+    //var walk = (x-startX) * 10 빠르게 움직임;
+    
+$(".boxgroup").scrollLeft(scrollLeft-walk);
+$("p").eq(2).text("마우스 무빙때 마우스 위치"+x);
+    
+}    
+);
+    
+    
+$(".boxgroup").mouseup(
+function(){
+    isDown=false;
+    $(".boxgroup").removeClass("active");
+}
+);
+    
+$(".boxgroup").mouseleave(
+function(){
+    isDown=false;
+    $(".boxgroup").removeClass("active");
+}
+);
+    
+}
+);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

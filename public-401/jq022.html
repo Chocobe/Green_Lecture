@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            width: 200px;
+            height: 100px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        행정권은 대통령을<br><br> 수반으로 하는 정부에 속한다. <br><br>헌법개정안이 제2항의 찬성을 얻은 <br><br>때에는 헌법개정은 확정되며, <br><br>대통령은 즉시 이를 공포하여야 한다.
+    </div>
+    
+    <p>0</p>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    var x=0;
+    $(document).ready(function(){
+       $("div").scroll(function(){
+$("p").text($("div").scrollTop());
+       });
+    });
+</script>       
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

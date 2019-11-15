@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .boxgroup{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: red;
+            left: 10px;
+            top: 0;
+            z-index: 10;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: blue;
+            left: 30px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxgroup">
+        <div class="box1"></div>
+        <div class="box2"></div>        
+    </div>
+</body>
+</html>

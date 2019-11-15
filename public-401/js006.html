@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"><br>
+    <input type="text" id="cnt"><br>
+    <input type="button" value="확인" onclick="func()">
+    <p id="result" style="color: red"></p>
+    
+    <script>
+        function func(){
+            var txt = document.getElementById("txt").value;
+            var cnt = document.getElementById("cnt").value;
+            
+document.getElementById("result").innerHTML=txt.substr(0,cnt)+"...";
+        }
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+

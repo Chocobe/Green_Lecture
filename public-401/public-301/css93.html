@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .showbox{
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+        .movebox{
+            width: 200px;
+            height: 250px;
+            border: 1px solid blue;
+            position: absolute;
+        }
+        .movebox div{
+            width: 200px;
+            height: 50px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+   
+   <div class="showbox">
+       <div class="movebox">
+           <div>뉴스1</div>
+           <div>뉴스2</div>
+           <div>뉴스3</div>
+           <div>뉴스4</div>
+           <div>뉴스5</div>
+       </div>       
+   </div>
+   
+   <br><br><br><br><br><br>
+   <br><br><br><br><br><br>
+   <button>누른다.</button>
+    
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(document).ready(
+function(){
+    
+    setInterval(function(){
+        $(".movebox").animate({
+            top:"-50px"            
+        },500,function(){            
+        var x= $(".movebox div").eq(0).detach();
+        $(".movebox").append(x);
+        $(".movebox").css("top","0");    
+        }
+        );
+    },2000);
+}
+);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+    <p>이것은 호버다.</p>
+    <p>이것은 두번째 호버다.</p>
+    <p>이것은 세번째 호버다.</p>
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    
+<script>
+    $(document).ready(
+        function(){
+            $("p").hover(
+                
+                function(){
+$("p").css("background-color","yellow");   
+                    
+                },
+                function(){
+$("p").css("background-color","pink");
+                }
+                
+                
+            );
+        }
+    );
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #wrap{
+            width: 1024px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+        .top{
+            width: 1022px;
+            background-color: blue;
+            display: flex;
+        }
+        .tleft{
+            width: 222px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .tright{
+            width: 800px;
+            height: 100px;
+        background-color: yellowgreen;
+        }
+        .trtop{
+            width: 800px;
+            height: 50px;
+            background-color: lightblue;
+        }
+        .trbottom{
+            width: 800px;
+            height: 50px;
+            background-color: lightcoral;            
+        }
+        
+        .middle{
+            width: 100%;
+            background-color: gray;
+            display: flex;
+        }
+        .mleft{
+            width: 800px;
+            height: 600px;
+            background-color: black;
+        }
+        .mright{
+            width: 222px;
+            background-color: white;
+        }
+        .mright div{
+            width: 222px;
+            height: 200px;
+            background-color: aqua;
+            border: 1px solid black;
+        }
+        .bottom{
+            width: 1022px;
+            display: flex;
+        }
+        .bottom div{
+            width: 33.3333%;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+   <div id="wrap">
+        <div class="top">
+            <div class="tleft">로고</div>
+            <div class="tright">
+                <div class="trtop"></div>
+                <div class="trbottom"></div>
+            </div>
+        </div>
+
+        <div class="middle">
+            <div class="mleft">배너</div>
+            <div class="mright">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        
+        
+        <div class="bottom">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

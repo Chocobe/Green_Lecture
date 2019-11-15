@@ -1,0 +1,211 @@
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <title> Learning HTML5! </title>
+                <style type="text/css"> 
+                        html,body{
+                                width:100%;
+                                height:100%
+                        }
+                        
+                        html{
+                                overflow-y:scroll 
+                                /* 위 아래로 화면에 보이는 양 보다 내용이 많을 때 
+                                        visible, hidden, scroll, auto
+                                */
+                        }
+                        
+                        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{
+                                margin:0;
+                                padding:0
+                        }
+                        
+                        body,h1,h2,h3,h4,input,button{
+                                font-family:NanumGothicWeb,verdana,dotum,Helvetica,sans-serif;
+                                font-size:13px;
+                                color:#383d41
+                        }
+                        
+                        body{
+                                background-color:#fff;
+                                *word-break:break-all;
+                                -ms-word-break:break-all
+                                /*
+                                *은 전체선택자 모든 엘리먼트값을 선택하라 라는 의미
+                                word-break:줄바꿈 break-all:강제 줄바꿈 normal:알아서
+                                
+                                                           |
+                                ex)beautiful girl
+                                
+                                   beautiful gi     break-all
+                                   rl
+                                
+                                   beautiful        keep-all 
+                                   girl                                   
+                                   
+                                keep-all:줄바꿈 금지
+                                
+                                IE8 introduced -ms-word-break as a synonym for word-break. 
+                                Don't use the -ms- prefix.
+                                                        
+                                */
+                                
+                        }
+                        
+                        img,fieldset,iframe{
+                                border:0 none
+                        }
+                        
+                        li{
+                                list-style:none
+                                /*
+                                또는 list-style-type
+                                        항목 앞 모양 default:disc
+
+                                */
+                        }
+                        
+                        #wrap{
+                                width:760px;
+                                margin:0 auto
+                        }
+                        
+                        header{
+                                margin-top:20px;
+                                padding:20px;
+                                border:1px solid #000;
+                                background:#474747
+                        }
+                        
+                        hgroup{
+                                overflow:hidden;
+                                padding-bottom:20px
+                                /*
+                                        hgroup 은 더이상 사용되지 않음. 사라질 예정                                        
+                                */
+                        }
+                        
+                        hgroup h1{
+                                float:left;
+                                font-size:18px;
+                                color:#fff                                                                
+                        }
+                        
+                        hgroup h2{
+                                float:right;
+                                font-weight:normal;
+                                color:#fff;
+                                opacity:0.8
+                                /*
+                                        opacity:투명도 0.0~1.0
+                                */
+                        }
+                        
+                        nav{
+                                clear:both;
+                                overflow:hidden
+                                /*
+                                        clear은 float속성 자신의 위치를 주변 콘텐츠로 부터 상대적으로 배치하는 속성
+                                */
+                        }
+                        
+                        nav li{
+                                float:left;
+                                padding-right:5px;
+                                font-family:verdana
+                        }
+                        
+                        nav li span{
+                                display:inline-block;
+                                padding:3px 10px;
+                                border-radius:5px;
+                                background-color:#fff
+                        }
+                        
+                        section{
+                                float:left;
+                                width:518px;
+                                margin-top:15px;
+                                margin-bottom:20px;
+                                padding:20px;
+                                border:1px solid #ccc;
+                                line-height:20px
+                        }
+                        
+                        article{
+                                margin-bottom:20px
+                        }
+                        
+                        article h3{
+                                font-size:16px
+                        }
+                        
+                        aside{
+                                float:right;
+                                width:163px;
+                                padding:10px;
+                                margin-top:15px;
+                                border:1px solid #ccc;
+                                line-height:20px
+                        }
+                        
+                        aside .ad{
+                                height:100px;
+                                margin-bottom:20px;
+                                background-color:#ebebeb
+                        }
+                        
+                        footer{
+                                clear:both;
+                                padding:20px;
+                                border:1px solid #ccc
+                        }
+                </style>
+        </head>
+        <body>
+        <div id="wrap">
+                <header>
+                        <hgroup>
+                                <h1>Learning HTML5!</h1>
+                                <h2>by xxx</h2>
+                        </hgroup>
+                </header>
+                <nav>
+                        <ul>
+                                <li><span>메뉴1</span></li>
+                                <li><span>메뉴2</span></li>
+                                <li><span>메뉴3</span></li>
+                                <li><span>메뉴4</span></li>
+                                <li><span>메뉴5</span></li>
+                                <li><span>메뉴6</span></li>
+                                <li><span>메뉴7</span></li>
+                        </ul>
+                </nav>
+                <section> 
+                        <article>
+                                <h1> 첫번째 본문의 제목 </h1>
+                                <p> 첫번째 본문의 내용 </p>
+                        </article>
+                        <article>
+                                <h1> 두번째 본문의 제목 </h1>
+                                <p> 두번째 본문의 내용 </p>
+                        </article>
+                        <article>
+                                <h1> 세번째 본문의 제목 </h1>
+                                <p> 세번째 본문의 내용 </p>
+                        </article>
+                </section>
+                <aside>
+                        <p class="ad">광고</p>
+                        <ul>
+                                <li><b>html5강좌</b></li>
+                                <li><b>html5강좌</b></li>
+                                <li><b>html5강좌</b></li>
+                        </ul>
+                </aside>
+                <footer>
+                        <center>Copyright xxx</center>
+                </footer>
+        </div>
+        </body>
+</html>

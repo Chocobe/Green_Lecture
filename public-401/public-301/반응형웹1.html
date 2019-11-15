@@ -1,0 +1,238 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            header{
+                width: 100%;
+                min-height: 80px;
+                background-color: deepskyblue;
+                position: fixed;
+                display: flex;
+                flex-flow: row wrap;
+                top: 0;
+            }
+            .logo{
+                width: 250px;
+                min-height: 80px;
+                position: relative;
+                display: inline-block;
+                background-color: red;
+            }
+            .logo img{
+                position: absolute;
+                width: 80%;
+                height: 80%;
+                left: 10%;
+                top: 10%;
+            }
+            .menu{
+                width: calc(100% - 250px);
+                text-align: right;
+                border: 1px solid black;
+            }
+            .menu> ul{
+                width: 500px;
+                height: 80px;
+                display: inline-block;
+            }
+            .menu> ul>li{
+                display: inline-block;
+                list-style: none;
+                color: white;
+                font-size: 20px;
+                margin-right: 25px;
+                margin-top: 25px;
+            }
+/*
+            .art1{
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-flow: row wrap;
+                margin-top: 95px;
+            }
+*/
+            .sec1{
+                width: 60%;
+                height: 300px;
+                background-color: pink;
+                margin-left: 1%;
+            }
+            .sec2{
+                width: 37%;
+                height: 300px;
+                margin-left: 1%;
+                background-color: lightgray;
+            }
+            .login{
+                width: 100%;
+                height: 185px;
+                background-color: red;
+            }
+            .ad{
+                width: 100%;
+                height: 100px;
+                margin-top: 15px;
+                background-color: blue;
+            }
+            .art2{
+                width: 100%;
+                height: auto;
+            }
+            .sec3{
+                width: 98%;
+                height: 100px;
+                background-color: aquamarine;
+                margin-left: 1%;
+                margin-top: 1%;
+            }
+            .art3{
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .sec4{
+                width: 60%;
+                height: 400px;
+                background-color: lightgrey;
+                margin-top: 1%;
+                margin-left: 1%;
+            }
+            .submenu1{
+                width: 100%;
+                height: 200px;
+                background-color: hotpink;
+            }
+            .submenu2{
+                width: 100%;
+                height: 185px;
+                background-color: orange;
+                margin-top: 15px;
+            }
+            .sec5{
+                width: 37%;
+                height: 400px;
+                background-color: lightgrey;
+                margin-top: 1%;
+                margin-left: 1%;
+            }
+            .submenu3{
+                width: 100%;
+                height: 200px;
+                background-color: hotpink;
+            }
+            .submenu4{
+                width: 100%;
+                height: 185px;
+                background-color: orange;
+                margin-top: 15px;
+            }
+            .mobile_menu{
+                display: none;
+                width: 50px;
+                height: 50px;
+                background-color: black;
+                float: right;
+                margin-top: 10px;
+                margin-right: 10px;
+            }
+            
+            @media (max-width:768px){
+                .menu> ul{
+                    display: none;
+                }
+                .mobile_menu{
+                    display: block;
+                }
+                .sec1{
+                    width: 98%;
+                }
+                .sec2{
+                    width: 98%;
+                    margin-top: 2%;
+                }
+                .sec3{
+                    margin-top: 2%;
+                }
+                .sec4{
+                    display: none;
+                }
+                .sec5{
+                    width: 98%;
+                    margin-top: 2%;
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="aoa1.jpg">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                    <li>메뉴4</li>
+                    <li>메뉴5</li>
+                </ul>
+                <div class="mobile_menu"></div>
+            </div>
+        </header>
+        <article class="art1">
+            <section class="sec1"></section>
+            <section class="sec2">
+                <div class="login"></div>
+                <div class="ad"></div>
+            </section>
+        </article>
+                
+        <article class="art2">
+            <section class="sec3"></section>
+        </article>
+        
+        <article class="art3">
+            <section class="sec4">
+                <div class="submenu1"></div>
+                <div class="submenu2"></div>
+            </section>
+            
+            <section class="sec5">
+                <div class="submenu3"></div>
+                <div class="submenu4"></div>
+            </section>
+        </article>
+    </body>
+</html>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

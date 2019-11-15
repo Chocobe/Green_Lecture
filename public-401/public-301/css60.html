@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+/*
+            input[type=checkbox]{
+                transform: scale(2);
+            }
+            span{
+                font-size: 110%;
+            }
+*/
+            
+            input[id=chk]{
+                display: none;
+            }
+            input[id=chk] + label {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border: 2px solid #bcbcbc;
+				cursor: pointer;
+			}
+            input[id=chk]:checked + label{
+                background-color: #666666;
+            }
+        </style>        
+    </head>
+    <body>
+        <input type="checkbox" id="chk">
+        <label for="chk"></label>
+        <span>메뉴</span>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+

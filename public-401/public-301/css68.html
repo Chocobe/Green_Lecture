@@ -1,0 +1,90 @@
+<html>
+    
+    <head>
+        <style>
+            .container{
+                width: 500px;
+                height: 350px;
+                border: 1px solid black;
+                margin: 0 auto;
+                display: flex;
+                position: relative;
+            }
+            .box1{
+                position: relative;
+                width: 50px;
+                height: 50px;
+                background-color: red;
+                top:300px;
+                
+            }
+            .box2{
+                position: relative;
+                width: 50px;
+                height: 50px;
+                background-color: green;
+                top:300px;
+            }
+            .box3{
+                position: relative;
+                width: 50px;
+                height: 50px;
+                background-color: blue;
+                top:300px;
+            }
+            .img1{
+                width: 500px;
+                height: 300px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: opacity .5s;
+            }
+            .img2{
+                width: 500px;
+                height: 300px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: opacity .5s;
+            }
+            .img3{
+                width: 500px;
+                height: 300px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: opacity .5s;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            
+            .box1:hover ~ .img1{
+                opacity: 1;
+            }
+            .box2:hover ~ .img2{
+                opacity: 1;
+            }
+            .box3:hover ~ .img3{
+                opacity: 1;
+            }
+        </style>
+    </head>
+    
+    <body>        
+        <div class="container">
+            
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+            <div class="img1"><img src="dog.jpg"></div>            
+            <div class="img2"><img src="cat.jpg"></div>
+            <div class="img3"><img src="bono.png"></div>
+        </div>
+    </body>
+</html>

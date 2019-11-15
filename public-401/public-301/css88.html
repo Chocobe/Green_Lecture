@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0
+                
+        }
+        .wrap{
+            width: 100%;
+            height: 100vh;
+            border: 1px solid red;
+        }
+        ul li{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .pop2_content{
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+            position: absolute;
+            left: 25%;
+            top: 25%;
+            display: none;
+        }
+        
+        .pop3_content{
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+            position: absolute;
+            left: 25%;
+            top: 25%;
+            display: none;
+            z-index: 2;
+        }
+        .modal_layer{
+            z-index: 1;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.5);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="wrap">
+   <ul>
+       <li>
+           <a href="#" class="pop1">기본</a>
+       </li>
+       <li>
+           <a href="#" class="pop2">레이어</a>
+       </li>
+       <li>
+         <a href="#" class="pop3">모달레이어</a>
+       </li>
+   </ul>    
+   
+       
+    <div class="pop2_content">
+      <button class="pop2_close">닫기</button>
+    </div>      
+          
+    <div class="pop3_content">
+      <button class="pop3_close">닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+                   
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+
+
+
+<script>
+$(document).ready(
+function(){
+    $(".pop1").click(
+    function(){
+        window.open("http://google.com",
+                    "_blank",
+                "top=0,width=400,height=400");  
+    }
+    );
+    
+    $(".pop2").click(
+    function(){
+        $(".pop2_content").fadeIn(500);
+        $(".pop2_content").draggable();
+    }
+    );   
+    
+    $(".pop2_close").click(
+    function(){
+        $(".pop2_content").fadeOut(500);
+    }   
+    );
+    
+    $(".pop3").click(
+    function(){
+     $(".modal_layer").fadeIn(300,function(){
+            $(".pop3_content").fadeIn(500);
+        });
+    }
+    );
+    
+    $(".pop3_close").click(
+    function(){
+     $(".pop3_content").fadeOut(300,function()
+     {
+         $(".modal_layer").fadeOut(500);
+     });
+        
+        
+    }
+    );
+    
+    
+    
+    
+    
+}
+);
+</script>    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100%;
+            height: 98vh;
+            border: 1px solid blue;
+            position: relative;
+            overflow: hidden;
+        }
+        .box1{
+            border: 1px solid black;
+            width: 125%;
+            height: 100%;
+            transform: rotate(-37deg);
+            position: absolute;
+            overflow: hidden;
+            left: -440px;
+            top: -380px;
+            
+            
+        }
+        .box11{
+            left: 0;
+            top: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+            transform: rotate(37deg);
+        }
+        .box11 img{
+            position: absolute;
+            width: 140%;
+            height: 140%;
+            top: 10px;
+        }
+        .box2{
+            border: 1px solid black;
+            width: 125%;
+            height: 100%;
+            transform: rotate(-37deg);
+            position: absolute;
+            left: 120px;
+            top: 375px;
+            overflow: hidden;
+            
+        }
+        .box22{
+            left: 0;
+            top: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+            transform: rotate(37deg);
+        }
+        .box22 img{
+            left: -200px;
+            top: -400px;
+            position: absolute;
+            width: 130%;
+            height: 130%;
+        }
+        
+    </style>
+</head>
+<body>
+<!--
+    <div class="box">
+        <div class="box1"></div>
+    </div>
+-->
+   <div class="box">
+        <div class="box1">
+            <div class="box11">
+                <img src="dog.jpg">
+            </div>    
+        </div>
+        <div class="box2">
+            <div class="box22">
+                <img src="cat.jpg">
+            </div>    
+        </div>
+    </div>
+    
+</body>
+</html>

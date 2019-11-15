@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="song">
+    Ladys and gentleman 아싸 또 왔다 나<br>
+    아싸 또 왔다 나 기분 좋아서 나<br>
+    노래 한곡 하고 하나 둘 셋 넷<br>
+    터질 것만 같은 행복한 기분으로<br>
+    틀에 박힌 관념 다 버리고 이제 또<br>
+    맨 주먹 정신 다시 또 시작하면<br>
+    나 이루리라 다 나 바라는대로<br>
+    지금 내가 있는 이 땅이 너무 좋아<br>
+    이민따위 생각 한 적도 없었고요<br>
+    금 같은 시간 아끼고 또 아끼며 나<br>
+    비상하리라 나 바라는대로<br>
+    산 속에도 저 바다 속에도<br>
+    이렇게 행복할 순 없을거야 랄랄랄라<br>
+    구름타고 세상을 날아도<br>
+    지금처럼 좋을 수는 없을거야 울랄랄라<br>
+    모든게 마음 먹기 달렸어<br>
+    어떤게 행복한 삶인가요<br>
+    사는게 힘이 들다 하지만<br>
+    쉽게만 살아가면 재미없어 빙고<br>
+    거룩한 인생 고귀한 삶을 살며<br>
+    북끄럼 없는 투명한 마음으로<br>
+    이내 삶이 끝날 그 마지막 순간에<br>
+    나 웃어보리라 나 바라는대로<br>
+    </p>
+    
+    <p id="answer"></p>
+    
+    <script>
+        var text = document.getElementById("song").innerHTML;
+        
+        var arr=text.split("\n");
+        
+        var result="";
+        
+//        var temp = arr[1].replace(/ /g,"");
+//        alert(temp.charAt(0));
+        
+        for(var i=0;i<arr.length;i++){
+            var temp = arr[i].replace(/ /g,"");
+            result=result+temp.charAt(0);
+        }
+        
+document.getElementById("answer").innerHTML=result;
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

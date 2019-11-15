@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <style>
+            .box1{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+            .box2{
+                width: 100px;
+                height: 100px;
+                background-color: green;
+            }
+            .box3{
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+            }
+            
+            .box4{
+                width: 100px;
+                height: 100px;
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <button class="btn1">111</button>
+        
+        <button class="btn11">111-111</button>
+        
+        <div class="box1"></div>
+        
+        
+        
+        
+        
+        
+        
+        <button class="btn2">222</button>
+        <button class="btn22">222-222</button>
+        <div class="box2"></div>
+        
+        <button class="btn3">333</button>
+        <button class="btn33">333-333</button>
+        <div class="box3"></div>
+        
+        
+        
+        <button class="btn4">444</button>
+        <div class="box4"></div>
+        
+        
+        
+        
+        
+        
+      <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+      
+<script>
+
+$(document).ready(
+    function(){
+
+        $(".btn1").click(
+            function(){                
+                $(".box1").hide(500);
+                //fadeOut();
+                //slideUp();
+            }
+        );
+        
+        $(".btn11").click(
+            function(){
+                $(".box1").show(500);
+                //fadeIn();
+                //slideDown();
+            }
+        );
+        
+        
+        
+        
+        $(".btn4").click(
+            function(){
+        $(".box4").stop().toggle(500);
+//              $(".box4").fadeToggle();
+//             $(".box4").slideToggle();
+            }
+        );
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+);
+
+</script>  
+    </body>    
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,171 @@
+<html>
+    <head>
+       <meta charset="utf-8">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #wrap{
+                width: 700px;
+                border: 1px solid black;
+            }
+            .search{
+                width: 700px;
+            }
+            .nav{
+                width: 700px;
+                margin-bottom: 5px;
+            }
+            .nav ul li{
+                display: inline;
+                margin-right: 10px;
+            }
+            .left{                
+                border: 1px solid red;
+                display: inline-block;
+                width: 390px;
+                height: 285px;
+                vertical-align: top;
+            }
+            .right{
+                border: 1px solid red;
+                display: inline-block;
+                width: 290px;
+                height: 285px;
+                vertical-align: top;
+            }
+            .pic1{
+                border: 1px solid black;
+                width: 100%;
+                height: 100px;
+                margin-bottom: 5px;
+            }
+            .weather{
+                border: 1px solid black;
+                width: width: 100%;
+                height: 30px;
+                margin-bottom: 5px;
+            }
+            
+            .news{
+                height: 135px;
+                border: 1px solid black;
+                border-collapse: collapse;   
+            }
+            .news td{
+                border: 1px solid black;
+                width: 130px;
+                height: 40px;
+            }
+            .login{
+                padding-top: 15px;
+                border: 1px solid black;
+                width: 100%;
+                height: 100px;
+                margin-bottom: 5px;
+            }
+            .login input[type=button]{
+                width: 50px;
+                height: 50px;
+            }
+            .news2{
+                border: 1px solid black;
+                width: 100%;
+                height: 70px;
+                padding-left: 20px;
+                margin-bottom: 5px;
+            }
+            .pic2{
+                border: 1px solid black;
+                width: 100%;
+                height: 95px;
+            }
+            
+            
+           
+            
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+           <div>
+               <div class="search">
+                   <table>
+                       <tr>
+                           <td><img src="logo.png"></td>
+                           <td><input type="text"></td>
+                           <td><input type="button" value="검색"></td>
+                       </tr>
+                   </table>
+                </div>            
+               <div class="nav">
+                   <ul>
+                       <li>메일</li>
+                       <li>카페</li>
+                       <li>블로그</li>
+                       <li>지식iN</li>
+                       <li>사전</li>
+                       <li>뉴스</li>
+                       <li>부동산</li>
+                   </ul>
+               </div>
+           </div>
+           <div class="main">
+               <div class="left">
+                   <div class="pic1">
+                       그림
+                   </div>
+                   <div class="weather">
+                       오늘의 날씨는 맑아요~
+                   </div>
+                   <div class="news">
+                       <table>
+                           <tr>
+                               <td>한국경제</td>
+                               <td>부산일보</td>
+                               <td>한겨레21</td>
+                           </tr>
+                           <tr>
+                               <td></td>
+                               <td></td>
+                               <td></td>
+                           </tr>
+                           <tr>
+                               <td></td>
+                               <td></td>
+                               <td></td>
+                           </tr>
+                       </table>
+                   </div>                
+               </div>
+               <div class="right">
+                   <div class="login">
+                       <table>
+                           <tr>
+                               <td>아이디</td>
+                               <td><input type="text"></td>
+                               <td rowspan="2">
+                                   <input type="button" class="loginbtn" value="로그인">
+                               </td>
+                           </tr>
+                           <tr>
+                               <td>비번</td>
+                               <td><input type="text"></td>    
+                           </tr>
+                       </table>
+                   </div>
+                   <div class="news2">
+                      오늘의 뉴스
+                       <ol>
+                           <li>패싸움~</li>
+                           <li>꽃놀이</li>
+                       </ol>
+                   </div>
+                   <div class="pic2">그림2</div>
+               </div>
+           </div>            
+        </div>
+    </body>
+</html>

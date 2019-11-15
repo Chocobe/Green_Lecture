@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+<input type="button" value="+" onclick="p()">
+<input type="button" value="-" onclick="m()">
+<input type="button" value="확인" onclick="r()">
+<br>
+<div id="contents">
+    <input type="file" id="f1"><br>
+</div>   
+<p id="result"></p>
+
+<script>
+var btnnum=1;
+function p(){
+    btnnum++;
+    var filebtn=document.createElement("input");
+    var br = document.createElement("br");
+    
+    filebtn.setAttribute("type","file");
+    filebtn.setAttribute("id","f"+btnnum);
+    
+document.getElementById("contents").appendChild(filebtn);
+document.getElementById("contents").appendChild(br);
+}
+    
+function m(){
+document.getElementById("f"+btnnum).remove();
+document.getElementsByTagName("br")[btnnum].remove();
+btnnum--;    
+}    
+    
+function r(){
+var txt="";
+    
+for(var i=1;i<=btnnum;i++){
+txt = txt+document.getElementById("f"+i).value+",";
+}
+    
+document.getElementById("result").innerHTML=txt;
+    
+}    
+    
+</script>                
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<html>
+    <head>
+<style>
+    .myClass{
+        width: 32px;
+        height: 32px;
+        background-color: #000;
+        transition: transform 1s ease;
+    }
+    .myClass:hover {
+/*      transform: perspective(300px) scaleZ(3) translateZ(60px)*/
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+    }
+    
+    
+    .container{
+        perspective: 300px;
+    }
+    .parent{
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        transform: rotateX(45deg);
+        transform-style: preserve-3d;
+    }
+    .child{
+        margin-top: 40px;
+        padding: 100px 0;
+        width: 100%;
+        background-color: #ddd;
+        text-align: center;
+        color: #999;
+        transform: rotateX(-30deg);
+    }
+    
+    
+    
+    
+    
+</style>
+    </head>
+    <body>
+        <div class="myClass"></div>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="parent">
+                <div class="child">
+                    I'm your sun.
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

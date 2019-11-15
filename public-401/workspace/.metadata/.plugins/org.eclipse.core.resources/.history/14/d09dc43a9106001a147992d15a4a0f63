@@ -1,0 +1,5 @@
+package kr.ac.green.dbcp.dao;
+
+public class MyDAO {
+
+}

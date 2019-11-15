@@ -1,0 +1,100 @@
+<html>
+   <head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    #wrap{
+        width: 1450px;
+        border: 1px solid black;
+        margin: 0 auto;
+    }
+    header{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+    .l_menu{
+        width: 500px;
+        border: 1px solid red;
+    }
+    .l_menu> ul{
+        display: flex;
+        justify-content: space-around;
+    }
+    .l_menu> ul> li{
+        list-style: none;
+    }
+    
+    .submenu{ /* ul 밑에 div */
+        position: absolute;
+        border: 1px solid green;
+        width: 100%;
+        top: 80px;
+        left: 0;
+        background-color: white;
+        display: none;
+    }    
+    .submenu li{
+        list-style: none;
+    }
+    
+    .menu1:hover .submenu{
+        display: block;
+    }
+    
+    .r_menu{
+        width: 500px;
+        border: 1px solid blue;
+    }
+    .logo{
+        color: blue;
+        font-size: 32px;
+    }
+</style>
+   </head>
+        
+    <body>
+        <div id="wrap">
+            <header>
+<div class="l_menu">
+    <ul>
+        <li class="menu1">갤럭시5G
+            <div class="submenu">
+                <ul>
+                    <li>메뉴1</li>
+                    <li>메뉴1</li>
+                    <li>메뉴1</li>
+                    <li>메뉴1</li>
+                    <li>메뉴1</li> 
+                </ul>
+            </div>
+        </li>
+        <li>갤럭시5G</li>
+        <li>갤럭시5G</li>
+        <li>갤럭시5G</li>
+        <li>갤럭시5G</li>
+    </ul>
+</div>
+                <div class="logo">SAMSUNG</div>
+                <div class="r_menu"></div>
+            </header>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

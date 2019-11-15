@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        button{
+            margin-top: 200px;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div></div>
+    <button>눌러</button>
+    
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(
+        function(){
+            $("button").click(
+            function(){
+                
+//             alert(1);
+                
+    $("div").animate(
+    {
+        //css 작성
+        left:"250px"
+    },500,
+
+        function(){
+            $("div").animate(
+            {
+                top:"250px"
+                
+            },500
+            
+            );
+
+        }
+
+
+
+
+    );
+                
+                
+            }
+            );
+            
+            
+        }
+        );
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            .main{
+                width: 100%;
+                height: 100vh;
+                background-color: lightskyblue;
+            }
+            .menu{
+                border: 1px solid black;
+                height: 30px;
+            }
+            ul{
+                text-align: right;
+            }
+            li{
+                display: inline-block;
+                width: 100px;
+            }
+            .content{
+                border: 1px solid red;
+                width: 100%;
+                height: calc(100vh - 30px);                
+            }
+            .menu1{
+                width: 700px;
+                height: 500px;
+                border: 1px solid black;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 150px;
+                position: relative;
+                display: none;
+                overflow: hidden;
+            }
+            
+            .c1{
+                cursor: pointer;
+            }
+            .imgbox{
+                position: absolute;
+                display: flex;
+                width: 2100px;
+                height: 500px;
+            }
+            .imgbox .imgdiv{
+                position: relative;
+                width: 700px;
+                height: 500px;
+                display: inline-block;
+            }
+            .imgdiv img{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            .leftbtn{
+                position: absolute;
+                top: 0;
+            }
+            .rightbtn{
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .closebtn{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="menu">
+                <ul>
+                    <li class="c1">메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="menu1">
+                    <div class="imgbox">
+                        <div class="imgdiv">
+                            <img src="cat.jpg">
+                        </div>    
+                        <div class="imgdiv">
+                            <img src="dog.jpg">
+                        </div>                                
+                        <div class="imgdiv">
+                            <img src="css_position.png">
+                        </div>
+                    </div>
+                    <input type="button" class="leftbtn" value="왼쪽">
+                    <input type="button" class="rightbtn" value="오른쪽">
+                    <input type="button" class="closebtn" value="닫기">
+                </div>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".c1").click(function(){
+                   $(".menu1").fadeIn(500);
+                });
+                
+                $(".closebtn").click(function(){
+                    $(".menu1").fadeOut(500);
+                });
+                
+                $(".leftbtn").click(function(){
+                    $(".imgbox").animate({
+                        left:"-700px" //그림의 크기 만큼
+                    },300,function(){
+                        var x = $(".imgdiv").eq(0).detach();
+                        $(".imgbox").append(x);
+                        $(".imgbox").css("left","0");
+                    });
+                });
+                $(".rightbtn").click(function(){
+                    $(".imgbox").animate({
+                        left:"700px" // 그림의 크기만큼
+                    },300,function(){
+                        var x = $(".imgdiv").eq($(".imgdiv").length-1).detach();
+                        $(".imgbox").prepend(x);
+                        $(".imgbox").css("left","0");
+                    }); 
+                });
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

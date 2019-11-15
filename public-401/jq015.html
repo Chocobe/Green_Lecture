@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            left: 25%;
+            top: 25%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(window).resize(function(){
+            var x = $(window).width();
+            var y = $(window).height();
+            $("div").width(x/2);
+            $("div").height(y/2);
+        });
+    });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

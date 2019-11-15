@@ -1,0 +1,33 @@
+<style>
+	.box-container{
+		width: 350px;
+		border: 2px solid #09c;
+		background-color: #d7f5ff;
+	}
+	.box-container .box{
+		width: 80px;
+		height: 40px;
+		border: 2px solid red;
+		background-color: #ffe7d5;
+	}
+    
+    .clearfix:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+</style>
+<div class="box-container clearfix">    
+    
+	<div class="box" style="float: left">박스1</div>    
+	<div class="box" style="float: right">박스2</div>
+</div>
+
+
+<div>박스 아래에 나타나야 하는 내용</div>
+
+
+
+
+
+

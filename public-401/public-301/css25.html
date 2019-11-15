@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            div{
+                width: 100px;
+                height: 100px;
+                display: inline-block;
+            }
+            .bbox{
+                width: 200px;
+                height: 100px;
+                background-color: black;
+                display: block;
+                font-size: 0;
+                border: 10px solid red;
+                box-sizing: border-box;
+            }
+            .bbox div{
+                background-color: yellow;
+            }
+            .cbox{
+                width: 200px;
+                height: 100px;
+                background-color: black;
+                display: block;
+                font-size: 0;
+                border: 10px solid red;
+                box-sizing: content-box;
+            }
+            .cbox div{
+                background-color: lightgreen;
+            }
+        </style>
+    </head>
+    <body>
+<h3>box-sizing:border-box;</h3>
+<div class="bbox">
+    <div></div>
+    <div></div>
+</div>        
+        
+<h3>box-sizing:content-box;</h3>
+<div class="cbox">
+    <div></div>
+    <div></div>
+</div>                
+        
+    </body>
+</html>

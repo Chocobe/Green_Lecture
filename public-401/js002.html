@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+<input type="text" id="num1"><br>
+<input type="text" id="num2"><br>
+<input type="button" value="+" onclick="func1()">
+<input type="button" value="-" onclick="func2()">
+<input type="button" value="*" onclick="func3()">
+<input type="button" value="/" onclick="func4()">
+<br>
+<p id="result">0</p>
+        
+<script>
+function func1(){
+    var x = document.getElementById("num1").value;
+    var y = document.getElementById("num2").value;
+document.getElementById("result").innerHTML=Number(x)+Number(y);
+}
+function func2(){
+    alert(2);
+}
+function func3(){
+    alert(3);
+}
+function func4(){
+    alert(4);
+}
+</script>    
+</body>
+</html>

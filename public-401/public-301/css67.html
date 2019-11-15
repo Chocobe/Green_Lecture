@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            .banner{
+                width: 400px;
+                border: 1px solid red;
+                position: relative;
+                overflow: hidden;
+                margin: 0 auto;  
+                order: 2;
+                
+            }            
+            
+            .box{
+                width: 800px;
+                height: 200px;
+                border: 1px solid blue;
+                position: relative;
+                display: flex;
+                transition: left .5s;
+                left: 0;
+                
+            }
+            .banner:hover .box{
+                
+                left: -100%;        
+            }
+            
+            .box div{
+                position: relative;
+                height: 200px;
+                width: 50%;
+            }
+            .box div img{
+                position: absolute;                
+                width: 100%;
+                height: 100%;
+            }
+            
+            .container{
+                display: flex;
+                width: 500px;
+                margin: 0 auto;
+                border: 1px solid green;
+            }
+            .left_btn{
+                border: 1px solid blue;
+                order: 1;
+                cursor: pointer;
+            }
+            .right_btn{
+                border: 1px solid blue;
+                order: 3;
+                cursor: pointer;
+            }
+            input{
+                display: none;
+            }
+            
+            #left_btn:checked + .left_btn + #right_btn + .right_btn + .banner> .box{
+                left: -100%;
+            }
+            #left_btn:checked + .left_btn + #right_btn:checked + .right_btn + .banner> .box{
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <input type="checkbox" id="left_btn">
+            <label for="left_btn" class="left_btn">
+                &lt;
+            </label>
+            <input type="checkbox" id="right_btn">
+            <label for="right_btn" class="right_btn">
+                &gt;
+            </label>
+            
+            
+            <div class="banner">
+                <div class="box">                
+                    <div><img src="cat.jpg"></div>
+                    <div><img src="dog.jpg"></div>
+                </div>
+            </div>        
+            
+        </div>    
+    </body>
+    
+</html>

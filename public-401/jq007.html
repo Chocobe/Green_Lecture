@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button>커짐(빨강)</button>
+    <button>작아짐(파랑)</button>
+    <br><br><br>
+    <div></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script>
+$(function(){
+   $("button").eq(0).click(function(){
+      $("div").animate({
+          width:"+=200px",
+          height:"+=200px",
+          backgroundColor:"red"
+      },500);
+   });
+    
+   $("button").eq(1).click(function(){
+      $("div").animate({
+          width:"-=200px",
+          height:"-=200px",
+          backgroundColor:"blue"
+      },500);
+   });
+});
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

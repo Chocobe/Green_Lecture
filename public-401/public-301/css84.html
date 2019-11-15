@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+        .showbox{
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .box{
+            width: 1500px;
+            height: 300px;
+            border: 1px solid red;
+            position: absolute;
+            display: flex;
+            top: 0;
+            left: 0;
+        }
+        .box div{
+            width: 500px;
+            height: 300px;
+        }
+        .box div img{
+            width: 100%;
+            height: 100%;
+        }
+    
+    </style>
+</head>
+<body>
+   
+   
+<div class="showbox">
+    <div class="box">
+        <div><img src="dog.jpg"></div>
+        <div><img src="cat.jpg"></div>
+        <div><img src="bono.png"></div>
+    </div>
+</div>
+
+
+<button class="lbtn">왼쪽</button>
+<button class="rbtn">오른쪽</button>
+
+
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(document).ready(
+function(){
+    
+    
+    $(".lbtn").click(
+        function(){
+            $(".box").stop().animate({
+              left:"-500px"
+            },500,function(){
+    var x=$(".box div").eq(0).detach();
+    $(".box").append(x);
+    $(".box").css("left","0");
+});
+            
+            
+
+            
+            
+        }
+    );
+    
+    
+    $(".rbtn").click(
+        function(){
+            
+var y = $(".box div").eq(2).detach();
+$(".box").prepend(y);
+$(".box").css("left","-500px");
+            
+$(".box").stop().animate({
+    left:"0"
+},500);
+            
+            
+            
+        }
+    );
+    
+    
+    
+}
+);
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 17px;
+        }
+        #myVideo{
+            min-width:  100%;
+            min-height: 100%;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+        .content{
+            position: fixed;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+        }
+        #myBtn{
+            width: 200px;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+        #myBtn:hover{
+            background: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+       <source src="mj.mp4" type="video/mp4">
+       이 브라우져는 동영상 배경을 지원하지 않는다.
+    </video>
+    
+    <div class="content">
+        <h1>헤드라인</h1>
+        <p>
+            모든 국민은 인간다운 생활을 할 권리를 가진다. 비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다.
+        </p>
+        
+    <button id="myBtn" onclick="myFunc()">
+        일시중지
+    </button>
+    
+    </div>
+    
+    
+    <script>
+     var video = document.getElementById("myVideo");
+     var btn = document.getElementById("myBtn");
+        
+        function myFunc(){
+            if(video.paused){
+                video.play();
+                btn.innerHTML="일시중지";
+            }else{
+                video.pause();
+                btn.innerHTML="재생";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

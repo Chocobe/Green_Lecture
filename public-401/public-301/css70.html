@@ -1,0 +1,71 @@
+<html>
+    <head>        
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: absolute;
+                top: 50px;
+            }
+            
+        </style>
+    </head>
+    <body>
+       <button>왼쪽</button>
+       <button>오른쪽</button>
+       
+       
+       <div></div>
+       
+       
+       
+       
+       
+       
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> 
+    
+    <script>
+$(document).ready(
+    function(){
+
+      $("button").eq(0).click(
+
+        function(){
+         $("div").css("left","-=10px");
+        }
+
+      );
+        
+        
+      $("button").eq(1).click(
+
+        function(){
+          $("div").css("left","+=10px");
+        }
+
+      );  
+        
+        
+        
+        
+        
+
+    }
+);
+    </script>  
+          
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

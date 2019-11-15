@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .menu{
+            border: 1px solid black;
+            width: 100%;
+        }
+        li{
+            cursor: pointer;
+        }
+        .menu> ul{
+            display: flex;
+            border: 1px solid red;
+            width: 300px;
+            justify-content: space-around;
+            
+        }
+        .menu> ul> li{
+            list-style: none;
+            position: relative;
+        }
+        
+        .menu> ul> li> ul{
+            position: absolute; 
+            padding: 0;
+            border: 1px solid blue;
+            width: 80px;
+            display: none;
+        }
+        
+        .menu> ul> li:hover> ul{
+            display: block;
+        }
+        
+        .menu> ul> li> ul> li{
+            list-style: none;
+            position: relative;
+        }
+        .menu> ul> li> ul> li> ul{
+            border: 1px solid green;
+            position: absolute;
+            padding: 0;
+            width: 120px;
+            display: none;
+            left: 80px; /* 위치 */
+            top: 0;
+        }
+        .menu> ul> li> ul> li:hover> ul{
+            display: block;
+        }
+        .menu> ul> li> ul> li> ul> li{
+            list-style: none;
+            position: relative;
+        }
+        .menu> ul> li> ul> li> ul> li> ul{
+            border: 1px solid pink;
+            position: absolute;
+            padding: 0;
+            width: 140px;
+            top: 0;
+            left: 120px;
+            display: none;
+        }
+        .menu> ul> li> ul> li> ul> li:hover> ul{
+            display: block;
+        }
+        .menu> ul> li> ul> li> ul> li> ul> li{
+            list-style: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3*
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3</li>
+                </ul>
+            </li>
+            <li>메뉴4*
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3*
+                        <ul>
+                            <li>서브서브메뉴1</li>
+                            <li>서브서브메뉴2</li>
+                            <li>서브서브메뉴3*
+                                <ul>
+                                    <li>서브서브서브메뉴1</li>
+                                    <li>서브서브서브메뉴2</li>
+                                    <li>서브서브서브메뉴3</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

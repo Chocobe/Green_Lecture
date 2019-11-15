@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="yyyymm">xxxx년xx월</p>
+    <p>일 월 화 수 목 금 토</p>
+    <p id="cal">실제달력</p>
+    
+    <script>
+        var result="";
+        var date = new Date();
+        var lastday=new Date(date.getFullYear(),date.getMonth()+1,0).getDate();
+
+        var week = new Date(date.getFullYear(),date.getMonth(),1).getDay();
+        
+document.getElementById("yyyymm").innerHTML=date.getFullYear()+"."+(date.getMonth()+1);
+        
+        for(var i=0;i<week;i++){            
+            result=result+"XX ";
+        }
+        
+        for(var i=1;i<=lastday;i++){
+            if(i<10){
+                result=result+"0"+i+" ";
+            }else{
+                result=result+i+" ";
+            }
+            
+            if(new Date(date.getFullYear(),date.getMonth(),i).getDay()==6){
+                result=result+"<br>";
+            }
+            
+        }
+        
+document.getElementById("cal").innerHTML=result;
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <style>
+div{
+    position: relative;
+    border: 1px solid black;    
+}
+.menu{ /* ul 입니다. */
+    border: 1px solid blue;
+    height: 30px;
+  
+}            
+.menu > li{
+    display: inline-block;
+    border: 1px solid red;
+    margin-left: 20px;
+    width: 100px;
+    height: 30px;    
+    
+}
+            
+.menu > li ul {
+    display: none;
+    position: absolute;
+}
+
+.menu > li:hover ul{
+    display: block;
+}
+
+            
+            
+            
+        </style>
+    </head>
+    <body>
+    
+    
+<div>
+    <ul class="menu">
+        <li>메뉴1
+            <ul>
+                <li>서브1</li>
+                <li>서브2</li>
+                <li>서브3</li>
+            </ul>
+        </li>
+        <li>메뉴2
+            <ul>
+                <li>서브1</li>
+                <li>서브2</li>
+                <li>서브3</li>
+            </ul>
+        </li>
+        <li>메뉴3
+            <ul>
+                <li>서브1</li>
+                <li>서브2</li>
+                <li>서브3</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+    
+    
+    </body>
+
+</html>

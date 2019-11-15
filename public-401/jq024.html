@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .boxgroup{
+            position: relative;
+            width: 100%;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow-x: scroll;
+        }
+        
+     .boxgroup.active{
+        background-color: rgba(0,0,0,0.1);
+        cursor: grabbing;
+     }
+        
+        .box{
+            background-color: skyblue;
+            display: inline-block;
+            width: 400px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxgroup">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>  
+
+<script>
+$(document).ready(function(){
+    var isDown = false;//마우스 누름?
+    var starX = 0; //마우스클릭한곳 위치
+    var scrollLeft = 0;//스크롤위치
+
+    $(".boxgroup").mousedown(function(e){
+        
+        isDown = true;
+        
+        $(".boxgroup").addClass("active");
+        
+   starX=e.pageX;//마우스x좌표
+        
+   scrollLeft=$(".boxgroup").scrollLeft();
+        
+    $("p").eq(0).text("마우스의 위치 : "+starX);
+    $("p").eq(1).text("스크롤의 위치 : "+scrollLeft);
+        
+    });
+$(".boxgroup").mousemove(function(e){
+        
+        if(!isDown){
+            //isDown = false;
+            return;
+        }
+        
+        e.preventDefault();
+        var x = e.pageX;
+        var walk = (x-starX);
+        //var walk = (x-starX)*10;
+$(".boxgroup").scrollLeft(scrollLeft-walk);
+$("p").eq(2).text("마우스무빙 때 마우스 위치"+x);
+        
+});
+    
+$(".boxgroup").mouseup(function(){
+    isDown=false;
+    $(".boxgroup").removeClass("active");
+});
+
+$(".boxgroup").mouseleave(function(){
+    isDown=false;
+    $(".boxgroup").removeClass("active");
+});
+    
+    
+});
+</script>    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

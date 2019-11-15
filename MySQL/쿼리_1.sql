@@ -95,32 +95,3 @@ SELECT * FROM my_contacts WHERE (first_name LIKE '%m%' OR last_name LIKE '%m%') 
 
 SELECT * FROM my_contacts;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

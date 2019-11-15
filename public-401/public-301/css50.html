@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .box{
+                position: relative;
+                width: 100px;
+                height: 200px;
+            }
+            .back{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            .back img{
+                width: 100%;
+                height: 100%;
+                
+            }
+            .front{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: black;
+                transition: opacity 2s;
+            }
+            .box:hover .front{
+                opacity: 0;
+            }
+            
+            
+            
+            
+            
+            .menu{
+                width: 500px;
+                height: 45px;
+                border: 1px solid black;
+                padding: 0;
+            }
+            .menu> ul{
+                display: flex;
+            }
+            .menu> ul> li{
+                list-style: none;
+                margin-right: 100px;
+                position: relative;
+            }
+/*
+            .menu> ul> li> ul{
+                position: absolute;
+                border: 1px solid red;
+                width: 50px;
+                top: 30px;
+                display: none;
+            }
+            .menu> ul> li:hover> ul{
+                display: block;
+            }
+*/
+            .menu> ul> li> ul{
+                position: absolute;
+                border: 1px solid red;
+                width: 50px;
+                top: 30px;
+                height: 0;
+                transition: all 1s;
+            }
+            .menu> ul> li> ul>li{
+                height: 0;
+                opacity: 0;
+                transition: all 1s;
+            }
+            .menu> ul> li:hover> ul{
+                height: 100px;
+            }
+            
+            .menu> ul> li:hover> ul> li{
+                height: 20px;
+                opacity: 1;
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        
+        
+        
+        <div class="box">
+            <div class="back">
+                <img src="cat.jpg">
+            </div>
+            <div class="front"></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <br><br>
+        <div class="menu">
+            <ul>
+                <li>
+                    메뉴1
+                    <ul>
+                        <li>서브1</li>
+                        <li>서브2</li>
+                        <li>서브3</li>
+                    </ul>
+                </li>
+                <li>
+                    메뉴2
+                    <ul>
+                        <li>서브1</li>
+                        <li>서브2</li>
+                        <li>서브3</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+    </body>
+</html>

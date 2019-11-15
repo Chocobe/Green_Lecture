@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            .banner{
+                width: 400px;
+                border: 1px solid red;
+                position: relative;
+                overflow: hidden;
+                margin: 0 auto;                
+                
+            }            
+            
+            .box{
+                width: 800px;
+                height: 200px;
+                border: 1px solid blue;
+                position: relative;
+                display: flex;
+                transition: left .5s;
+                left: 0;
+                
+            }
+            .banner:hover .box{
+                transition: 1s;
+                left: -100%;        
+            }
+            
+            .box div{
+                position: relative;
+                height: 200px;
+                width: 50%;
+            }
+            .box div img{
+                position: absolute;                
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="banner">
+            <div class="box">                
+                <div><img src="cat.jpg"></div>
+                <div><img src="dog.jpg"></div>
+            </div>
+        </div>        
+    </body>
+    
+</html>

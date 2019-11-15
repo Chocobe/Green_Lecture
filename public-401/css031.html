@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            height: 80px;
+            background-color: deepskyblue;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            z-index: 5;
+        }
+        .logo{
+            width: 250px;
+            height: 80px;
+            position: relative;
+            background-color: red;
+        }
+        .menu{
+            width: calc(100% - 250px);
+            border: 1px solid black;
+        }
+        .menu> ul{
+            width: 100%;
+            height: 78px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .menu> ul> li{
+            list-style: none;
+            margin-right: 20px;
+            margin-top: 20px;            
+        }
+        .sec1{
+            width: 100%;
+            margin-top: 95px;
+            padding: 0 1%;
+        }
+        .art1{
+            width: 98%;
+            margin-left: 1%;
+        }
+        .art1 img{
+            width: 100%;
+        }
+        .sec2{
+            width: 100%;
+        }
+        .art2{
+            width: 98%;
+            margin-left: 1%;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .box{
+            padding: 1%;
+            width: 25%;
+        }
+        .border{
+            width: 100%;
+            position: relative;
+            border: 1px solid lightgray;
+        }
+        .border img{
+            width: 100%;
+        }
+        .border h3{
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            word-break: break-all;
+        }
+        .border p{
+            width: 100%;
+            text-align: center;
+            word-break: break-all;
+            padding: 10px;
+        }
+        footer{
+            width: 100%;
+            height: 150px;
+            background-color: dimgray;
+        }
+        .mobile_menu{
+            width: 50px;
+            height: 50px;            
+            display: none;
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        @media(max-width:1024px){
+            .box{
+                width: 33.33333%;
+            }
+        }
+        @media(max-width:768px){
+            .box{
+                width: 50%;
+            }
+        }
+        @media(max-width:600px){
+            .box{
+                width: 100%;
+            }
+            .menu>ul{
+                display: none;
+            }
+            .mobile_menu{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">그림</div>
+        <div class="menu">
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+                <li>메뉴5</li>
+            </ul>
+            <div class="mobile_menu">
+                <i class="fas fa-bars fa-3x" ></i>
+            </div>
+        </div>        
+    </header>
+    
+    <section class="sec1">
+        <article class="art1">
+            <img src="bono.png">
+        </article>
+    </section>
+    
+    <section class="sec2">
+        <article class="art2">
+           
+            <div class="box">
+                <div class="border">
+                    <img src="aoa1.jpg">
+                    <h3>Card Titlesdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasd</h3>
+                    <p>내용 내용 내용</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="border">
+                    <img src="aoa1.jpg">
+                    <h3>Card Title</h3>
+                    <p>내용 내용 내용</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="border">
+                    <img src="aoa1.jpg">
+                    <h3>Card Title</h3>
+                    <p>내용 내용 내용</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="border">
+                    <img src="aoa1.jpg">
+                    <h3>Card Title</h3>
+                    <p>내용 내용 내용</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="border">
+                    <img src="aoa1.jpg">
+                    <h3>Card Title</h3>
+                    <p>내용 내용 내용</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="border">
+                    <img src="aoa1.jpg">
+                    <h3>Card Title</h3>
+                    <p>내용 내용 내용</p>
+                </div>
+            </div>
+            
+        </article>
+    </section>
+    <footer>이것은 푸터</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    #wrap{
+        width: 100%;
+        border: 1px solid black;
+    }
+    .menu{
+        width: 100%;
+        height: 70px;
+        background-color: skyblue;
+    }
+    .banner{
+        width: 100%;
+        background-color: darkgreen;
+    }
+    .banner img{
+        width: 100%;
+    }
+    
+    .model{
+        width: 100%;
+        background-color: darkgray;
+    }
+    .model>.mbox{
+        width: 100%;
+        height: 50px;
+        border: 1px solid red;
+    }
+    .model>.mbox2{
+        width: 100%;
+        border: 1px solid blue;
+        height: 200px;
+        display: none;
+    }
+    .model2{
+        width: 100%;
+        background-color: darkgray;
+        display: none;
+    }
+    .model22{
+         width: 100%;
+         display: flex;
+         flex-flow: row wrap;
+    }
+    .m2box{
+        width: 25%;
+        height: 100px;
+        border: 1px solid red;
+    }
+    
+    .popular{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .pbox{
+        width: 50%;
+        height: 200px;
+        border: 1px solid green;
+    }
+    .banner2{
+        width: 100%;
+        height: 400px;
+        background-color: darkgreen;
+    }
+    .regi{
+        width: 100%;
+        height: 200px;
+        text-align: center;
+        border: 1px solid black;
+    }
+    .service{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .sbox{
+        width: 50%;
+        height: 200px;
+        border: 1px solid red;
+    }
+    .tail{
+        width: 100%;
+    }
+    .tbox{
+        width: 100%;
+        height: 200px;
+        border: 1px solid blue;
+    }
+    @media(min-width:740px){
+        .model2{
+            display: block;
+            
+        }
+        .model{
+            display: none;
+        }
+        .sbox{
+            width: 25%;
+        }
+    }
+</style>
+</head>
+<body>
+<div id="wrap">
+    <div class="menu">현대</div>
+    <div class="banner">
+        <img src="cat.jpg">
+    </div>
+    <div class="model">
+        <div class="mbox">전체모델</div>
+        <div class="mbox2">
+            이것<br>
+            저것<br>
+            그것<br>
+            어느것
+        </div>
+    </div>
+    <div class="model2">
+       <div class="model22">
+            <div class="m2box"></div>
+            <div class="m2box"></div>
+            <div class="m2box"></div>
+            <div class="m2box"></div>
+            <div class="m2box"></div>
+            <div class="m2box"></div>
+            <div class="m2box"></div>
+        </div>
+    </div>
+    
+    
+    <div class="popular">
+        <div class="pbox"></div>
+        <div class="pbox"></div>
+        <div class="pbox"></div>
+        <div class="pbox"></div>
+    </div>
+    <div class="banner2">
+        이것은 배너2
+    </div>
+    <div class="regi">
+        <button>로그인</button>
+        <button>회원가입</button>
+    </div>
+    <div class="service">
+        <div class="sbox">
+            서비스네트워크
+        </div>
+        <div class="sbox">
+            블루맴버스
+        </div>
+        <div class="sbox">
+            차량관리서비스
+        </div>
+        <div class="sbox">
+            블루링크
+        </div>
+    </div>
+    <div class="tail">
+        <div class="tbox"></div>
+        <div class="tbox"></div>
+        <div class="tbox"></div>
+        <div class="tbox"></div>
+    </div>
+</div>
+
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+<script>
+$(document).ready(
+function(){
+    $(".mbox").click(
+    function(){
+      $(".mbox2").slideToggle(300);
+    }
+    );
+}
+);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

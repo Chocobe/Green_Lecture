@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .box div img{
+            width: 100%;
+            height: 100%;
+        }
+        
+        .box div:nth-child(3){
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            animation-name: banner;
+            animation-iteration-count: infinite;
+            animation-fill-mode: none;
+            animation-delay: 0s;
+            animation-duration: 6s;
+        }
+        .box div:nth-child(2){
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            animation-name: banner;
+            animation-iteration-count: infinite;
+            animation-fill-mode: none;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+        .box div:nth-child(1){
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            animation-name: banner;
+            animation-iteration-count: infinite;
+            animation-fill-mode: none;
+            animation-delay: 4s;
+            animation-duration: 18s;
+        }
+        
+        @keyframes banner{
+            0%{
+                opacity: 0;
+                z-index: 100;
+            }
+            15%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+                z-index: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div><img src="aoa1.jpg"></div>
+        <div><img src="aoa2.jpg"></div>
+        <div><img src="aoa3.jpg"></div>
+    </div>
+</body>
+</html>

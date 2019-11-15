@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;web.xml&apos; to &apos;8081-config&apos;" description="Move &apos;web.xml&apos; to &apos;8081-config&apos;" destination="8081-config" element1="/Exam01/WebContent/WEB-INF/web.xml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1573700998870" updateReferences="true"/>
+</session>
