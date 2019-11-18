@@ -10,7 +10,7 @@
 	</head>
 
 	<body>
-		<%
+		<%		
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");

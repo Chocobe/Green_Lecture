@@ -31,7 +31,7 @@ Vector<BoardDTO> vec = dao.getList();
 			<tr>
 				<td><%= vec.get(i).getIdx() %></td>
 				<td>
-					<a href="view.jsp?idx= <%= vec.get(i).getIdx() %>">
+					<a href="view.jsp?idx=<%= vec.get(i).getIdx() %>">
 						<%= vec.get(i).getSubject() %>
 					</a>
 				</td>
