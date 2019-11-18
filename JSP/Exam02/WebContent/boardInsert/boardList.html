@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            .wrap {
+                width: 900px;
+                border: 3px solid black;
+            }
+            
+            th {
+                background-color: aquamarine;
+            }
+            
+            .no {
+                width: 80px;
+            }
+            
+            .title {
+                width: 500px;
+            }
+            
+            .auth {
+                width: 170px;
+            }
+            
+            .writeDate {
+                width: 150px;
+            }
+            
+            tr td:nth-child(1),
+            tr td:nth-child(3),
+            tr td:nth-child(4) {
+                text-align: center;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrap">
+            <table>
+                <tr>
+                    <th class="no">번호</th>
+                    <th class="title">제목</th>
+                    <th class="auth">작성자</th>
+                    <th class="writeDate">작성일</th>
+                </tr>
+                
+                <tr>
+                    <td>000</td>
+                    <td>제목</td>
+                    <td>222</td>
+                    <td>yyyy/mm/dd</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
