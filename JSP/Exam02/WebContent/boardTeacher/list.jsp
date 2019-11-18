@@ -30,7 +30,11 @@ Vector<BoardDTO> vec = dao.getList();
 			<% for(int i = 0; i < vec.size(); i++) { %>
 			<tr>
 				<td><%= vec.get(i).getIdx() %></td>
-				<td><%= vec.get(i).getSubject() %></td>
+				<td>
+					<a href="view.jsp?idx= <%= vec.get(i).getIdx() %>">
+						<%= vec.get(i).getSubject() %>
+					</a>
+				</td>
 				<td><%= vec.get(i).getName() %></td>
 				<td><%= vec.get(i).getRegDay() %></td>
 			</tr>
