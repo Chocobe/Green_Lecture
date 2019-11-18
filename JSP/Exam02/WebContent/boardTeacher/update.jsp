@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
 
 <%
-/* request.setCharacterEncoding("UTF-8"); */
+request.setCharacterEncoding("UTF-8");/
 
 String idx = request.getParameter("idx");
 String pw = request.getParameter("pw");

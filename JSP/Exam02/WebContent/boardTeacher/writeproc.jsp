@@ -11,7 +11,7 @@
 
 	<body>
 		<%
-		/* request.setCharacterEncoding("UTF-8"); */
+		request.setCharacterEncoding("UTF-8");
 		
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");

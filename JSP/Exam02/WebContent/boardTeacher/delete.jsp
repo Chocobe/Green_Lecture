@@ -7,8 +7,6 @@
 String idx = request.getParameter("idx");
 BoardDAO dao = BoardDAO.getInstance();
 int result = dao.deleteView(idx);
-
-
 %>
 
 
