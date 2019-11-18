@@ -10,7 +10,9 @@
 	</head>
 
 	<body>
-		<%		
+		<%
+		/* request.setCharacterEncoding("UTF-8"); */
+		
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");

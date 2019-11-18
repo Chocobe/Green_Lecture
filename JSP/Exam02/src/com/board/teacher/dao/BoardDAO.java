@@ -226,6 +226,63 @@ public class BoardDAO {
 		
 		return result;
 	}
+	
+	
+	public int updateView(String idx, 
+						  String pw, 
+						  String name, 
+						  String email, 
+						  String homepage, 
+						  String subject, 
+						  String memo, 
+						  String file1, 
+						  String file2) {
+		int result = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			String sql = "UPDATE BOARD1 SET " + 
+						 "PW=?, " +
+						 "EMAIL=?, " +
+						 "HOMEPAGE=?, " +
+						 "SUBJECT=?, " +
+						 "MEMO=?, " +
+						 "FILE1=?, " +
+						 "FILE2=?, " +
+						 "REG_DAY = NOW() " +
+						 "WHERE IDX=?";
+			
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, pw);
+			pstmt.setString(2, email);
+			pstmt.setString(3, homepage);
+			pstmt.setString(4, subject);
+			pstmt.setString(5, memo);
+			pstmt.setString(6, file1);
+			pstmt.setString(7, file2);
+			pstmt.setInt(8, Integer.parseInt(idx));
+			
+			result = pstmt.executeUpdate();
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			try {
+				pstmt.close();
+				
+			} catch(Exception e) { }
+			
+			try {
+				conn.close();
+				
+			} catch(Exception e) { }
+		}
+		
+		return result;
+	}
 }
 
 

@@ -66,8 +66,43 @@
 
 1.	DAO 메소드 작성 - ``insertBoard()`` - 글 작성하기 메소드
 
-1.	게시판 리스트 페이지에서 ``table``로 틀만 만들어 두기
+1.	게시판 리스트 페이지에서 ``<table>``로 틀만 만들어 두기
 
 1.	DAO 메소드 작성 - ``getList()`` - 전체 글 가져오기
 
 1.	가져온 전체 글 -> 게시판 리스트 페이지에 출력하기
+
+	* ``for(;;) { }``반복문을 사용하여 출력
+	
+	* 출력한 글의 제목은 ``<a>``태그를 이용하여, 해당 게시물 페이지로 이동하도록 작성(``질의 문자열``에 idx값을 넘겨줘서 DB에서 게시물을 찾는다)
+	
+1.	각 게시물의 수정, 삭제 기능 추가하기.
+
+	* ```xml
+		<form name="frm">
+			<input type="button" value="수정" onclick="update()">
+			<input type="button" value="삭제" onclick="delete()">
+		</form>
+		
+		<script>
+			function update() {
+				frm.action="update.jsp";
+				frm.submit();
+			}
+			
+			function delete() {
+				frm.action="delete.jsp";
+				frm.submit();
+			}
+		</script>
+	```
+	
+*	버튼 만들기 -> 특정 페이지, 또는 이전페이지
+
+	```xml
+		<!-- 특정 페이지 -->
+		<input type="button" onclick="javascript:location.href='writer.jsp'">
+		
+		<!-- 이전 페이지 -->
+		<input type="button" onclick="javascript:history.back()">
+	```
