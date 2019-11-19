@@ -89,17 +89,20 @@ public class BoardDAO {
 	}
 	
 	
-	public Vector<BoardDTO> getList() {
+// 페이징 처리_2 (인자값의 시작점과 개수만큼 DB에 게시물을 가져온다) 
+	public Vector<BoardDTO> getList(int start, int cnt) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Vector<BoardDTO> vec = null;
 		
 		try {
-			String sql = "SELECT * FROM BOARD1";
+			String sql = "SELECT * FROM BOARD1 LIMIT ?, ?";
 			
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, cnt);
 			rs = pstmt.executeQuery();
 			
 			vec = new Vector<BoardDTO>();
@@ -270,6 +273,50 @@ public class BoardDAO {
 			e.printStackTrace();
 			
 		} finally {
+			try {
+				pstmt.close();
+				
+			} catch(Exception e) { }
+			
+			try {
+				conn.close();
+				
+			} catch(Exception e) { }
+		}
+		
+		return result;
+	}
+	
+	
+// 페이징 처리 메소드_1 (전체 게시물 개수 가져오기)
+	public float getCount() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		// 전체개수
+		float result = 0F;
+		
+		try {
+			String sql = "SELECT COUNT(*) FROM BOARD1";
+			
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			try {
+				rs.close();
+				
+			} catch(Exception e) { }
+			
 			try {
 				pstmt.close();
 				
