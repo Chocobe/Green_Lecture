@@ -106,3 +106,7 @@
 		<!-- 이전 페이지 -->
 		<input type="button" onclick="javascript:history.back()">
 	```
+	
+---
+
+>	## 파일 업로드
