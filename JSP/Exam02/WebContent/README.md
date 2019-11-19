@@ -110,3 +110,57 @@
 ---
 
 >	## 파일 업로드
+
+>	### View 작성
+
+*	``cos.jar``파일 사용 (servlets.com에서 다운)
+
+*	파일 업로드를 위해 View의 ``<form>``속성에 ``enctype="multipart/form-data"``를 추가.
+
+*	위의 ``<form>``에 속한 ``<input>``태그 중, ``type="file"``속성이 지정된 ``<input>``태그로 파일 업로드 등록
+
+>	### Controller 작성
+
+*	``<form enctype="multipart/form-data">``의 질의문자열은 ``MultipartRequest``객체를 통해서 가질 수 있다.
+
+*	```java
+		MultipartRequest multi = new MultipartRequest(request, 저장경로, 파일최대크기, 인코딩값, new DefaultFileRenamePolicy());
+	```
+	
+*	``MultipartRequest``객체의 ``getParameter("속성명")``으로 질의문자열을 가져온다.
+
+*	```java
+		MultipartRequest multi = new MultipartRequest(req, "/경로/", 1024 * 1024 * 10, "UTF-8", new DefaultFileRenamePolicy());
+		
+		// <form>태그의 "name"속성값들을 가져오는 부분
+		Enumeration<String> names = multi.getFileNames();
+		
+		while(names.hasMoreElements()) {
+			// 현재 커서의 <form>태그 "name"속성값을 가져온다.
+			String name = names.nextElement();
+			
+			// DefaultFileRenamePolicy 객체에 의해 변경된 실제 파일명을 가져온다.
+			String fileName = multi.getFilesystemName(name);
+			
+			// 사용자가 업로드한 실제 파일명을 가져온다.
+			String fileOriginName = multi.getOriginalFileName(name);
+			
+			// 업로드된 파일을 <img>태그로 출력한다.
+			out.print("<img src='경로/fileName'>");
+		}
+	```
+	
+---
+	
+>	## 업로드된 파일 삭제하기
+
+*	업로드가 완료된 파일을 삭제하기 위해서는, 해당 파일을 가져온 후, 삭제를 해야 한다.
+
+*	```java
+		File file = new File("경로/저장된 파일명");
+		
+		if(file.exists()) {
+			file.delete();
+		}
+	```
+	
