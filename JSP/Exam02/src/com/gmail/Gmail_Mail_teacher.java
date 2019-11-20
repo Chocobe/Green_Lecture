@@ -18,6 +18,7 @@ public class Gmail_Mail_teacher {
 		Properties p = new Properties();
 		
 		// smtp : Send Mail Transfer Protocol
+		// gmail에서 사용하기 위해서는 계정의 2단계 암호 설정을 사용해야 한다.		
 		
 		// mail.smtp.user : 보내는 사람의 메일
 		p.put("mail.smtp.user", "kyw05171@gmail.com");
