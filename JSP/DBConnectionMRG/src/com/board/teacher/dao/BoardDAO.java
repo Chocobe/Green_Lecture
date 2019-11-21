@@ -10,6 +10,12 @@ import java.util.Vector;
 import com.dbConnectionMGR.DBConnectionMgr;
 
 public class BoardDAO {
+	private static BoardDAO dao = new BoardDAO();
+	
+	
+	public static BoardDAO getInstance() {
+		return dao;
+	}
 	
 // 페이징 처리_2 (인자값의 시작점과 개수만큼 DB에 게시물을 가져온다) 
 	public Vector<BoardDTO> getList(int start, int cnt) {
@@ -95,6 +101,58 @@ public class BoardDAO {
 		}
 		
 		return result;
+	}
+	
+	
+	public BoardDTO getView(String idx) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardDTO dto = null;
+		
+		try {
+			String sql = "SELECT * FROM BOARD1 WHERE IDX=?";
+			
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, Integer.parseInt(idx));
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new BoardDTO();
+				dto.setIdx(rs.getInt("IDX"));
+				dto.setPw(rs.getString("PW"));
+				dto.setName(rs.getString("NAME"));
+				dto.setEmail(rs.getString("EMAIL"));
+				dto.setHomepage(rs.getString("HOMEPAGE"));
+				dto.setSubject(rs.getString("SUBJECT"));
+				dto.setMemo(rs.getString("MEMO"));
+				dto.setFile1(rs.getString("FILE1"));
+				dto.setFile2(rs.getString("FILE2"));
+				dto.setRegDay(rs.getString("REG_DAY"));
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			try {
+				rs.close();
+				
+			} catch(Exception e) { }
+			
+			try {
+				pstmt.close();
+				
+			} catch(Exception e) { }
+			
+			try {
+				conn.close();
+				
+			} catch(Exception e) { }
+		}
+		
+		return dto;
 	}
 }
 
